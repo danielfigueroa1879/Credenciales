@@ -34,12 +34,6 @@
             transform: translateX(5px);
             border-color: #2a699a;
         }
-        div.border-green-500:hover {
-            border-color: #166534;
-        }
-        div.border-red-500:hover {
-            border-color: #bf1f23;
-        }
         div.border-yellow-500:hover {
             border-color: #a87d00;
         }
@@ -67,15 +61,6 @@
             .text-gray-500 {
                 color: #9ca3af;
             }
-            .border-blue-500 {
-                border-color: #3b82f6;
-            }
-            .border-green-500 {
-                border-color: #22c55e;
-            }
-            .border-red-500 {
-                border-color: #ef4444;
-            }
             .border-yellow-500 {
                 border-color: #f59e0b;
             }
@@ -87,9 +72,6 @@
             }
             h1 {
                 font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.25rem;
             }
             ul li {
                 font-size: 1rem;
@@ -120,29 +102,88 @@
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md p-6 space-y-6">
-        <h1 class="text-xl font-bold text-center text-blue-700">TRAMITAR CREDENCIALES</h1>
+        <h1 class="text-2xl font-bold text-center text-blue-700">TRAMITAR CREDENCIALES</h1>
         <div class="space-y-4">
-            <!-- SECCIÓN ÚNICA: TRAMITAR CREDENCIALES -->
+            <!-- SECCIÓN PRINCIPAL: TRAMITACIÓN DE CREDENCIALES -->
             <div class="border-l-4 border-yellow-500 pl-4">
-                <h3 class="font-bold text-gray-800">TRAMITAR CREDENCIALES</h3>
+                <h3 class="font-bold text-gray-800">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
                 <ul class="list-disc pl-5 text-sm text-gray-700">
                     <li class="flex flex-col space-y-1">
-                        <span>Resol. 2.522 (26.08.2024) normaliza el proceso</span>
-                        <a href="https://dal5.short.gy/Cred" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded text-xs w-40 inline-block text-center download-btn">Descargar Documento</a>
+                        <span><strong>DOCUMENTOS REQUERIDOS:</strong></span>
+                        <ul class="pl-5 list-decimal">
+                            <li class="flex flex-col space-y-1">
+                                <span>02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</span>
+                            </li>
+                            <li class="flex flex-col space-y-1">
+                                <span>FOTOCOPIA DE CÉDULA DE IDENTIDAD (ambas caras).</span>
+                            </li>
+                            <li class="flex flex-col space-y-1">
+                                <span>CERTIFICADO OS.10 (Curso Aprobado Vigente).</span>
+                            </li>
+                            <li class="flex flex-col space-y-1">
+                                <span>CERTIFICADO DE ANTECEDENTES PARA FINES ESPECIALES.</span>
+                            </li>
+                        </ul>
                     </li>
                     <li class="flex flex-col space-y-1">
-                        <span>Tramitar credenciales</span>
-                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded text-xs w-40 inline-block text-center download-btn">Tramitar credenciales</a>
+                        <span><strong>FOTOGRAFÍA DIGITAL:</strong></span>
+                        <ul class="pl-5 list-disc">
+                            <li>Formato JPG, 331x413 píxeles, fondo blanco.</li>
+                            <li>Resolución 300 DPI, desde los hombros hacia arriba.</li>
+                            <li>Camisa negra (tela gruesa/delgada, manga corta/larga).</li>
+                            <li>Almacenar en CD/Pendrive.</li>
+                            <div class="mt-1">
+                                <a href="https://dal5.short.gy/0" target="_blank" class="text-blue-600 hover:underline">Herramienta de Conversión 1</a>
+                                <a href="https://dal5.short.gy/j" target="_blank" class="text-blue-600 hover:underline">Herramienta de Conversión 2</a>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col space-y-1">
+                        <span><strong>FORMATO EXCEL:</strong></span>
+                        <ul class="pl-5 list-disc">
+                            <li>Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
+                            <li>Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
+                        </ul>
+                        <table class="border-collapse border border-gray-400 mt-2 w-full">
+                            <thead>
+                                <tr>
+                                    <th class="border border-gray-400 p-2 bg-gray-100">NRO</th>
+                                    <th class="border border-gray-400 p-2 bg-gray-100">APELLIDOS Y NOMBRES</th>
+                                    <th class="border border-gray-400 p-2 bg-gray-100">RUT</th>
+                                    <th class="border border-gray-400 p-2 bg-gray-100">CURSO VIGENCIA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-400 p-2">01</td>
+                                    <td class="border border-gray-400 p-2">JUAN ALEJANDRO LOPEZ CARMONA</td>
+                                    <td class="border border-gray-400 p-2">13333333-8</td>
+                                    <td class="border border-gray-400 p-2">MARZO 2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="https://dal5.short.gy/ExcelTemplate" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded text-xs w-40 inline-block mt-2 download-btn">
+                            Descargar Plantilla Excel
+                        </a>
+                    </li>
+                    <li class="flex flex-col space-y-1">
+                        <span><strong>PAGO OBLIGATORIO:</strong></span>
+                        <div class="font-semibold">
+                            $5.763 CLP en VALE VISTA a nombre de:<br>
+                            <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA</strong><br>
+                            R.U.T.: 61.944.800-6<br>
+                            Teléfono OS.10.: +56 2 512651024
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="text-xs text-gray-500 mt-4 text-center">
-            Haga clic en los botones para iniciar la descarga de los documentos
+            Haga clic en los botones para descargar los documentos requeridos
         </div>
     </div>
     <footer class="text-center text-gray-500 text-xs mt-4">
-        © 2025 - Directiva de Funcionamiento
+        © 2025 - Tramitar Credenciales
     </footer>
 </body>
 </html>
