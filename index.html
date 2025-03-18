@@ -96,94 +96,60 @@
         }
         /* EFECTOS PARA IMÁGENES */
         .photo-example,
-        .valores-example,
-        .pdf-thumbnail {
+        .valores-example {
+            max-width: 200px;
             transition: transform 0.3s ease;
             cursor: zoom-in;
-            border: 1px solid #bf1f23; /* Borde rojo delgado */
+            border: 2px solid #2d4379;
             margin-bottom: 10px;
         }
-        /* Zoom 200% para foto y valores */
         .photo-example:hover,
         .valores-example:hover {
-            transform: scale(2); /* 200% */
+            transform: scale(1.8);
             z-index: 1000;
             position: relative;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-        /* Zoom 1400% para solicitud (PDF) */
-        .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(14); /* 1400% */
+        /* AJUSTES PARA LA PLANILLA EXCEL */
+        .excel-container {
+            display: flex;
+            gap: 16px;
         }
-        /* Ajustes específicos */
-        .pdf-icon {
-            display: inline-block;
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+        .excel-table {
+            max-width: 50%;
         }
-        .pdf-thumbnail {
-            max-width: 24px;
-            height: auto;
-            cursor: pointer;
-        }
-        /* Bordes laterales (rojo oscuro) */
-        .border-l-4 {
-            border-color: #bf1f23 !important;
-        }
-        .border-l-4:hover {
-            border-color: #a31616 !important;
-        }
-        /* Modo oscuro */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #111827;
-                color: #d1d5db;
-            }
-            .bg-white {
-                background-color: #374151;
-                color: #d1d5db;
-            }
-            .border-l-4 {
-                border-color: #ff4444 !important;
-            }
-            .border-l-4:hover {
-                border-color: #e53e3e !important;
-            }
+        .excel-button {
+            width: 50%;
+            padding: 6px 12px;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
         <h1 class="text-center text-blue-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
-        <div class="border-l-4 border-red-500 pl-4 mb-6">
+        <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
-                <!-- Documentos requeridos -->
+                <!-- DOCUMENTOS REQUERIDOS -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">
-                            02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
-                            <a href="https://dal5.short.gy/C.emp" target="_blank" class="pdf-icon">
-                                <img 
-                                    src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/8e6e42302a437cb8098b2897eda60f0135e25cca/solicitud.jpg" 
-                                    alt="PDF de Solicitud" 
-                                    class="pdf-thumbnail w-6 h-6"
-                                >
-                            </a>
-                        </li>
+                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
                         <li class="mb-1">Certificado OS.10 (Curso Aprobado Vigente).</li>
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
                     </ul>
                 </div>
-                <!-- Fotografía digital -->
+                <!-- FOTOGRAFÍA DIGITAL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Fotografía digital:</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Formato JPG, 331x413 píxeles, fondo blanco.</li>
                         <li class="mb-1">Resolución 300 DPI, desde los hombros hacia arriba.</li>
                         <li class="mb-1">Camisa negra (tela gruesa/delgada, manga corta/larga).</li>
+                        <li class="mb-1">Almacenar en CD/Pendrive.</li>
+                        <li class="mb-1">Nombre del archivo: RUN del agente sin puntos, guion medio y dígito verificador (ej: 12345678-9).</li>
                         <div class="mt-2">
                             <img 
                                 src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/b3f4012d728cbacdd2448a7e9ced72f0e6e6f4e7/foto.jpg" 
@@ -197,56 +163,65 @@
                         </div>
                     </ul>
                 </div>
-                <!-- Formato Excel -->
+                <!-- FORMATO EXCEL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Formato Excel:</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
                         <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
                     </ul>
-                    <div class="table-container">
-                        <table class="responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>AF</th>
-                                    <th>RUN</th>
-                                    <th>NOMBRES</th>
-                                    <th>APELLIDOS</th>
-                                    <th>CARGO</th>
-                                    <th>EMPRESA</th>
-                                    <th>VIGENCIA</th>
-                                    <th>OBS-COLOR CREDENCIAL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>COQUIMBO</td>
-                                    <td>12345678-9</td>
-                                    <td>CAMILA GRACIELA</td>
-                                    <td>LEYTON MONTENEGRO</td>
-                                    <td>GUARDIA DE SEGURIDAD</td>
-                                    <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>COQUIMBO</td>
-                                    <td>12345678-8</td>
-                                    <td>DANIEL ENRIQUE</td>
-                                    <td>VEGA CHAVEZ</td>
-                                    <td>CONSERJE</td>
-                                    <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <!-- CONTENEDOR PARA TABLA Y BOTÓN -->
+                    <div class="excel-container">
+                        <!-- TABLA REDUCIDA -->
+                        <div class="excel-table">
+                            <div class="table-container">
+                                <table class="responsive-table w-full">
+                                    <thead>
+                                        <tr>
+                                            <th>AF</th>
+                                            <th>RUN</th>
+                                            <th>NOMBRES</th>
+                                            <th>APELLIDOS</th>
+                                            <th>CARGO</th>
+                                            <th>EMPRESA</th>
+                                            <th>VIGENCIA</th>
+                                            <th>OBS-COLOR CREDENCIAL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>COQUIMBO</td>
+                                            <td>12345678-9</td>
+                                            <td>CAMILA GRACIELA</td>
+                                            <td>LEYTON MONTENEGRO</td>
+                                            <td>GUARDIA DE SEGURIDAD</td>
+                                            <td>ALTA SEGURIDAD S.A.</td>
+                                            <td>31/10/2027</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>COQUIMBO</td>
+                                            <td>12345678-8</td>
+                                            <td>DANIEL ENRIQUE</td>
+                                            <td>VEGA CHAVEZ</td>
+                                            <td>CONSERJE</td>
+                                            <td>ALTA SEGURIDAD S.A.</td>
+                                            <td>31/10/2027</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- BOTÓN REDUCIDO AL LADO -->
+                        <div class="excel-button">
+                            <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm block w-full text-center download-btn">
+                                Descargar Plantilla Excel
+                            </a>
+                        </div>
                     </div>
-                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm w-full block text-center download-btn">
-                        Descargar Plantilla Excel
-                    </a>
                 </div>
-                <!-- Pago obligatorio -->
+                <!-- PAGO OBLIGATORIO -->
                 <div>
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
                     <div class="text-sm">
@@ -256,7 +231,7 @@
                         Teléfono OS.10.: +56 2 512651024
                     </div>
                 </div>
-                <!-- Imagen de valores -->
+                <!-- IMAGEN DE VALORES (AHORA MITAD DE TAMAÑO) -->
                 <div class="mt-4">
                     <img 
                         src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
