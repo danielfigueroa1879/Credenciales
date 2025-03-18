@@ -100,40 +100,37 @@
         .pdf-thumbnail {
             transition: transform 0.3s ease;
             cursor: zoom-in;
-            border: 2px solid #2d4379;
+            border: 2px solid #bf1f23; /* Rojo oscuro */
             margin-bottom: 10px;
         }
         .photo-example:hover,
-        .valores-example:hover,
-        .pdf-thumbnail:hover {
-            transform: scale(2);
+        .valores-example:hover {
+            transform: scale(1.8); /* Zoom 80% para imágenes normales */
             z-index: 1000;
             position: relative;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
-        /* Efectos específicos */
-        .valores-example {
-            max-width: 150px;
+        /* IMAGEN DE SOLICITUD CON ZOOM AL 800% */
+        .pdf-icon:hover .pdf-thumbnail {
+            transform: scale(8); /* 800% de zoom */
         }
-        .photo-example {
-            max-width: 200px;
-        }
-        /* Ícono PDF de solicitud */
+        /* Ajustes específicos */
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
+            transition: transform 0.3s ease;
         }
         .pdf-thumbnail {
             max-width: 24px;
             height: auto;
             cursor: pointer;
         }
-        /* Bordes laterales */
+        /* Bordes laterales (rojo oscuro) */
         .border-l-4 {
-            border-color: #facc15 !important;
+            border-color: #bf1f23 !important;
         }
         .border-l-4:hover {
-            border-color: #eab308 !important;
+            border-color: #a31616 !important;
         }
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
@@ -146,7 +143,10 @@
                 color: #d1d5db;
             }
             .border-l-4 {
-                border-color: #f59e0b !important;
+                border-color: #ff4444 !important;
+            }
+            .border-l-4:hover {
+                border-color: #e53e3e !important;
             }
         }
     </style>
@@ -154,7 +154,7 @@
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
         <h1 class="text-center text-blue-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
-        <div class="border-l-4 border-yellow-500 pl-4 mb-6">
+        <div class="border-l-4 border-red-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
                 <!-- Documentos requeridos -->
@@ -203,7 +203,6 @@
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
                         <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
                     </ul>
-                    <!-- Tabla ejemplo -->
                     <div class="table-container">
                         <table class="responsive-table">
                             <thead>
@@ -232,7 +231,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- Botón de descarga -->
                     <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm w-full block text-center download-btn">
                         Descargar Plantilla Excel
                     </a>
