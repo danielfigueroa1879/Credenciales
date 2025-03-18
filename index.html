@@ -18,9 +18,10 @@
         }
         .download-btn {
             transition: all 0.3s ease;
-            margin: 8px 0;
+            margin: 16px 0 24px; /* Espacio arriba:16px, abajo:24px */
             padding: 8px 12px;
             font-size: 0.9rem;
+            display: block; /* Para aplicar márgenes correctamente */
         }
         .download-btn:hover {
             transform: translateY(-3px);
@@ -66,36 +67,34 @@
                 font-size: 14px;
             }
             .download-btn {
-                font-size: 0.8rem !important;
-                padding: 6px 14px !important;
+                font-size: 0.7rem !important; /* Reducción de tamaño */
+                padding: 6px 10px !important;
                 width: 100% !important;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                margin: 12px 0 18px !important; /* Espacio móvil */
             }
         }
         .table-container {
             overflow-x: auto;
-            margin-top: 16px;
+            margin-top: 24px; /* Espacio superior para la tabla */
         }
         .responsive-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 16px;
-            table-layout: fixed; /* Distribución fija */
+            margin-bottom: 24px;
+            table-layout: fixed;
         }
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 6px;
             text-align: left;
-            font-size: 0.8rem;
-            white-space: nowrap; /* Evitar salto de línea */
+            font-size: 0.7rem; /* Tamaño reducido */
+            white-space: nowrap;
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* Anchos específicos para columnas clave */
+        /* Columnas específicas */
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
         .responsive-table th:nth-child(4),
@@ -104,7 +103,7 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 20%; /* 20% cada una */
+            width: 18%; /* Ancho reducido */
         }
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1), /* AF */
@@ -114,13 +113,13 @@
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 10%; /* 10% cada una */
+            width: 8%; /* Ancho reducido */
         }
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.7rem;
-                padding: 6px;
+                font-size: 0.6rem;
+                padding: 4px;
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -130,17 +129,7 @@
             .responsive-table td:nth-child(5),
             .responsive-table th:nth-child(6),
             .responsive-table td:nth-child(6) {
-                width: 25%; /* Mayor ancho en móvil */
-            }
-            .responsive-table th:nth-child(1),
-            .responsive-table td:nth-child(1),
-            .responsive-table th:nth-child(2),
-            .responsive-table td:nth-child(2),
-            .responsive-table th:nth-child(7),
-            .responsive-table td:nth-child(7),
-            .responsive-table th:nth-child(8),
-            .responsive-table td:nth-child(8) {
-                width: 10%; /* Menos ancho para campos cortos */
+                width: 22%; /* Ajuste móvil */
             }
         }
         /* EFECTOS PARA IMÁGENES */
@@ -152,30 +141,12 @@
             border: 1px solid #FFD700;
             margin-bottom: 10px;
         }
-        /* Zoom reducido */
-        .photo-example:hover,
-        .valores-example:hover {
-            transform: scale(1.25);
-        }
         .pdf-icon:hover .pdf-thumbnail {
             transform: scale(3.5);
         }
-        .pdf-icon {
-            display: inline-block;
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-        .pdf-thumbnail {
-            max-width: 24px;
-            height: auto;
-            cursor: pointer;
-        }
-        /* Bordes laterales (amarillo) */
+        /* Bordes laterales */
         .border-l-4 {
             border-color: #FFD700 !important;
-        }
-        .border-l-4:hover {
-            border-color: #FFA000 !important;
         }
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
@@ -186,12 +157,6 @@
             .bg-white {
                 background-color: #374151;
                 color: #d1d5db;
-            }
-            .border-l-4 {
-                border-color: #FFD700 !important;
-            }
-            .border-l-4:hover {
-                border-color: #FFA000 !important;
             }
         }
     </style>
@@ -206,11 +171,10 @@
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
-                        </li>
-                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
+                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
+                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded text-center">
                             Descargar Solicitud
-                        </a><br>
+                        </a>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
                         <li class="mb-1">Certificado OS.10 (Curso Aprobado Vigente).</li>
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
@@ -268,20 +232,10 @@
                                     <td>31/10/2027</td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td>COQUIMBO</td>
-                                    <td>12345678-8</td>
-                                    <td>DANIEL ENRIQUE</td>
-                                    <td>VEGA CHAVEZ</td>
-                                    <td>CONSERJE</td>
-                                    <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
-                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
+                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded text-center">
                         Descargar Plantilla Excel
                     </a>
                 </div>
