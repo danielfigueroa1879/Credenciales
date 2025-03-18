@@ -100,7 +100,7 @@
             max-width: 200px;
             transition: transform 0.3s ease;
             cursor: zoom-in;
-            border: 2px solid #bf1f23; /* Rojo */
+            border: 2px solid #facc15; /* Amarillo claro */
             margin-bottom: 10px;
         }
         .photo-example:hover,
@@ -125,20 +125,34 @@
         .pdf-thumbnail {
             max-width: 24px;
             height: auto;
-            border: 2px solid #bf1f23; /* Rojo */
+            border: 2px solid #facc15; /* Amarillo claro */
             cursor: pointer;
+        }
+        /* AJUSTES PARA BARRA LATERAL */
+        .border-l-4 {
+            border-color: #facc15 !important; /* Color del botón amarillo */
+        }
+        .border-l-4:hover {
+            border-color: #eab308 !important; /* Tonalidad más oscura */
+        }
+        /* Compatibilidad modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            .border-l-4 {
+                border-color: #f59e0b !important;
+            }
+            .border-l-4:hover {
+                border-color: #d68000 !important;
+            }
         }
     </style>
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
         <h1 class="text-center text-blue-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
-        
         <!-- SECCIÓN PRINCIPAL -->
-        <div class="border-l-4 border-red-500 pl-4 mb-6">
+        <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
-                
                 <!-- DOCUMENTOS REQUERIDOS -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
@@ -158,7 +172,6 @@
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
                     </ul>
                 </div>
-                
                 <!-- FOTOGRAFÍA DIGITAL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Fotografía digital:</h4>
@@ -181,7 +194,6 @@
                         </div>
                     </ul>
                 </div>
-                
                 <!-- FORMATO EXCEL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Formato Excel:</h4>
@@ -189,7 +201,6 @@
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
                         <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
                     </ul>
-                    
                     <!-- TABLA CON EJEMPLO -->
                     <div class="table-container">
                         <table class="responsive-table">
@@ -229,13 +240,11 @@
                             </tbody>
                         </table>
                     </div>
-                    
                     <!-- BOTÓN DE DESCARGA -->
                     <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm w-full block text-center download-btn">
                         Descargar Plantilla Excel
                     </a>
                 </div>
-                
                 <!-- PAGO OBLIGATORIO -->
                 <div>
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
@@ -246,7 +255,6 @@
                         Teléfono OS.10.: +56 2 512651024
                     </div>
                 </div>
-                
                 <!-- IMAGEN DE VALORES (AHORA MITAD DE TAMAÑO) -->
                 <div class="mt-4">
                     <img 
@@ -257,7 +265,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="text-center text-gray-500 text-sm mt-4">
             Haga clic en los botones para descargar los documentos requeridos
         </div>
