@@ -18,32 +18,14 @@
         }
         .download-btn {
             transition: all 0.3s ease;
-            margin: 4px 0;
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            width: 25% !important; /* 25% del ancho */
-            display: inline-block;
+            margin: 8px 0;
+            padding: 8px 12px;
+            font-size: 0.9rem;
         }
         .download-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        /* Cambio de color borde lateral a amarillo */
-        .border-l-4 {
-            border-color: #FFD700 !important; /* Color amarillo */
-        }
-        .border-l-4:hover {
-            border-color: #FFA000 !important; /* Sombra más oscuro */
-        }
-        /* Efectos reducidos para imágenes */
-        .photo-example:hover,
-        .valores-example:hover {
-            transform: scale(1.25); /* 125% */
-        }
-        .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(1.5); /* 350% */
-        }
-        /* Estilos adicionales */
         .card-container {
             max-width: 800px;
             margin: 0 auto;
@@ -84,9 +66,12 @@
                 font-size: 14px;
             }
             .download-btn {
-                font-size: 0.7rem;
-                padding: 4px 8px;
-                width: 25% !important;
+                font-size: 0.8rem !important;
+                padding: 6px 14px !important;
+                width: 100% !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
         .table-container {
@@ -114,7 +99,7 @@
                 font-size: 0.5rem;
             }
         }
-        /* Estilos para imágenes */
+        /* EFECTOS PARA IMÁGENES */
         .photo-example,
         .valores-example,
         .pdf-thumbnail {
@@ -123,6 +108,15 @@
             border: 1px solid #FFD700; /* Borde amarillo */
             margin-bottom: 10px;
         }
+        /* Zoom reducido */
+        .photo-example:hover,
+        .valores-example:hover {
+            transform: scale(1.25); /* 125% */
+        }
+        .pdf-icon:hover .pdf-thumbnail {
+            transform: scale(3.5); /* 350% */
+        }
+        /* Ajustes específicos */
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
@@ -132,6 +126,13 @@
             max-width: 24px;
             height: auto;
             cursor: pointer;
+        }
+        /* Bordes laterales (amarillo) */
+        .border-l-4 {
+            border-color: #FFD700 !important;
+        }
+        .border-l-4:hover {
+            border-color: #FFA000 !important;
         }
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
@@ -162,10 +163,9 @@
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">
-                            02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
+                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
                         </li>
-                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-5">
+                         <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
                                 Descargar Solicitud
                             </a>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
@@ -238,7 +238,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-5">
+                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
                         Descargar Plantilla Excel
                     </a>
                 </div>
