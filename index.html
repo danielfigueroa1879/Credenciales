@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tramitar Credenciales</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="swap">
     <style>
         body {
             font-family: 'Poppins ExtraLight', sans-serif;
@@ -19,10 +19,13 @@
         .download-btn {
             transition: all 0.3s ease;
             margin: 8px 0;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            width: 50%;
         }
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .card-container {
             max-width: 800px;
@@ -64,9 +67,9 @@
                 font-size: 14px;
             }
             .download-btn {
-                font-size: 0.8rem;
-                padding: 8px 12px;
-                width: 100%;
+                font-size: 0.6rem;
+                padding: 4px 6px;
+                width: 48%;
             }
         }
         .table-container {
@@ -96,60 +99,87 @@
         }
         /* EFECTOS PARA IMÁGENES */
         .photo-example,
-        .valores-example {
-            max-width: 100px;
+        .valores-example,
+        .pdf-thumbnail {
             transition: transform 0.3s ease;
             cursor: zoom-in;
-            border: 2px solid #2d4379;
+            border: 1px solid #bf1f23;
             margin-bottom: 10px;
         }
+        /* Zoom reducido al 75% para foto y valores */
         .photo-example:hover,
         .valores-example:hover {
-            transform: scale(1.8);
+            transform: scale(1.5); /* 150% */
             z-index: 1000;
             position: relative;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-        /* AJUSTES PARA LA PLANILLA EXCEL */
-        .excel-container {
-            display: flex;
-            gap: 16px;
+        /* Zoom reducido al 50% para solicitud (PDF) */
+        .pdf-icon:hover .pdf-thumbnail {
+            transform: scale(7); /* 700% */
         }
-        .excel-table {
-            max-width: 50%;
+        .pdf-icon {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
         }
-        .excel-button {
-            width: 50%;
-            padding: 6px 12px;
-            font-size: 0.8rem;
+        .pdf-thumbnail {
+            max-width: 24px;
+            height: auto;
+            cursor: pointer;
+        }
+        /* Bordes laterales (rojo oscuro) */
+        .border-l-4 {
+            border-color: #bf1f23 !important;
+        }
+        .border-l-4:hover {
+            border-color: #a31616 !important;
+        }
+        /* Modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #111827;
+                color: #d1d5db;
+            }
+            .bg-white {
+                background-color: #374151;
+                color: #d1d5db;
+            }
+            .border-l-4 {
+                border-color: #ff4444 !important;
+            }
+            .border-l-4:hover {
+                border-color: #e53e3e !important;
+            }
         }
     </style>
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
         <h1 class="text-center text-blue-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
-        <div class="border-l-4 border-yellow-500 pl-4 mb-6">
+        <div class="border-l-4 border-red-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
-                <!-- DOCUMENTOS REQUERIDOS -->
+                <!-- Documentos requeridos -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
+                        <li class="mb-1">
+                            02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
+                            <a href="https://dal5.short.gy/C.emp" target="_blank" class="text-blue-600 hover:underline text-sm">Enlace a solicitud</a>
+                        </li>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
                         <li class="mb-1">Certificado OS.10 (Curso Aprobado Vigente).</li>
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
                     </ul>
                 </div>
-                <!-- FOTOGRAFÍA DIGITAL -->
+                <!-- Fotografía digital -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Fotografía digital:</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Formato JPG, 331x413 píxeles, fondo blanco.</li>
                         <li class="mb-1">Resolución 300 DPI, desde los hombros hacia arriba.</li>
                         <li class="mb-1">Camisa negra (tela gruesa/delgada, manga corta/larga).</li>
-                        <li class="mb-1">Almacenar en CD/Pendrive.</li>
-                        <li class="mb-1">Nombre del archivo: RUN del agente sin puntos, guion medio y dígito verificador (ej: 12345678-9).</li>
                         <div class="mt-2">
                             <img 
                                 src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/b3f4012d728cbacdd2448a7e9ced72f0e6e6f4e7/foto.jpg" 
@@ -163,65 +193,62 @@
                         </div>
                     </ul>
                 </div>
-                <!-- FORMATO EXCEL -->
+                <!-- Formato Excel -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Formato Excel:</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
                         <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
                     </ul>
-                    <!-- CONTENEDOR PARA TABLA Y BOTÓN -->
-                    <div class="excel-container">
-                        <!-- TABLA REDUCIDA -->
-                        <div class="excel-table">
-                            <div class="table-container">
-                                <table class="responsive-table w-full">
-                                    <thead>
-                                        <tr>
-                                            <th>AF</th>
-                                            <th>RUN</th>
-                                            <th>NOMBRES</th>
-                                            <th>APELLIDOS</th>
-                                            <th>CARGO</th>
-                                            <th>EMPRESA</th>
-                                            <th>VIGENCIA</th>
-                                            <th>OBS-COLOR CREDENCIAL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>COQUIMBO</td>
-                                            <td>12345678-9</td>
-                                            <td>CAMILA GRACIELA</td>
-                                            <td>LEYTON MONTENEGRO</td>
-                                            <td>GUARDIA DE SEGURIDAD</td>
-                                            <td>ALTA SEGURIDAD S.A.</td>
-                                            <td>31/10/2027</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>COQUIMBO</td>
-                                            <td>12345678-8</td>
-                                            <td>DANIEL ENRIQUE</td>
-                                            <td>VEGA CHAVEZ</td>
-                                            <td>CONSERJE</td>
-                                            <td>ALTA SEGURIDAD S.A.</td>
-                                            <td>31/10/2027</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- BOTÓN REDUCIDO AL LADO -->
-                        <div class="excel-button">
-                            <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm block w-full text-center download-btn">
-                                Descargar Plantilla Excel
-                            </a>
-                        </div>
+                    <div class="table-container">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>AF</th>
+                                    <th>RUN</th>
+                                    <th>NOMBRES</th>
+                                    <th>APELLIDOS</th>
+                                    <th>CARGO</th>
+                                    <th>EMPRESA</th>
+                                    <th>VIGENCIA</th>
+                                    <th>OBS-COLOR CREDENCIAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>COQUIMBO</td>
+                                    <td>12345678-9</td>
+                                    <td>CAMILA GRACIELA</td>
+                                    <td>LEYTON MONTENEGRO</td>
+                                    <td>GUARDIA DE SEGURIDAD</td>
+                                    <td>ALTA SEGURIDAD S.A.</td>
+                                    <td>31/10/2027</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>COQUIMBO</td>
+                                    <td>12345678-8</td>
+                                    <td>DANIEL ENRIQUE</td>
+                                    <td>VEGA CHAVEZ</td>
+                                    <td>CONSERJE</td>
+                                    <td>ALTA SEGURIDAD S.A.</td>
+                                    <td>31/10/2027</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- BOTONES REDUCIDOS -->
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded text-sm">
+                            Descargar Plantilla Excel
+                        </a>
+                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm">
+                            Descargar Solicitud
+                        </a>
                     </div>
                 </div>
-                <!-- PAGO OBLIGATORIO -->
+                <!-- Pago obligatorio -->
                 <div>
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
                     <div class="text-sm">
@@ -231,7 +258,7 @@
                         Teléfono OS.10.: +56 2 512651024
                     </div>
                 </div>
-                <!-- IMAGEN DE VALORES (AHORA MITAD DE TAMAÑO) -->
+                <!-- Imagen de valores -->
                 <div class="mt-4">
                     <img 
                         src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
