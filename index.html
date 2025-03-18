@@ -69,7 +69,48 @@
                 width: 100%;
             }
         }
+        .table-container {
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+        }
+        .responsive-table th,
+        .responsive-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+            font-size: 0.6rem;
+        }
+        .responsive-table th {
+            background-color: #f1f5f9;
+        }
+        @media (max-width: 640px) {
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 0.5rem;
+            }
+        }
         /* EFECTOS PARA IMÁGENES */
+        .photo-example,
+        .valores-example {
+            max-width: 200px;
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+            border: 2px solid #facc15; /* Amarillo claro */
+            margin-bottom: 10px;
+        }
+        .photo-example:hover,
+        .valores-example:hover {
+            transform: scale(1.8);
+            z-index: 1000;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        /* NUEVO ESTILO PARA EL PDF */
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
@@ -79,53 +120,39 @@
             transform: scale(4); /* Escala al 400% */
             z-index: 1000;
             position: relative;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
         .pdf-thumbnail {
-            max-width: 18px; /* Tamaño inicial reducido */
+            max-width: 12px; /* Tamaño inicial: mitad del tamaño anterior (24px → 12px) */
             height: auto;
-            border: 2px solid #bf1f23; /* Bordes rojos */
+            border: 2px solid #facc15; /* Amarillo claro */
             cursor: pointer;
         }
-        /* BORDES Y COLORES */
+        /* AJUSTES PARA BARRA LATERAL */
         .border-l-4 {
-            border-color: #bf1f23 !important;
+            border-color: #facc15 !important; /* Color del botón amarillo */
         }
         .border-l-4:hover {
-            border-color: #a80d0d !important;
+            border-color: #eab308 !important; /* Tonalidad más oscura */
         }
-        /* COINCIDENCIA CON BOTÓN AMARILLO */
-        .requisitos-section {
-            border-color: #facc15 !important;
-        }
-        .requisitos-section:hover {
-            border-color: #eab308 !important;
-        }
-        /* MODOS DE COLOR */
+        /* Compatibilidad modo oscuro */
         @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #111827;
-                color: #d1d5db;
-            }
-            .bg-white {
-                background-color: #374151;
-                color: #d1d5db;
-            }
             .border-l-4 {
                 border-color: #f59e0b !important;
+            }
+            .border-l-4:hover {
+                border-color: #d68000 !important;
             }
         }
     </style>
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
-        <h1 class="text-center text-red-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
-        
-        <!-- SECCIÓN PRINCIPAL CON BARRA AMARILLA -->
-        <div class="border-l-4 border-yellow-500 pl-4 mb-6 requisitos-section">
+        <h1 class="text-center text-blue-700 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
+        <!-- SECCIÓN PRINCIPAL -->
+        <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
-                
                 <!-- DOCUMENTOS REQUERIDOS -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
@@ -145,7 +172,6 @@
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
                     </ul>
                 </div>
-                
                 <!-- FOTOGRAFÍA DIGITAL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Fotografía digital:</h4>
@@ -168,7 +194,6 @@
                         </div>
                     </ul>
                 </div>
-                
                 <!-- FORMATO EXCEL -->
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Formato Excel:</h4>
@@ -220,7 +245,6 @@
                         Descargar Plantilla Excel
                     </a>
                 </div>
-                
                 <!-- PAGO OBLIGATORIO -->
                 <div>
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
@@ -231,8 +255,7 @@
                         Teléfono OS.10.: +56 2 512651024
                     </div>
                 </div>
-                
-                <!-- IMAGEN DE VALORES REDUCIDA -->
+                <!-- IMAGEN DE VALORES (AHORA MITAD DE TAMAÑO) -->
                 <div class="mt-4">
                     <img 
                         src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
@@ -242,7 +265,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="text-center text-gray-500 text-sm mt-4">
             Haga clic en los botones para descargar los documentos requeridos
         </div>
