@@ -62,29 +62,35 @@
             .download-btn {
                 font-size: 0.8rem;
                 padding: 8px 12px;
+                width: 100%;
             }
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-top: 16px;
         }
         .responsive-table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 16px;
         }
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            font-size: 0.9rem;
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
         @media (max-width: 640px) {
-            .responsive-table {
-                display: block;
-                overflow-x: auto;
-            }
             .responsive-table th,
             .responsive-table td {
-                white-space: nowrap;
+                font-size: 0.8rem;
+            }
+            .responsive-table th {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -117,9 +123,7 @@
                         <li class="mb-1">Resolución 300 DPI, desde los hombros hacia arriba.</li>
                         <li class="mb-1">Camisa negra (tela gruesa/delgada, manga corta/larga).</li>
                         <li class="mb-1">Almacenar en CD/Pendrive.</li>
-                        <li class="mb-1">Cada imagen debe ser cargada en formato JPG, y nombrada de la siguiente manera: RUN del agente sin puntos, con guion medio y dígito verificador.</li>
-                        <li class="mb-1">La imagen debe respetar la proporción de este ejemplo donde se vea parte de los hombros.</li>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAHgCAYAAAA10dzkAAAgAElEQ..." alt="Ejemplo de Fotografía" class="mt-2 w-full md:w-1/2">
+                        <li class="mb-1">Nombre del archivo: RUN del agente sin puntos, guion medio y dígito verificador (ej: 12345678-9).</li>
                         <div class="flex space-x-2 mt-2">
                             <a href="https://dal5.short.gy/0" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 1</a>
                             <a href="https://dal5.short.gy/j" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 2</a>
@@ -136,65 +140,41 @@
                     </ul>
                     
                     <!-- TABLA CON EJEMPLO -->
-                    <table class="responsive-table mt-2">
-                        <thead>
-                            <tr>
-                                <th>AF</th>
-                                <th>RUN</th>
-                                <th>NOMBRES</th>
-                                <th>APELLIDOS</th>
-                                <th>CARGO</th>
-                                <th>EMPRESA</th>
-                                <th>VIGENCIA</th>
-                                <th>OBS/COLOR CREDENCIAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>COQUIMBO</td>
-                                <td>12345678-9</td>
-                                <td>CAMILA GRACIELA</td>
-                                <td>LEYTON MONTENEGRO</td>
-                                <td>GUARDIA DE SEGURIDAD</td>
-                                <td>ALTA SEGURIDAD S.A.</td>
-                                <td>31/10/2027</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>COQUIMBO</td>
-                                <td>12345678-8</td>
-                                <td>DANIEL ENRIQUE</td>
-                                <td>VEGA CHAVEZ</td>
-                                <td>CONSERJE</td>
-                                <td>ALTA SEGURIDAD S.A.</td>
-                                <td>31/10/2027</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>COQUIMBO</td>
-                                <td>12345678-7</td>
-                                <td>JUAN FRANCISCO</td>
-                                <td>DIAZ SILVA</td>
-                                <td>SUPERVISOR</td>
-                                <td>ALTA SEGURIDAD S.A.</td>
-                                <td>31/10/2027</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>COQUIMBO</td>
-                                <td>12345678-6</td>
-                                <td>JUAN FRANCISCO</td>
-                                <td>DIAZ SILVA</td>
-                                <td>JEFE DE SEGURIDAD</td>
-                                <td>BANCO SANTANDER</td>
-                                <td>31/10/2027</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-container">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>NRO</th>
+                                    <th>APELLIDOS Y NOMBRES</th>
+                                    <th>RUT</th>
+                                    <th>CURSO VIGENCIA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>JUAN ALEJANDRO LOPEZ CARMONA</td>
+                                    <td>13333333-8</td>
+                                    <td>MARZO 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>PEDRO JUAN LOPEZ CARMONA</td>
+                                    <td>14555555-8</td>
+                                    <td>ABRIL 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td>MARTA ISABEL LOPEZ CARMONA</td>
+                                    <td>14555555-8</td>
+                                    <td>DICIEMBRE 2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     
-                    <!-- BOTÓN DE DESCARGA CON MARGEN AJUSTADO -->
-                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm download-btn">
+                    <!-- BOTÓN DE DESCARGA -->
+                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-2 text-sm w-full block text-center download-btn">
                         Descargar Plantilla Excel
                     </a>
                 </div>
