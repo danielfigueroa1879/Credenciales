@@ -79,7 +79,7 @@
             border: 1px solid #ddd;
             padding: 6px;
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.6rem; /* Reducción de tamaño */
         }
         .responsive-table th {
             background-color: #f1f5f9;
@@ -87,8 +87,19 @@
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.7rem;
+                font-size: 0.5rem; /* Reducción de tamaño en móvil */
             }
+        }
+        /* EFECTO HOVER PARA LA IMAGEN DE EJEMPLO */
+        .photo-example {
+            max-width: 200px;
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+        }
+        .photo-example:hover {
+            transform: scale(1.5);
+            z-index: 1000;
+            position: relative;
         }
     </style>
 </head>
@@ -121,6 +132,9 @@
                         <li class="mb-1">Camisa negra (tela gruesa/delgada, manga corta/larga).</li>
                         <li class="mb-1">Almacenar en CD/Pendrive.</li>
                         <li class="mb-1">Nombre del archivo: RUN del agente sin puntos, guion medio y dígito verificador (ej: 12345678-9).</li>
+                        <div class="mt-2">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAHgCAYAAAA10dzkAAAgAElEQ..." alt="Ejemplo de Fotografía" class="photo-example w-full md:w-1/2">
+                        </div>
                         <div class="flex space-x-2 mt-2">
                             <a href="https://dal5.short.gy/0" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 1</a>
                             <a href="https://dal5.short.gy/j" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 2</a>
