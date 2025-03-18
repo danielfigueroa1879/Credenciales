@@ -82,21 +82,65 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 16px;
+            table-layout: fixed; /* Distribución fija */
         }
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 6px;
+            padding: 8px;
             text-align: left;
-            font-size: 0.6rem;
+            font-size: 0.8rem;
+            white-space: nowrap; /* Evitar salto de línea */
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
+        /* Anchos específicos para columnas clave */
+        .responsive-table th:nth-child(3),
+        .responsive-table td:nth-child(3), /* NOMBRES */
+        .responsive-table th:nth-child(4),
+        .responsive-table td:nth-child(4), /* APELLIDOS */
+        .responsive-table th:nth-child(5),
+        .responsive-table td:nth-child(5), /* CARGO */
+        .responsive-table th:nth-child(6),
+        .responsive-table td:nth-child(6) { /* EMPRESA */
+            width: 20%; /* 20% cada una */
+        }
+        .responsive-table th:nth-child(1),
+        .responsive-table td:nth-child(1), /* AF */
+        .responsive-table th:nth-child(2),
+        .responsive-table td:nth-child(2), /* RUN */
+        .responsive-table th:nth-child(7),
+        .responsive-table td:nth-child(7), /* VIGENCIA */
+        .responsive-table th:nth-child(8),
+        .responsive-table td:nth-child(8) { /* OBS */
+            width: 10%; /* 10% cada una */
+        }
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.5rem;
+                font-size: 0.7rem;
+                padding: 6px;
+            }
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3),
+            .responsive-table th:nth-child(4),
+            .responsive-table td:nth-child(4),
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5),
+            .responsive-table th:nth-child(6),
+            .responsive-table td:nth-child(6) {
+                width: 25%; /* Mayor ancho en móvil */
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1),
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2),
+            .responsive-table th:nth-child(7),
+            .responsive-table td:nth-child(7),
+            .responsive-table th:nth-child(8),
+            .responsive-table td:nth-child(8) {
+                width: 10%; /* Menos ancho para campos cortos */
             }
         }
         /* EFECTOS PARA IMÁGENES */
@@ -105,18 +149,17 @@
         .pdf-thumbnail {
             transition: transform 0.3s ease;
             cursor: zoom-in;
-            border: 1px solid #FFD700; /* Borde amarillo */
+            border: 1px solid #FFD700;
             margin-bottom: 10px;
         }
         /* Zoom reducido */
         .photo-example:hover,
         .valores-example:hover {
-            transform: scale(1.25); /* 125% */
+            transform: scale(1.25);
         }
         .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(3.5); /* 350% */
+            transform: scale(3.5);
         }
-        /* Ajustes específicos */
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
@@ -165,9 +208,11 @@
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).
                         </li>
-                         <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
-                                Descargar Solicitud
-                            </a>
+                        <li class="mb-1">
+                        <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 ml-0">
+                            Descargar Solicitud
+                        </a>
+                        </li>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
                         <li class="mb-1">Certificado OS.10 (Curso Aprobado Vigente).</li>
                         <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
