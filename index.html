@@ -110,11 +110,14 @@
             position: relative;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
+        /* AJUSTES SOLICITADOS */
+        /* IMAGEN DE VALORES AHORA A LA MITAD DE TAMAÑO BASE */
         .valores-example {
-            max-width: 300px;
+            max-width: 150px; /* Mitad del tamaño anterior */
         }
-        .valores-example:hover {
-            transform: scale(1.8);
+        /* FOTO DE CREDENCIAL AHORA SE AGRANDA MÁS AL HOVER */
+        .photo-example:hover {
+            transform: scale(1.8); /* Aumento del 80% en lugar de 50% */
         }
     </style>
 </head>
@@ -226,7 +229,7 @@
                     </div>
                 </div>
                 
-                <!-- IMAGEN DE VALORES -->
+                <!-- IMAGEN DE VALORES (AHORA MITAD DE TAMAÑO) -->
                 <div class="mt-4">
                     <img 
                         src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
