@@ -12,7 +12,7 @@
             margin: 0;
             padding: 20px;
             background-color: #f0f2f5;
-            color: #1f2937; /* Texto más oscuro en PC */
+            color: #1f2937;
             line-height: 1.5;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -31,6 +31,9 @@
             transition: all 0.3s ease;
             animation: slideUp 1s ease-out 0.5s forwards;
             opacity: 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         @keyframes slideUp {
             from {
@@ -46,7 +49,7 @@
             body {
                 padding: 16px;
                 font-size: 14px;
-                color: #374151; /* Texto ligeramente claro en móvil */
+                color: #374151;
             }
             h1 {
                 font-size: 1.8rem;
@@ -91,18 +94,27 @@
                 font-size: 0.5rem;
             }
         }
-        /* EFECTO HOVER PARA LA IMAGEN DE EJEMPLO */
-        .photo-example {
+        /* EFECTOS PARA IMÁGENES */
+        .photo-example,
+        .valores-example {
             max-width: 200px;
             transition: transform 0.3s ease;
             cursor: zoom-in;
             border: 2px solid #2d4379;
+            margin-bottom: 10px;
         }
-        .photo-example:hover {
+        .photo-example:hover,
+        .valores-example:hover {
             transform: scale(1.5);
             z-index: 1000;
             position: relative;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .valores-example {
+            max-width: 300px;
+        }
+        .valores-example:hover {
+            transform: scale(1.8);
         }
     </style>
 </head>
@@ -212,6 +224,15 @@
                         R.U.T.: 61.944.800-6<br>
                         Teléfono OS.10.: +56 2 512651024
                     </div>
+                </div>
+                
+                <!-- IMAGEN DE VALORES -->
+                <div class="mt-4">
+                    <img 
+                        src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
+                        alt="Valores de Pago" 
+                        class="valores-example w-full md:w-1/2 mb-2"
+                    >
                 </div>
             </div>
         </div>
