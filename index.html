@@ -125,10 +125,11 @@
             width: 25%; /* Mantenido el ancho para columnas pequeñas */
         }
         @media (max-width: 640px) {
-            .responsive-table th,
-            .responsive-table td {
-                font-size: 0.7rem; /* Reducido el tamaño de fuente en móviles */
-                padding: 10px; /* Reducido el padding en móviles */
+            .responsive-table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+            table-layout: fixed;
             }
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1),
