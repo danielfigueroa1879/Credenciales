@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tramitar Credenciales</title>
+    <title>Tramitar Credencial Empresa</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="swap">
     <style>
@@ -73,31 +73,11 @@
                 width: 40% !important;
                 margin: 12px 0 !important;
             }
-            .responsive-table th,
-            .responsive-table td {
-                font-size: 0.6rem;
-                padding: 4px;
-            }
-            /* Anchos móviles */
-            .responsive-table th:nth-child(3),
-            .responsive-table td:nth-child(3),
-            .responsive-table th:nth-child(4),
-            .responsive-table td:nth-child(4),
-            .responsive-table th:nth-child(5),
-            .responsive-table td:nth-child(5),
-            .responsive-table th:nth-child(6),
-            .responsive-table td:nth-child(6) {
-                width: 25%; /* 25% en móvil */
-            }
-            .responsive-table th:nth-child(1),
-            .responsive-table td:nth-child(1),
-            .responsive-table th:nth-child(2),
-            .responsive-table td:nth-child(2),
-            .responsive-table th:nth-child(7),
-            .responsive-table td:nth-child(7),
-            .responsive-table th:nth-child(8),
-            .responsive-table td:nth-child(8) {
-                width: 7.5%; /* Menos ancho para campos cortos */
+        }
+        /* Modo oscuro móvil específico para el botón de solicitud */
+        @media (prefers-color-scheme: dark) and (max-width: 640px) {
+            .download-btn:first-of-type { /* Solo el botón de solicitud */
+                width: 100% !important;
             }
         }
         .table-container {
@@ -121,12 +101,12 @@
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* Anchos de columnas corregidos */
+        /* ANCHOS DE COLUMNAS CORREGIDOS */
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1), /* AF */
         .responsive-table th:nth-child(2),
         .responsive-table td:nth-child(2) { /* RUN */
-            width: 5%; /* Ancho reducido */
+            width: 15%; /* Ancho ampliado para AF y RUN */
         }
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
@@ -142,7 +122,30 @@
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 10%; /* Ancho reducido */
+            width: 10%; /* Menos ancho para columnas pequeñas */
+        }
+        @media (max-width: 640px) {
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 0.6rem;
+                padding: 4px;
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1),
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2) {
+                width: 20%; /* AF y RUN en móvil */
+            }
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3),
+            .responsive-table th:nth-child(4),
+            .responsive-table td:nth-child(4),
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5),
+            .responsive-table th:nth-child(6),
+            .responsive-table td:nth-child(6) {
+                width: 25%; /* Columnas clave en móvil */
+            }
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
         .photo-example,
@@ -202,7 +205,7 @@
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
-        <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
+        <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIAL EMPRESA</h1>
         <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
@@ -210,7 +213,7 @@
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
+                        <li class="mb-1">02 Solicitud simple o carta conductora de la empresa (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
                         <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 mb-4">
                             Descargar Solicitud
                         </a>
@@ -293,7 +296,7 @@
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
                     <div class="text-sm">
                         $5.763 CLP en VALE VISTA a nombre de:<br>
-                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong><br>
+                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA</strong><br>
                         R.U.T.: 61.944.800-6<br>
                         Teléfono OS.10.: +56 2 512651024
                     </div>
@@ -313,7 +316,7 @@
         </div>
     </div>
     <footer class="text-center text-gray-500 text-xs mt-4">
-        © 2025 - Tramitar Credenciales
+        © 2025 - Tramitar Credencial Empresa
     </footer>
 </body>
 </html>
