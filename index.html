@@ -21,7 +21,7 @@
             margin: 16px 0;
             padding: 8px 12px;
             font-size: 0.9rem;
-            width: 25%; /* Ancho estándar del 25% */
+            width: 25%;
             display: inline-block;
         }
         .download-btn:hover {
@@ -70,7 +70,7 @@
             .download-btn {
                 font-size: 0.7rem !important;
                 padding: 6px 10px !important;
-                width: 35% !important; /* Ancho móvil reducido */
+                width: 40% !important;
                 margin: 12px 0 !important;
             }
         }
@@ -82,7 +82,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 24px;
-            table-layout: fixed; /* Distribución fija */
+            table-layout: fixed;
         }
         .responsive-table th,
         .responsive-table td {
@@ -90,12 +90,18 @@
             padding: 8px;
             text-align: left;
             font-size: 0.8rem;
-            white-space: nowrap; /* Evitar salto de línea */
+            white-space: nowrap;
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* Anchos de columnas ajustados */
+        /* ANCHOS DE COLUMNAS CORREGIDOS */
+        .responsive-table th:nth-child(1),
+        .responsive-table td:nth-child(1), /* AF */
+        .responsive-table th:nth-child(2),
+        .responsive-table td:nth-child(2) { /* RUN */
+            width: 15%; /* Ancho ampliado para AF y RUN */
+        }
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
         .responsive-table th:nth-child(4),
@@ -104,23 +110,25 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 25%; /* 25% para columnas clave */
+            width: 20%; /* Mantener ancho para columnas clave */
         }
-        .responsive-table th:nth-child(1),
-        .responsive-table td:nth-child(1), /* AF */
-        .responsive-table th:nth-child(2),
-        .responsive-table td:nth-child(2), /* RUN */
         .responsive-table th:nth-child(7),
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 10%; /* 10% para columnas cortas */
+            width: 10%; /* Menos ancho para columnas pequeñas */
         }
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
                 font-size: 0.6rem;
                 padding: 4px;
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1),
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2) {
+                width: 20%; /* AF y RUN en móvil */
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -130,7 +138,7 @@
             .responsive-table td:nth-child(5),
             .responsive-table th:nth-child(6),
             .responsive-table td:nth-child(6) {
-                width: 30%; /* Mayor ancho en móvil */
+                width: 25%; /* Columnas clave en móvil */
             }
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
@@ -142,16 +150,21 @@
             border: 1px solid #FFD700;
             margin-bottom: 10px;
         }
-        /* Eliminar zoom en imágenes */
+        /* Zoom para fotos y valores */
         .photo-example:hover,
-        .valores-example:hover,
-        .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(1); /* Sin zoom */
+        .valores-example:hover {
+            transform: scale(1.5); /* 150% */
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
-        /* Ajustes específicos */
+        /* Zoom para PDF (mitad del efecto original) */
+        .pdf-icon:hover .pdf-thumbnail {
+            transform: scale(7); /* 700% */
+        }
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
+            transition: transform 0.3s ease;
         }
         .pdf-thumbnail {
             max-width: 24px;
@@ -297,7 +310,7 @@
         </div>
     </div>
     <footer class="text-center text-gray-500 text-xs mt-4">
-        © 2025 Daniel Figueroa Ch.
+        © 2025 - Daniel Figueroa Ch,
     </footer>
 </body>
 </html>
