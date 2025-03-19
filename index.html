@@ -126,10 +126,10 @@
         }
         @media (max-width: 640px) {
             .responsive-table {
-            width: 200%;
-            border-collapse: collapse;
-            margin-bottom: 8px;
-            table-layout: fixed;
+                width: 200%;
+                border-collapse: collapse;
+                margin-bottom: 8px;
+                table-layout: fixed;
             }
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1),
@@ -147,12 +147,12 @@
             .responsive-table td:nth-child(6) {
                 width: 120%; /* Columnas clave en móvil */
             }
-          .responsive-table th:nth-child(7),
-          .responsive-table td:nth-child(7), /* VIGENCIA */
-          .responsive-table th:nth-child(8),
-          .responsive-table td:nth-child(8) { /* OBS */
-            width: 180%; /* Mantenido el ancho para columnas pequeñas */
-        
+            .responsive-table th:nth-child(7),
+            .responsive-table td:nth-child(7), /* VIGENCIA */
+            .responsive-table th:nth-child(8),
+            .responsive-table td:nth-child(8) { /* OBS */
+                width: 180%; /* Mantenido el ancho para columnas pequeñas */
+            }
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
         .photo-example,
@@ -162,17 +162,20 @@
             cursor: zoom-in;
             border: 1px solid #FFD700;
             margin-bottom: 10px;
+            position: relative; /* Asegura posición relativa */
         }
-        /* Zoom 150% para fotos y valores */
+        /* Zoom 200% para fotos y valores */
         .photo-example:hover,
         .valores-example:hover {
-            transform: scale(1.5);
+            transform: scale(2);
+            -webkit-transform: scale(2); /* Prefijo para compatibilidad */
             z-index: 1000;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
         /* Zoom 700% para PDF */
         .pdf-icon:hover .pdf-thumbnail {
             transform: scale(7);
+            -webkit-transform: scale(7); /* Prefijo para compatibilidad */
         }
         .pdf-icon {
             display: inline-block;
