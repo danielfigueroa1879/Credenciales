@@ -21,7 +21,7 @@
             margin: 16px 0;
             padding: 8px 12px;
             font-size: 0.9rem;
-            width: 25%; /* 25% del ancho del contenedor */
+            width: 25%; /* Ancho estándar del 25% */
             display: inline-block;
         }
         .download-btn:hover {
@@ -70,8 +70,14 @@
             .download-btn {
                 font-size: 0.7rem !important;
                 padding: 6px 10px !important;
-                width: 40% !important; /* Ancho móvil ajustado */
+                width: 40% !important; /* Ancho móvil estándar */
                 margin: 12px 0 !important;
+            }
+        }
+        /* Modo oscuro móvil */
+        @media (prefers-color-scheme: dark) and (max-width: 640px) {
+            .download-btn {
+                width: 100% !important; /* Ancho completo en móvil oscuro */
             }
         }
         .table-container {
@@ -82,7 +88,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 24px;
-            table-layout: fixed;
+            table-layout: fixed; /* Distribución fija */
         }
         .responsive-table th,
         .responsive-table td {
@@ -90,12 +96,13 @@
             padding: 8px;
             text-align: left;
             font-size: 0.8rem;
-            white-space: nowrap;
+            white-space: normal; /* Permitir salto de línea */
+            word-break: break-word; /* Romper palabras largas */
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* Anchos de columnas corregidos */
+        /* Anchos de columnas ajustados */
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
         .responsive-table th:nth-child(4),
@@ -104,7 +111,7 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 20%; /* 20% para columnas clave */
+            width: 25%; /* 25% para columnas clave */
         }
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1), /* AF */
@@ -119,8 +126,8 @@
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.6rem;
-                padding: 4px;
+                font-size: 0.7rem;
+                padding: 6px;
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -130,17 +137,7 @@
             .responsive-table td:nth-child(5),
             .responsive-table th:nth-child(6),
             .responsive-table td:nth-child(6) {
-                width: 25%; /* Mayor ancho en móvil */
-            }
-            .responsive-table th:nth-child(1),
-            .responsive-table td:nth-child(1),
-            .responsive-table th:nth-child(2),
-            .responsive-table td:nth-child(2),
-            .responsive-table th:nth-child(7),
-            .responsive-table td:nth-child(7),
-            .responsive-table th:nth-child(8),
-            .responsive-table td:nth-child(8) {
-                width: 10%;
+                width: 30%; /* Mayor ancho en móvil */
             }
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
@@ -152,19 +149,16 @@
             border: 1px solid #FFD700;
             margin-bottom: 10px;
         }
-        /* Zoom original reducido a la mitad */
+        /* Eliminar zoom en imágenes */
         .photo-example:hover,
-        .valores-example:hover {
-            transform: scale(1); /* 100% (mitad de 200%) */
-        }
+        .valores-example:hover,
         .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(7); /* Mitad de 1400% (700%) */
+            transform: scale(1); /* Sin zoom */
         }
         /* Ajustes específicos */
         .pdf-icon {
             display: inline-block;
             margin-left: 8px;
-            transition: transform 0.3s ease;
         }
         .pdf-thumbnail {
             max-width: 24px;
@@ -207,7 +201,7 @@
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">02 Solicitud simple o carta conductora de la empresa (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
+                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
                         <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 mb-4">
                             Descargar Solicitud
                         </a>
@@ -236,12 +230,12 @@
                         </div>
                     </ul>
                 </div>
-                <!-- Formato Excel -->
+                <!-- Formato planilla  -->
                 <div class="mb-4">
-                    <h4 class="font-semibold mb-2">Formato Excel:</h4>
+                    <h4 class="font-semibold mb-2">Formato planilla :</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
-                        <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
+                        <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE planilla . Datos de los agentes</strong>.</li>
                     </ul>
                     <div class="table-container">
                         <table class="responsive-table">
@@ -290,7 +284,7 @@
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
                     <div class="text-sm">
                         $5.763 CLP en VALE VISTA a nombre de:<br>
-                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong><br>
+                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA</strong><br>
                         R.U.T.: 61.944.800-6<br>
                         Teléfono OS.10.: +56 2 512651024
                     </div>
