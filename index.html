@@ -85,28 +85,28 @@
             margin-top: 24px;
         }
         .responsive-table {
-            width: 100%;
+            width: 200%;
             border-collapse: collapse;
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             table-layout: fixed;
         }
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px; /* Aumentado el padding */
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.9rem; /* Aumentado el tamaño de fuente */
             white-space: nowrap; /* Evitar saltos de línea */
         }
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* ANCHOS DE COLUMNAS CORREGIDOS */
+        /* ANCHOS DE COLUMNAS AMPLIADOS */
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1), /* AF */
         .responsive-table th:nth-child(2),
         .responsive-table td:nth-child(2) { /* RUN */
-            width: 12%; /* Ancho ampliado para AF y RUN */
+            width: 15%; /* Ampliado el ancho para AF y RUN */
         }
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
@@ -116,25 +116,25 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 20%; /* 20% para columnas clave */
+            width: 25%; /* Ampliado el ancho para columnas clave */
         }
         .responsive-table th:nth-child(7),
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 10%; /* Menos ancho para columnas pequeñas */
+            width: 10%; /* Mantenido el ancho para columnas pequeñas */
         }
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.6rem;
-                padding: 4px;
+                font-size: 0.7rem; /* Reducido el tamaño de fuente en móviles */
+                padding: 8px; /* Reducido el padding en móviles */
             }
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1),
             .responsive-table th:nth-child(2),
             .responsive-table td:nth-child(2) {
-                width: 15%; /* AF y RUN en móvil */
+                width: 20%; /* AF y RUN en móvil */
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -144,7 +144,7 @@
             .responsive-table td:nth-child(5),
             .responsive-table th:nth-child(6),
             .responsive-table td:nth-child(6) {
-                width: 25%; /* Columnas clave en móvil */
+                width: 30%; /* Columnas clave en móvil */
             }
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
