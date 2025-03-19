@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tramitar Credencial Empresa</title>
+    <title>Tramitar Credenciales</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="swap">
     <style>
@@ -73,6 +73,32 @@
                 width: 40% !important;
                 margin: 12px 0 !important;
             }
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 0.6rem;
+                padding: 4px;
+            }
+            /* Anchos móviles */
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3),
+            .responsive-table th:nth-child(4),
+            .responsive-table td:nth-child(4),
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5),
+            .responsive-table th:nth-child(6),
+            .responsive-table td:nth-child(6) {
+                width: 25%; /* 25% en móvil */
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1),
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2),
+            .responsive-table th:nth-child(7),
+            .responsive-table td:nth-child(7),
+            .responsive-table th:nth-child(8),
+            .responsive-table td:nth-child(8) {
+                width: 7.5%; /* Menos ancho para campos cortos */
+            }
         }
         .table-container {
             overflow-x: auto;
@@ -95,12 +121,12 @@
         .responsive-table th {
             background-color: #f1f5f9;
         }
-        /* ANCHOS DE COLUMNAS CORREGIDOS */
+        /* Anchos de columnas corregidos */
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1), /* AF */
         .responsive-table th:nth-child(2),
         .responsive-table td:nth-child(2) { /* RUN */
-            width: 15%; /* Ancho ampliado para AF y RUN */
+            width: 5%; /* Ancho reducido */
         }
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
@@ -110,36 +136,13 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 20%; /* Mantener ancho para columnas clave */
+            width: 20%; /* 20% para columnas clave */
         }
         .responsive-table th:nth-child(7),
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 10%; /* Menos ancho para columnas pequeñas */
-        }
-        @media (max-width: 640px) {
-            .responsive-table th,
-            .responsive-table td {
-                font-size: 0.6rem;
-                padding: 4px;
-            }
-            .responsive-table th:nth-child(1),
-            .responsive-table td:nth-child(1),
-            .responsive-table th:nth-child(2),
-            .responsive-table td:nth-child(2) {
-                width: 20%; /* AF y RUN en móvil */
-            }
-            .responsive-table th:nth-child(3),
-            .responsive-table td:nth-child(3),
-            .responsive-table th:nth-child(4),
-            .responsive-table td:nth-child(4),
-            .responsive-table th:nth-child(5),
-            .responsive-table td:nth-child(5),
-            .responsive-table th:nth-child(6),
-            .responsive-table td:nth-child(6) {
-                width: 25%; /* Columnas clave en móvil */
-            }
+            width: 10%; /* Ancho reducido */
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
         .photo-example,
@@ -150,16 +153,16 @@
             border: 1px solid #FFD700;
             margin-bottom: 10px;
         }
-        /* Zoom para fotos y valores */
+        /* Zoom 150% para fotos y valores */
         .photo-example:hover,
         .valores-example:hover {
-            transform: scale(1.5); /* 150% */
+            transform: scale(1.5);
             z-index: 1000;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
-        /* Zoom para PDF (mitad del efecto original) */
+        /* Zoom 700% para PDF */
         .pdf-icon:hover .pdf-thumbnail {
-            transform: scale(7); /* 700% */
+            transform: scale(7);
         }
         .pdf-icon {
             display: inline-block;
@@ -199,7 +202,7 @@
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md">
-        <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIAL EMPRESA</h1>
+        <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIALES</h1>
         <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
             <div class="space-y-4">
@@ -207,9 +210,9 @@
                 <div class="mb-4">
                     <h4 class="font-semibold mb-2">Documentos requeridos:</h4>
                     <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">02 Solicitud simple o carta conductora de la empresa (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
+                        <li class="mb-1">02 SOLICITUD SIMPLE O CARTA CONDUCTORA DE LA EMPRESA (Razón Social, R.U.T., Domicilio Comercial, Representante Legal).</li>
                         <a href="https://dal5.short.gy/C.emp" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 mb-4">
-                            Descargar Solic.
+                            Descargar Solicitud
                         </a>
                         <li class="mb-1">Fotocopia de cédula de identidad (ambas caras).</li>
                         <li class="mb-1">Certificado OS.10 (Curso Aprobado Vigente).</li>
@@ -282,7 +285,7 @@
                         </table>
                     </div>
                     <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-4 mb-4">
-                        Descargar Excel
+                        Descargar Plantilla Excel
                     </a>
                 </div>
                 <!-- Pago obligatorio -->
@@ -290,7 +293,7 @@
                     <h4 class="font-semibold mb-2">Pago obligatorio:</h4>
                     <div class="text-sm">
                         $5.763 CLP en VALE VISTA a nombre de:<br>
-                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA</strong><br>
+                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong><br>
                         R.U.T.: 61.944.800-6<br>
                         Teléfono OS.10.: +56 2 512651024
                     </div>
@@ -310,7 +313,7 @@
         </div>
     </div>
     <footer class="text-center text-gray-500 text-xs mt-4">
-        © 2025 - Daniel Figueroa Ch,
+        © 2025 - Tramitar Credenciales
     </footer>
 </body>
 </html>
