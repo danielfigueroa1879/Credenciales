@@ -70,14 +70,8 @@
             .download-btn {
                 font-size: 0.7rem !important;
                 padding: 6px 10px !important;
-                width: 40% !important; /* Ancho móvil estándar */
+                width: 35% !important; /* Ancho móvil reducido */
                 margin: 12px 0 !important;
-            }
-        }
-        /* Modo oscuro móvil */
-        @media (prefers-color-scheme: dark) and (max-width: 640px) {
-            .download-btn {
-                width: 100% !important; /* Ancho completo en móvil oscuro */
             }
         }
         .table-container {
@@ -96,8 +90,7 @@
             padding: 8px;
             text-align: left;
             font-size: 0.8rem;
-            white-space: normal; /* Permitir salto de línea */
-            word-break: break-word; /* Romper palabras largas */
+            white-space: nowrap; /* Evitar salto de línea */
         }
         .responsive-table th {
             background-color: #f1f5f9;
@@ -126,8 +119,8 @@
         @media (max-width: 640px) {
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.7rem;
-                padding: 6px;
+                font-size: 0.6rem;
+                padding: 4px;
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -230,12 +223,12 @@
                         </div>
                     </ul>
                 </div>
-                <!-- Formato planilla  -->
+                <!-- Formato Excel -->
                 <div class="mb-4">
-                    <h4 class="font-semibold mb-2">Formato planilla :</h4>
+                    <h4 class="font-semibold mb-2">Formato Excel:</h4>
                     <ul class="list-disc pl-5 text-sm">
                         <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
-                        <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE planilla . Datos de los agentes</strong>.</li>
+                        <li class="mb-1">Estructura obligatoria: <strong>PESTAÑA 1. FORMATO ESTÁNDAR DE EXCEL. Datos de los agentes</strong>.</li>
                     </ul>
                     <div class="table-container">
                         <table class="responsive-table">
@@ -304,7 +297,7 @@
         </div>
     </div>
     <footer class="text-center text-gray-500 text-xs mt-4">
-        © 2025 - Tramitar Credenciales
+        © 2025 Daniel Figueroa Ch.
     </footer>
 </body>
 </html>
