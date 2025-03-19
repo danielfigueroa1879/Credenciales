@@ -77,15 +77,15 @@
         /* Modo oscuro móvil para botón de solicitud */
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
             .download-btn:first-of-type {
-                width: 50% !important; /* 50% en móvil oscuro */
+                width: 40% !important; /* 50% en móvil oscuro */
             }
         }
         .table-container {
-            overflow-x: auto; /* Desplazamiento horizontal */
+            overflow-x: auto;
             margin-top: 24px;
         }
         .responsive-table {
-            width: 100%; /* Ajustar al 100% del contenedor */
+            width: 200%;
             border-collapse: collapse;
             margin-bottom: 8px;
             table-layout: fixed;
@@ -93,9 +93,9 @@
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px; /* Aumentado el padding */
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.9rem; /* Aumentado el tamaño de fuente */
             white-space: nowrap; /* Evitar saltos de línea */
         }
         .responsive-table th {
@@ -116,25 +116,26 @@
         .responsive-table td:nth-child(5), /* CARGO */
         .responsive-table th:nth-child(6),
         .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 20%; /* Ampliado el ancho para columnas clave */
+            width: 25%; /* Ampliado el ancho para columnas clave */
         }
         .responsive-table th:nth-child(7),
         .responsive-table td:nth-child(7), /* VIGENCIA */
         .responsive-table th:nth-child(8),
         .responsive-table td:nth-child(8) { /* OBS */
-            width: 15%; /* Mantenido el ancho para columnas pequeñas */
+            width: 25%; /* Mantenido el ancho para columnas pequeñas */
         }
         @media (max-width: 640px) {
-            .responsive-table th,
-            .responsive-table td {
-                font-size: 0.6rem; /* Reducido el tamaño de fuente en móviles */
-                padding: 4px; /* Reducido el padding en móviles */
+            .responsive-table {
+            width: 200%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+            table-layout: fixed;
             }
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1),
             .responsive-table th:nth-child(2),
             .responsive-table td:nth-child(2) {
-                width: 20%; /* AF y RUN en móvil */
+                width: 95%; /* AF y RUN en móvil */
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -144,14 +145,14 @@
             .responsive-table td:nth-child(5),
             .responsive-table th:nth-child(6),
             .responsive-table td:nth-child(6) {
-                width: 25%; /* Columnas clave en móvil */
+                width: 120%; /* Columnas clave en móvil */
             }
-            .responsive-table th:nth-child(7),
-            .responsive-table td:nth-child(7), /* VIGENCIA */
-            .responsive-table th:nth-child(8),
-            .responsive-table td:nth-child(8) { /* OBS */
-                width: 20%; /* Mantenido el ancho para columnas pequeñas */
-            }
+          .responsive-table th:nth-child(7),
+          .responsive-table td:nth-child(7), /* VIGENCIA */
+          .responsive-table th:nth-child(8),
+          .responsive-table td:nth-child(8) { /* OBS */
+            width: 180%; /* Mantenido el ancho para columnas pequeñas */
+        
         }
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
         .photo-example,
