@@ -70,14 +70,14 @@
             .download-btn {
                 font-size: 0.7rem !important;
                 padding: 6px 10px !important;
-                width: 40% !important;
+                width: 50% !important; /* Ancho móvil 50% */
                 margin: 12px 0 !important;
             }
         }
-        /* Modo oscuro móvil específico para el botón de solicitud */
+        /* Modo oscuro móvil para botón de solicitud */
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
-            .download-btn:first-of-type { /* Solo el botón de solicitud */
-                width: 100% !important;
+            .download-btn:first-of-type {
+                width: 50% !important; /* 50% en móvil oscuro */
             }
         }
         .table-container {
@@ -96,7 +96,7 @@
             padding: 8px;
             text-align: left;
             font-size: 0.8rem;
-            white-space: nowrap;
+            white-space: nowrap; /* Evitar saltos de línea */
         }
         .responsive-table th {
             background-color: #f1f5f9;
@@ -106,7 +106,7 @@
         .responsive-table td:nth-child(1), /* AF */
         .responsive-table th:nth-child(2),
         .responsive-table td:nth-child(2) { /* RUN */
-            width: 15%; /* Ancho ampliado para AF y RUN */
+            width: 12%; /* Ancho ampliado para AF y RUN */
         }
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3), /* NOMBRES */
@@ -134,7 +134,7 @@
             .responsive-table td:nth-child(1),
             .responsive-table th:nth-child(2),
             .responsive-table td:nth-child(2) {
-                width: 20%; /* AF y RUN en móvil */
+                width: 15%; /* AF y RUN en móvil */
             }
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3),
@@ -288,7 +288,7 @@
                         </table>
                     </div>
                     <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-4 mb-4">
-                        Descargar Excel
+                        Descargar Plantilla Excel
                     </a>
                 </div>
                 <!-- Pago obligatorio -->
@@ -296,7 +296,7 @@
                     <h4 class="font-semibold mb-2">Pago Vale Vista:</h4>
                     <div class="text-sm">
                         $5.763 CLP en VALE VISTA a nombre de:<br>
-                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS </strong><br>
+                        <strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong><br>
                         R.U.T.: 61.944.800-6<br>
                         Teléfono OS.10.: +56 2 512651024
                     </div>
