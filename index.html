@@ -81,95 +81,80 @@
             }
         }
         
-        /* NUEVA CONFIGURACIÓN DE TABLA RESPONSIVE */
+        /* TABLA RESPONSIVE MODIFICADA PARA MÓVIL */
         .table-container {
             overflow-x: auto;
             margin-top: 24px;
             width: 100%;
-            -webkit-overflow-scrolling: touch; /* Mejor desplazamiento en iOS */
         }
-
         .responsive-table {
-            width: 100%; /* Cambiado de 200% a 100% */
+            width: 100%;
             border-collapse: collapse;
             margin-bottom: 8px;
-            table-layout: auto; /* Cambiado de fixed a auto */
         }
-
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 12px; 
+            padding: 12px;
             text-align: left;
             font-size: 0.9rem;
-            white-space: normal; /* Permitir saltos de línea */
-            word-wrap: break-word; /* Permitir corte de palabras */
-            overflow-wrap: break-word;
         }
-
         .responsive-table th {
             background-color: #f1f5f9;
-            position: sticky;
-            top: 0;
-            z-index: 10;
         }
 
-        /* Quitar anchos fijos para columnas */
-        .responsive-table th, 
-        .responsive-table td {
-            width: auto; /* Contenido determina el ancho */
-            min-width: 100px; /* Ancho mínimo */
-        }
-
-        /* Estilos específicos para móvil */
+        /* MODIFICACIONES PARA MÓVIL - TABLA HORIZONTAL */
         @media (max-width: 640px) {
-            /* Cambiar el estilo de la tabla para móvil */
             .responsive-table {
                 width: 100%;
                 display: block;
             }
-            
-            /* Convertir tabla a formato vertical */
-            .responsive-table thead {
-                display: none; /* Ocultar encabezados originales */
-            }
-            
-            .responsive-table tbody {
-                display: block;
-                width: 100%;
-            }
-            
+            .responsive-table thead, 
+            .responsive-table tbody, 
             .responsive-table tr {
                 display: block;
-                margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                overflow: hidden;
-                background-color: #fff;
+                width: 100%;
             }
-            
+            .responsive-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            .responsive-table tr {
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+            }
             .responsive-table td {
                 display: flex;
-                justify-content: space-between;
-                padding: 10px 12px;
-                width: 100%;
-                text-align: right;
                 border: none;
                 border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+                min-height: 30px;
+                align-items: center;
+                word-wrap: break-word;
+                word-break: break-word;
+                white-space: normal;
+                font-size: 0.85rem;
             }
-            
-            /* Añadir encabezados a cada celda */
             .responsive-table td:before {
                 content: attr(data-label);
-                font-weight: 600;
-                float: left;
-                text-align: left;
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                width: 45%;
                 padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                text-align: left;
             }
-            
-            /* Eliminar el último borde */
-            .responsive-table tr td:last-child {
-                border-bottom: none;
+            /* Colores para modo oscuro y claro */
+            .responsive-table td:nth-of-type(odd) {
+                background-color: rgba(0, 0, 0, 0.02);
+            }
+            .responsive-table tr:nth-of-type(even) {
+                background-color: rgba(0, 0, 0, 0.03);
             }
         }
         
@@ -199,7 +184,6 @@
         .border-l-4:hover {
             border-color: #FFA000 !important;
         }
-        
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
             body {
@@ -216,21 +200,26 @@
             .border-l-4:hover {
                 border-color: #FFA000 !important;
             }
-            
-            /* Modo oscuro para tabla en móvil */
+            /* Estilos dark mode para tabla */
+            .responsive-table th {
+                background-color: #1f2937;
+                color: #d1d5db;
+            }
+            .responsive-table td, .responsive-table th {
+                border-color: #4b5563;
+            }
             @media (max-width: 640px) {
-                .responsive-table tr {
-                    background-color: #1f2937;
-                    border-color: #374151;
+                .responsive-table td:nth-of-type(odd) {
+                    background-color: rgba(255, 255, 255, 0.05);
                 }
-                
+                .responsive-table tr:nth-of-type(even) {
+                    background-color: rgba(255, 255, 255, 0.03);
+                }
                 .responsive-table td {
-                    border-bottom-color: #374151;
-                    color: #d1d5db;
+                    border-bottom: 1px solid #4b5563;
                 }
-                
-                .responsive-table td:before {
-                    color: #9ca3af;
+                .responsive-table tr {
+                    border: 1px solid #4b5563;
                 }
             }
         }
@@ -351,5 +340,12 @@
     <footer class="text-center text-gray-500 text-xs mt-4">
         © 2025 - Daniel Figueroa Ch.
     </footer>
+    <script>
+        // Script para asegurar que se muestren correctamente los data-label en móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            // Esta función no es necesaria porque los atributos data-label ya están definidos en el HTML,
+            // pero se incluye para dar soporte a posibles modificaciones futuras dinámicas.
+        });
+    </script>
 </body>
 </html>
