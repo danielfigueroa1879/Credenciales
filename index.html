@@ -300,6 +300,15 @@
         .border-l-4:hover {
             border-color: #FFA000 !important;
         }
+        
+        /* Separador horizontal para la nueva sección */
+        .separator {
+            height: 1px;
+            background-color: #FFD700;
+            opacity: 0.3;
+            margin: 24px 0;
+        }
+        
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
             body {
@@ -318,6 +327,10 @@
             }
             .conversion-link {
                 color: #EF4444 !important; /* Rojo más claro en modo oscuro */
+            }
+            .separator {
+                background-color: #FFD700;
+                opacity: 0.4;
             }
         }
     </style>
@@ -435,6 +448,15 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Nueva sección para Credencial Independiente -->
+        <div class="separator"></div>
+        
+        <h3 class="font-bold my-4">TRAMITAR CREDENCIAL INDEPENDIENTE</h3>
+        <a href="https://dal5.short.gy/Ind" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-2 mb-4">
+            Cred. Independiente
+        </a>
+        
         <div class="text-center text-gray-500 text-sm mt-4">
             Haga clic en los botones para descargar los documentos requeridos
         </div>
