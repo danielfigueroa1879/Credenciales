@@ -23,6 +23,7 @@
             font-size: 0.9rem;
             width: 25%;
             display: inline-block;
+            white-space: nowrap; /* Evita que el texto se corte */
         }
         .download-btn:hover {
             transform: translateY(-3px);
@@ -68,16 +69,20 @@
                 font-size: 14px;
             }
             .download-btn {
-                font-size: 0.7rem !important;
+                font-size: 0.8rem !important; /* Aumentado de 0.7rem a 0.8rem */
                 padding: 6px 10px !important;
-                width: 50% !important; /* Ancho móvil 50% */
+                width: auto !important; /* Cambiado de 50% a auto para adaptarse al contenido */
+                min-width: 160px !important; /* Ancho mínimo para que se vea bien */
                 margin: 12px 0 !important;
             }
         }
         /* Modo oscuro móvil para botón de solicitud */
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
             .download-btn:first-of-type {
-                width: 40% !important; /* 40% en móvil oscuro */
+                width: auto !important; /* Cambiado de 40% a auto */
+                min-width: 160px !important; /* Ancho mínimo para que se vea bien */
+                white-space: nowrap !important; /* Asegura que no se corte el texto */
+                font-size: 0.85rem !important; /* Aumentado a 0.85rem */
             }
         }
         
