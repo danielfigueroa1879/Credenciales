@@ -50,6 +50,24 @@
                 opacity: 1;
             }
         }
+        /* Estilos para el QR Code */
+        .qr-code {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        /* QR Code en el header para móviles */
+        .header-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
         @media (max-width: 640px) {
             body {
                 padding: 16px;
@@ -100,6 +118,14 @@
             /* Texto en minúscula para todo el contenido móvil */
             .text-sm {
                 font-size: 16px !important; /* Aumentado */
+            }
+            
+            /* Ajustes para el QR Code en móviles */
+            .qr-code {
+                width: 70px;
+                height: 70px;
+                top: 10px;
+                right: 10px;
             }
         }
         
@@ -297,7 +323,12 @@
     </style>
 </head>
 <body class="text-gray-800">
-    <div class="card-container bg-white rounded-xl shadow-md">
+    <div class="card-container bg-white rounded-xl shadow-md relative">
+        <!-- QR Code añadido -->
+        <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
+             alt="Código QR" 
+             class="qr-code">
+             
         <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIAL EMPRESA</h1>
         <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
