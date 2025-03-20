@@ -77,84 +77,100 @@
         /* Modo oscuro móvil para botón de solicitud */
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
             .download-btn:first-of-type {
-                width: 40% !important; /* 50% en móvil oscuro */
+                width: 40% !important; /* 40% en móvil oscuro */
             }
         }
         
-        /* TABLA RESPONSIVE MODIFICADA PARA MÓVIL */
+        /* NUEVA CONFIGURACIÓN MEJORADA PARA LA TABLA EN MÓVIL */
         .table-container {
             overflow-x: auto;
             margin-top: 24px;
-            width: 100%;
+            -webkit-overflow-scrolling: touch; /* Para mejorar el desplazamiento en iOS */
+            scrollbar-width: thin; /* Barra de desplazamiento delgada en Firefox */
         }
+        
         .responsive-table {
-            width: 100%;
+            width: 100%; /* Cambiado a 100% para mejor ajuste */
             border-collapse: collapse;
             margin-bottom: 8px;
         }
+        
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
             font-size: 0.9rem;
+            white-space: nowrap; /* Evita saltos de línea */
         }
+        
         .responsive-table th {
             background-color: #f1f5f9;
+            position: sticky; /* Cabeceras fijas al desplazar */
+            top: 0;
+            z-index: 10;
         }
-
-        /* MODIFICACIONES PARA MÓVIL - TABLA HORIZONTAL */
+        
+        /* Anchos de columnas optimizados */
+        .responsive-table th:nth-child(1), .responsive-table td:nth-child(1) { min-width: 100px; } /* AF */
+        .responsive-table th:nth-child(2), .responsive-table td:nth-child(2) { min-width: 120px; } /* RUN */
+        .responsive-table th:nth-child(3), .responsive-table td:nth-child(3) { min-width: 150px; } /* NOMBRES */
+        .responsive-table th:nth-child(4), .responsive-table td:nth-child(4) { min-width: 150px; } /* APELLIDOS */
+        .responsive-table th:nth-child(5), .responsive-table td:nth-child(5) { min-width: 180px; } /* CARGO */
+        .responsive-table th:nth-child(6), .responsive-table td:nth-child(6) { min-width: 180px; } /* EMPRESA */
+        .responsive-table th:nth-child(7), .responsive-table td:nth-child(7) { min-width: 120px; } /* VIGENCIA */
+        .responsive-table th:nth-child(8), .responsive-table td:nth-child(8) { min-width: 180px; } /* OBS */
+        
+        /* Estilos para móvil */
         @media (max-width: 640px) {
-            .responsive-table {
-                width: 100%;
+            .table-container {
+                margin-left: -16px; /* Extiende fuera del contenedor */
+                margin-right: -16px;
+                width: calc(100% + 32px);
+                padding: 0 16px; /* Añade padding horizontal */
+            }
+            
+            .table-container:after {
+                content: '←  Desplaza horizontalmente  →';
                 display: block;
+                text-align: center;
+                padding: 8px 0;
+                font-size: 12px;
+                color: #6b7280;
             }
-            .responsive-table thead, 
-            .responsive-table tbody, 
-            .responsive-table tr {
-                display: block;
-                width: 100%;
-            }
-            .responsive-table thead tr {
+            
+            /* Indicador de desplazamiento horizontal */
+            .table-container:before {
+                content: '';
                 position: absolute;
-                top: -9999px;
-                left: -9999px;
+                right: 0;
+                top: 50%;
+                width: 20px;
+                height: 100%;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.7));
+                pointer-events: none;
+                z-index: 5;
             }
-            .responsive-table tr {
-                border: 1px solid #ccc;
-                margin-bottom: 15px;
-            }
-            .responsive-table td {
-                display: flex;
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-                text-align: left;
-                min-height: 30px;
-                align-items: center;
-                word-wrap: break-word;
-                word-break: break-word;
-                white-space: normal;
-                font-size: 0.85rem;
-            }
-            .responsive-table td:before {
-                content: attr(data-label);
-                position: absolute;
-                top: 12px;
-                left: 12px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                font-weight: bold;
-                text-align: left;
-            }
-            /* Colores para modo oscuro y claro */
-            .responsive-table td:nth-of-type(odd) {
-                background-color: rgba(0, 0, 0, 0.02);
-            }
-            .responsive-table tr:nth-of-type(even) {
-                background-color: rgba(0, 0, 0, 0.03);
+            
+            /* Modo oscuro para tabla en móvil */
+            @media (prefers-color-scheme: dark) {
+                .responsive-table th {
+                    background-color: #374151;
+                    color: #d1d5db;
+                }
+                
+                .responsive-table th, 
+                .responsive-table td {
+                    border-color: #4b5563;
+                }
+                
+                .table-container:before {
+                    background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
+                }
+                
+                .table-container:after {
+                    color: #9ca3af;
+                }
             }
         }
         
@@ -199,28 +215,6 @@
             }
             .border-l-4:hover {
                 border-color: #FFA000 !important;
-            }
-            /* Estilos dark mode para tabla */
-            .responsive-table th {
-                background-color: #1f2937;
-                color: #d1d5db;
-            }
-            .responsive-table td, .responsive-table th {
-                border-color: #4b5563;
-            }
-            @media (max-width: 640px) {
-                .responsive-table td:nth-of-type(odd) {
-                    background-color: rgba(255, 255, 255, 0.05);
-                }
-                .responsive-table tr:nth-of-type(even) {
-                    background-color: rgba(255, 255, 255, 0.03);
-                }
-                .responsive-table td {
-                    border-bottom: 1px solid #4b5563;
-                }
-                .responsive-table tr {
-                    border: 1px solid #4b5563;
-                }
             }
         }
     </style>
@@ -287,24 +281,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td data-label="AF">COQUIMBO</td>
-                                    <td data-label="RUN">12345678-9</td>
-                                    <td data-label="NOMBRES">CAMILA GRACIELA</td>
-                                    <td data-label="APELLIDOS">LEYTON MONTENEGRO</td>
-                                    <td data-label="CARGO">GUARDIA DE SEGURIDAD</td>
-                                    <td data-label="EMPRESA">ALTA SEGURIDAD S.A.</td>
-                                    <td data-label="VIGENCIA">31/10/2027</td>
-                                    <td data-label="OBS-COLOR"></td>
+                                    <td>COQUIMBO</td>
+                                    <td>12345678-9</td>
+                                    <td>CAMILA GRACIELA</td>
+                                    <td>LEYTON MONTENEGRO</td>
+                                    <td>GUARDIA DE SEGURIDAD</td>
+                                    <td>ALTA SEGURIDAD S.A.</td>
+                                    <td>31/10/2027</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td data-label="AF">COQUIMBO</td>
-                                    <td data-label="RUN">12345678-8</td>
-                                    <td data-label="NOMBRES">DANIEL ENRIQUE</td>
-                                    <td data-label="APELLIDOS">VEGA CHAVEZ</td>
-                                    <td data-label="CARGO">CONSERJE</td>
-                                    <td data-label="EMPRESA">ALTA SEGURIDAD S.A.</td>
-                                    <td data-label="VIGENCIA">31/10/2027</td>
-                                    <td data-label="OBS-COLOR"></td>
+                                    <td>COQUIMBO</td>
+                                    <td>12345678-8</td>
+                                    <td>DANIEL ENRIQUE</td>
+                                    <td>VEGA CHAVEZ</td>
+                                    <td>CONSERJE</td>
+                                    <td>ALTA SEGURIDAD S.A.</td>
+                                    <td>31/10/2027</td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -340,12 +334,5 @@
     <footer class="text-center text-gray-500 text-xs mt-4">
         © 2025 - Daniel Figueroa Ch.
     </footer>
-    <script>
-        // Script para asegurar que se muestren correctamente los data-label en móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            // Esta función no es necesaria porque los atributos data-label ya están definidos en el HTML,
-            // pero se incluye para dar soporte a posibles modificaciones futuras dinámicas.
-        });
-    </script>
 </body>
 </html>
