@@ -29,7 +29,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .card-container {
-            max-width: 800px;
+            max-width: 820px; /* Ligeramente más ancho */
             margin: 0 auto;
             padding: 20px;
             transition: all 0.3s ease;
@@ -87,6 +87,35 @@
             margin-top: 24px;
             -webkit-overflow-scrolling: touch; /* Para mejorar el desplazamiento en iOS */
             scrollbar-width: thin; /* Barra de desplazamiento delgada en Firefox */
+            position: relative; /* Para el indicador de desplazamiento */
+            margin-bottom: 20px; /* Espacio para el texto de desplazamiento */
+        }
+        
+        /* Estilo para siempre mostrar la barra de desplazamiento en móvil */
+        @media (max-width: 640px) {
+            .table-container::-webkit-scrollbar {
+                -webkit-appearance: none;
+                height: 6px;
+            }
+            
+            .table-container::-webkit-scrollbar-thumb {
+                border-radius: 4px;
+                background-color: rgba(0, 0, 0, .5);
+                -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+            }
+            
+            /* Mostrar indicación de desplazamiento */
+            .table-container::after {
+                content: '←  Desplaza horizontalmente  →';
+                display: block !important;
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                color: #6b7280;
+            }
         }
         
         .responsive-table {
@@ -130,17 +159,8 @@
                 padding: 0 16px; /* Añade padding horizontal */
             }
             
-            .table-container:after {
-                content: '←  Desplaza horizontalmente  →';
-                display: block;
-                text-align: center;
-                padding: 8px 0;
-                font-size: 12px;
-                color: #6b7280;
-            }
-            
-            /* Indicador de desplazamiento horizontal */
-            .table-container:before {
+            /* Indicador de desplazamiento horizontal siempre visible */
+            .table-container::before {
                 content: '';
                 position: absolute;
                 right: 0;
@@ -151,26 +171,26 @@
                 pointer-events: none;
                 z-index: 5;
             }
+        }
+        
+        /* Modo oscuro para tabla en móvil */
+        @media (prefers-color-scheme: dark) {
+            .responsive-table th {
+                background-color: #374151;
+                color: #d1d5db;
+            }
             
-            /* Modo oscuro para tabla en móvil */
-            @media (prefers-color-scheme: dark) {
-                .responsive-table th {
-                    background-color: #374151;
-                    color: #d1d5db;
-                }
-                
-                .responsive-table th, 
-                .responsive-table td {
-                    border-color: #4b5563;
-                }
-                
-                .table-container:before {
-                    background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
-                }
-                
-                .table-container:after {
-                    color: #9ca3af;
-                }
+            .responsive-table th, 
+            .responsive-table td {
+                border-color: #4b5563;
+            }
+            
+            .table-container::before {
+                background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
+            }
+            
+            .table-container::after {
+                color: #9ca3af;
             }
         }
         
@@ -191,6 +211,12 @@
             -webkit-transform: scale(1.5); /* Prefijo para compatibilidad */
             z-index: 1000;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Enlaces de conversión en rojo y negrita */
+        .conversion-link {
+            color: #DC2626 !important; /* Rojo */
+            font-weight: bold !important;
         }
         
         /* Bordes laterales */
@@ -215,6 +241,9 @@
             }
             .border-l-4:hover {
                 border-color: #FFA000 !important;
+            }
+            .conversion-link {
+                color: #EF4444 !important; /* Rojo más claro en modo oscuro */
             }
         }
     </style>
@@ -253,8 +282,8 @@
                             >
                         </div>
                         <div class="flex space-x-2 mt-2">
-                            <a href="https://dal5.short.gy/0" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 1</a>
-                            <a href="https://dal5.short.gy/j" target="_blank" class="text-blue-600 hover:underline text-sm">Herramienta de Conversión 2</a>
+                            <a href="https://dal5.short.gy/0" target="_blank" class="conversion-link text-sm">CONVERTIR A 300 DPI O PPP 1</a>
+                            <a href="https://dal5.short.gy/j" target="_blank" class="conversion-link text-sm">CONVERTIR A 300 DPI O PPP 2</a>
                         </div>
                     </ul>
                 </div>
