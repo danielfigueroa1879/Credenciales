@@ -80,80 +80,99 @@
                 width: 40% !important; /* 50% en móvil oscuro */
             }
         }
+        
+        /* NUEVA CONFIGURACIÓN DE TABLA RESPONSIVE */
         .table-container {
             overflow-x: auto;
             margin-top: 24px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch; /* Mejor desplazamiento en iOS */
         }
+
         .responsive-table {
-            width: 200%;
+            width: 100%; /* Cambiado de 200% a 100% */
             border-collapse: collapse;
             margin-bottom: 8px;
-            table-layout: fixed;
+            table-layout: auto; /* Cambiado de fixed a auto */
         }
+
         .responsive-table th,
         .responsive-table td {
             border: 1px solid #ddd;
-            padding: 12px; /* Aumentado el padding */
+            padding: 12px; 
             text-align: left;
-            font-size: 0.9rem; /* Aumentado el tamaño de fuente */
-            white-space: nowrap; /* Evitar saltos de línea */
+            font-size: 0.9rem;
+            white-space: normal; /* Permitir saltos de línea */
+            word-wrap: break-word; /* Permitir corte de palabras */
+            overflow-wrap: break-word;
         }
+
         .responsive-table th {
             background-color: #f1f5f9;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        /* ANCHOS DE COLUMNAS AMPLIADOS */
-        .responsive-table th:nth-child(1),
-        .responsive-table td:nth-child(1), /* AF */
-        .responsive-table th:nth-child(2),
-        .responsive-table td:nth-child(2) { /* RUN */
-            width: 15%; /* Ampliado el ancho para AF y RUN */
+
+        /* Quitar anchos fijos para columnas */
+        .responsive-table th, 
+        .responsive-table td {
+            width: auto; /* Contenido determina el ancho */
+            min-width: 100px; /* Ancho mínimo */
         }
-        .responsive-table th:nth-child(3),
-        .responsive-table td:nth-child(3), /* NOMBRES */
-        .responsive-table th:nth-child(4),
-        .responsive-table td:nth-child(4), /* APELLIDOS */
-        .responsive-table th:nth-child(5),
-        .responsive-table td:nth-child(5), /* CARGO */
-        .responsive-table th:nth-child(6),
-        .responsive-table td:nth-child(6) { /* EMPRESA */
-            width: 25%; /* Ampliado el ancho para columnas clave */
-        }
-        .responsive-table th:nth-child(7),
-        .responsive-table td:nth-child(7), /* VIGENCIA */
-        .responsive-table th:nth-child(8),
-        .responsive-table td:nth-child(8) { /* OBS */
-            width: 25%; /* Mantenido el ancho para columnas pequeñas */
-        }
+
+        /* Estilos específicos para móvil */
         @media (max-width: 640px) {
+            /* Cambiar el estilo de la tabla para móvil */
             .responsive-table {
-                width: 200%;
-                border-collapse: collapse;
-                margin-bottom: 8px;
-                table-layout: fixed;
+                width: 100%;
+                display: block;
             }
-            .responsive-table th:nth-child(1),
-            .responsive-table td:nth-child(1),
-            .responsive-table th:nth-child(2),
-            .responsive-table td:nth-child(2) {
-                width: 95%; /* AF y RUN en móvil */
+            
+            /* Convertir tabla a formato vertical */
+            .responsive-table thead {
+                display: none; /* Ocultar encabezados originales */
             }
-            .responsive-table th:nth-child(3),
-            .responsive-table td:nth-child(3),
-            .responsive-table th:nth-child(4),
-            .responsive-table td:nth-child(4),
-            .responsive-table th:nth-child(5),
-            .responsive-table td:nth-child(5),
-            .responsive-table th:nth-child(6),
-            .responsive-table td:nth-child(6) {
-                width: 120%; /* Columnas clave en móvil */
+            
+            .responsive-table tbody {
+                display: block;
+                width: 100%;
             }
-            .responsive-table th:nth-child(7),
-            .responsive-table td:nth-child(7), /* VIGENCIA */
-            .responsive-table th:nth-child(8),
-            .responsive-table td:nth-child(8) { /* OBS */
-                width: 180%; /* Mantenido el ancho para columnas pequeñas */
+            
+            .responsive-table tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+                background-color: #fff;
+            }
+            
+            .responsive-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 12px;
+                width: 100%;
+                text-align: right;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            /* Añadir encabezados a cada celda */
+            .responsive-table td:before {
+                content: attr(data-label);
+                font-weight: 600;
+                float: left;
+                text-align: left;
+                padding-right: 10px;
+            }
+            
+            /* Eliminar el último borde */
+            .responsive-table tr td:last-child {
+                border-bottom: none;
             }
         }
+        
         /* EFECTOS PARA IMÁGENES CORREGIDOS */
         .photo-example,
         .valores-example,
@@ -180,6 +199,7 @@
         .border-l-4:hover {
             border-color: #FFA000 !important;
         }
+        
         /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
             body {
@@ -195,6 +215,23 @@
             }
             .border-l-4:hover {
                 border-color: #FFA000 !important;
+            }
+            
+            /* Modo oscuro para tabla en móvil */
+            @media (max-width: 640px) {
+                .responsive-table tr {
+                    background-color: #1f2937;
+                    border-color: #374151;
+                }
+                
+                .responsive-table td {
+                    border-bottom-color: #374151;
+                    color: #d1d5db;
+                }
+                
+                .responsive-table td:before {
+                    color: #9ca3af;
+                }
             }
         }
     </style>
@@ -261,24 +298,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>COQUIMBO</td>
-                                    <td>12345678-9</td>
-                                    <td>CAMILA GRACIELA</td>
-                                    <td>LEYTON MONTENEGRO</td>
-                                    <td>GUARDIA DE SEGURIDAD</td>
-                                    <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
-                                    <td></td>
+                                    <td data-label="AF">COQUIMBO</td>
+                                    <td data-label="RUN">12345678-9</td>
+                                    <td data-label="NOMBRES">CAMILA GRACIELA</td>
+                                    <td data-label="APELLIDOS">LEYTON MONTENEGRO</td>
+                                    <td data-label="CARGO">GUARDIA DE SEGURIDAD</td>
+                                    <td data-label="EMPRESA">ALTA SEGURIDAD S.A.</td>
+                                    <td data-label="VIGENCIA">31/10/2027</td>
+                                    <td data-label="OBS-COLOR"></td>
                                 </tr>
                                 <tr>
-                                    <td>COQUIMBO</td>
-                                    <td>12345678-8</td>
-                                    <td>DANIEL ENRIQUE</td>
-                                    <td>VEGA CHAVEZ</td>
-                                    <td>CONSERJE</td>
-                                    <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
-                                    <td></td>
+                                    <td data-label="AF">COQUIMBO</td>
+                                    <td data-label="RUN">12345678-8</td>
+                                    <td data-label="NOMBRES">DANIEL ENRIQUE</td>
+                                    <td data-label="APELLIDOS">VEGA CHAVEZ</td>
+                                    <td data-label="CARGO">CONSERJE</td>
+                                    <td data-label="EMPRESA">ALTA SEGURIDAD S.A.</td>
+                                    <td data-label="VIGENCIA">31/10/2027</td>
+                                    <td data-label="OBS-COLOR"></td>
                                 </tr>
                             </tbody>
                         </table>
