@@ -59,6 +59,10 @@
             height: 100px;
             z-index: 10;
             transition: all 0.3s ease;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background-color: white;
+            padding: 5px;
         }
         /* QR Code en el header para móviles */
         .header-container {
@@ -76,12 +80,14 @@
             }
             h1 {
                 font-size: 1.8rem;
+                padding-right: 60px; /* Espacio para el QR code */
             }
             h3 {
                 font-size: 1.2rem;
             }
             .card-container {
                 padding: 16px;
+                padding-top: 20px; /* Mayor espacio superior */
             }
             ul li {
                 font-size: 16px; /* Aumentado de 14px a 16px */
@@ -92,6 +98,14 @@
                 width: auto !important;
                 min-width: 180px !important; /* Aumentado de 160px a 180px */
                 margin: 12px 0 !important;
+            }
+            
+            /* Ajustes para imágenes en móvil */
+            .photo-example {
+                width: 120px !important;
+                height: auto;
+                margin: 0 auto;
+                display: block;
             }
             
             /* Aumentar tamaño de texto en tabla para móvil */
@@ -120,12 +134,17 @@
                 font-size: 16px !important; /* Aumentado */
             }
             
-            /* Ajustes para el QR Code en móviles */
+            /* Ajustes mejorados para el QR Code en móviles */
             .qr-code {
-                width: 70px;
-                height: 70px;
-                top: 10px;
-                right: 10px;
+                width: 80px;
+                height: 80px;
+                top: 8px;
+                right: 8px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                background-color: white;
+                padding: 4px;
+                z-index: 100;
             }
         }
         
@@ -277,6 +296,7 @@
             border: 1px solid #FFD700;
             margin-bottom: 10px;
             position: relative; /* Asegura posición relativa */
+            max-width: 100%;
         }
         /* Zoom 200% para fotos y valores */
         .photo-example:hover {
@@ -342,10 +362,13 @@
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md relative">
-        <!-- QR Code añadido -->
-        <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
-             alt="Código QR" 
-             class="qr-code">
+        <!-- QR Code añadido con enlace -->
+        <a href="https://dal5.short.gy/Cr3d" target="_blank">
+            <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
+                 alt="Código QR" 
+                 class="qr-code"
+                 title="Escanea para más información">
+        </a>
              
         <h1 class="text-center text-yellow-500 font-bold mb-4">TRAMITAR CREDENCIAL EMPRESA</h1>
         <div class="border-l-4 border-yellow-500 pl-4 mb-6">
@@ -375,7 +398,7 @@
                             <img 
                                 src="https://github.com/danielfigueroa1879/Credenciales/raw/17337cdf6fb8b4e03149a37a2870c64e04601bca/foto.jpg" 
                                 alt="Ejemplo de Fotografía" 
-                                class="photo-example w-full md:w-1/4 mb-2"
+                                class="photo-example w-1/3 md:w-1/4 mb-2"
                             >
                         </div>
                         <div class="flex space-x-2 mt-2">
