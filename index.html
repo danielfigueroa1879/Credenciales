@@ -53,7 +53,7 @@
         @media (max-width: 640px) {
             body {
                 padding: 16px;
-                font-size: 14px;
+                font-size: 16px; /* Aumentado de 14px a 16px */
                 color: #374151;
             }
             h1 {
@@ -66,23 +66,68 @@
                 padding: 16px;
             }
             ul li {
-                font-size: 14px;
+                font-size: 16px; /* Aumentado de 14px a 16px */
             }
             .download-btn {
-                font-size: 0.8rem !important; /* Aumentado de 0.7rem a 0.8rem */
-                padding: 6px 10px !important;
-                width: auto !important; /* Cambiado de 50% a auto para adaptarse al contenido */
-                min-width: 160px !important; /* Ancho mínimo para que se vea bien */
+                font-size: 1rem !important; /* Aumentado de 0.8rem a 1rem */
+                padding: 8px 12px !important; /* Aumentado de 6px 10px a 8px 12px */
+                width: auto !important;
+                min-width: 180px !important; /* Aumentado de 160px a 180px */
                 margin: 12px 0 !important;
+                text-transform: lowercase !important; /* Texto en minúsculas para móvil */
+            }
+            
+            /* Aumentar tamaño de texto en tabla para móvil */
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 1rem; /* Aumentado de 0.9rem a 1rem */
+            }
+            
+            /* Aumentar tamaño del indicador de desplazamiento */
+            .table-container::after {
+                font-size: 14px; /* Aumentado de 12px a 14px */
+            }
+            
+            /* Aumentar tamaño de los enlaces de conversión */
+            .conversion-link {
+                font-size: 1rem !important; /* Aumentado a 1rem */
+                text-transform: lowercase !important; /* Minúsculas para móvil */
+            }
+            
+            /* Aumentar tamaño del texto en el footer */
+            footer {
+                font-size: 0.8rem; /* Aumentado de 0.75rem a 0.8rem */
+            }
+            
+            /* Texto en minúscula para todo el contenido móvil */
+            .text-sm {
+                font-size: 16px !important; /* Aumentado */
             }
         }
+        
         /* Modo oscuro móvil para botón de solicitud */
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
-            .download-btn:first-of-type {
-                width: auto !important; /* Cambiado de 40% a auto */
-                min-width: 160px !important; /* Ancho mínimo para que se vea bien */
-                white-space: nowrap !important; /* Asegura que no se corte el texto */
-                font-size: 0.85rem !important; /* Aumentado a 0.85rem */
+            .download-btn {
+                width: auto !important;
+                min-width: 180px !important; /* Aumentado de 160px a 180px */
+                white-space: nowrap !important;
+                font-size: 1rem !important; /* Aumentado a 1rem */
+                padding: 10px 16px !important; /* Aumentado para mejor toque en modo oscuro */
+            }
+            
+            /* Ajustes adicionales para modo oscuro */
+            body {
+                font-size: 16px; /* Consistente con modo claro */
+            }
+            
+            .text-sm {
+                font-size: 16px !important; /* Aumentado */
+            }
+            
+            /* Mayor contraste para enlaces en modo oscuro */
+            .conversion-link {
+                font-size: 1rem !important; /* Aumentado a 1rem */
+                color: #FF6B6B !important; /* Rojo más brillante en modo oscuro */
             }
         }
         
@@ -111,14 +156,14 @@
             
             /* Mostrar indicación de desplazamiento */
             .table-container::after {
-                content: '←  Desplaza horizontalmente  →';
+                content: '←  desplaza horizontalmente  →'; /* cambiado a minúsculas */
                 display: block !important;
                 position: absolute;
                 bottom: -20px;
                 left: 0;
                 width: 100%;
                 text-align: center;
-                font-size: 12px;
+                font-size: 14px; /* Aumentado de 12px a 14px */
                 color: #6b7280;
             }
         }
