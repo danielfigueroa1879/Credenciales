@@ -1,23 +1,4 @@
-/* Modo oscuro para tabla en móvil */
-        @media (prefers-color-scheme: dark) {
-            .responsive-table th {
-                background-color: #374151;
-                color: #d1d5db;
-            }
-            
-            .responsive-table th, 
-            .responsive-table td {
-                border-color: #4b5563;
-            }
-            
-            .table-container::before {
-                background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
-            }
-            
-            .table-container::after {
-                color: #9ca3af;
-            }
-        }<!DOCTYPE html>
+/* Modo oscuro para tabla en móvil */<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -345,8 +326,26 @@
             cursor: pointer;
         }
         
-        /* Modo oscuro para selectores */
+        /* Modo oscuro para tabla y selectores */
         @media (prefers-color-scheme: dark) {
+            .responsive-table th {
+                background-color: #374151;
+                color: #d1d5db;
+            }
+            
+            .responsive-table th, 
+            .responsive-table td {
+                border-color: #4b5563;
+            }
+            
+            .table-container::before {
+                background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
+            }
+            
+            .table-container::after {
+                color: #9ca3af;
+            }
+            
             .cargo-select,
             .color-select {
                 background-color: #2d3748;
