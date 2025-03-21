@@ -403,17 +403,17 @@
                 height: 60px !important;
             }
             
-            /* NUEVO: Reducir la tabla al 60% de su tamaño para impresión */
+            /* NUEVO: Reducir la tabla al 50% de su tamaño para impresión */
             .table-container {
-                transform: scale(0.6);
+                transform: scale(0.5);
                 transform-origin: top left;
-                width: 166%; /* Compensar la reducción de escala (100% / 0.6 = 166%) */
-                margin-bottom: 40px; /* Espacio extra para evitar solapamiento */
+                width: 200%; /* Compensar la reducción de escala (100% / 0.5 = 200%) */
+                margin-bottom: 50px; /* Espacio extra adicional para evitar solapamiento */
             }
             
             /* Ajustar elementos cercanos a la tabla */
             .table-container + div {
-                margin-top: -80px; /* Compensar espacio extra creado por la transformación */
+                margin-top: -100px; /* Aumentado para compensar la mayor reducción */
             }
         }
     </style>
