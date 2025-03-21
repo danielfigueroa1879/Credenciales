@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+/* Modo oscuro para tabla en móvil */
+        @media (prefers-color-scheme: dark) {
+            .responsive-table th {
+                background-color: #374151;
+                color: #d1d5db;
+            }
+            
+            .responsive-table th, 
+            .responsive-table td {
+                border-color: #4b5563;
+            }
+            
+            .table-container::before {
+                background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
+            }
+            
+            .table-container::after {
+                color: #9ca3af;
+            }
+        }<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -285,6 +304,8 @@
         .responsive-table th:nth-child(6), .responsive-table td:nth-child(6) { min-width: 180px; } /* EMPRESA */
         .responsive-table th:nth-child(7), .responsive-table td:nth-child(7) { min-width: 120px; } /* VIGENCIA */
         .responsive-table th:nth-child(8), .responsive-table td:nth-child(8) { min-width: 180px; } /* OBS */
+        .responsive-table th:nth-child(9), .responsive-table td:nth-child(9) { min-width: 100px; } /* OTROS */
+        .responsive-table th:nth-child(10), .responsive-table td:nth-child(10) { min-width: 180px; } /* EMAIL */
         
         /* Estilos para móvil */
         @media (max-width: 640px) {
@@ -309,24 +330,33 @@
             }
         }
         
-        /* Modo oscuro para tabla en móvil */
+        /* Estilos para los selectores en la tabla */
+        .cargo-select,
+        .color-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+            padding-right: 2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        /* Modo oscuro para selectores */
         @media (prefers-color-scheme: dark) {
-            .responsive-table th {
-                background-color: #374151;
+            .cargo-select,
+            .color-select {
+                background-color: #2d3748;
                 color: #d1d5db;
-            }
-            
-            .responsive-table th, 
-            .responsive-table td {
                 border-color: #4b5563;
             }
             
-            .table-container::before {
-                background: linear-gradient(to right, transparent, rgba(55,65,81,0.7));
-            }
-            
-            .table-container::after {
-                color: #9ca3af;
+            .cargo-select option,
+            .color-select option {
+                background-color: #1f2937;
             }
         }
         
@@ -503,6 +533,8 @@
                                     <th>EMPRESA</th>
                                     <th>VIGENCIA</th>
                                     <th>OBS-COLOR CREDENCIAL</th>
+                                    <th>OTROS</th>
+                                    <th>EMAIL</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -511,20 +543,68 @@
                                     <td>12345678-9</td>
                                     <td>CAMILA GRACIELA</td>
                                     <td>LEYTON MONTENEGRO</td>
-                                    <td>GUARDIA DE SEGURIDAD</td>
+                                    <td>
+                                        <select class="cargo-select bg-white border rounded px-2 py-1 text-sm w-full">
+                                            <option selected>GUARDIA DE SEGURIDAD</option>
+                                            <option>CONSERJE</option>
+                                            <option>VIGILANTE PRIVADO</option>
+                                            <option>ASESOR DE SEGURIDAD</option>
+                                            <option>CAPACITADOR</option>
+                                            <option>ENCARGADO DE SEGURIDAD</option>
+                                            <option>JEFE DE SEGURIDAD</option>
+                                            <option>SUPERVISOR</option>
+                                            <option>TECNICO</option>
+                                            <option>TECNICO INDEPENDIENTE</option>
+                                            <option>TECNICO DE C.C.T.V. Y ALARMA</option>
+                                            <option>TECNICO A.T.M.</option>
+                                            <option>INSTALADOR TECNICO</option>
+                                        </select>
+                                    </td>
                                     <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
+                                    <td>31-10-2027</td>
+                                    <td>
+                                        <select class="color-select bg-white border rounded px-2 py-1 text-sm w-full">
+                                            <option selected>BLANCO</option>
+                                            <option>AZUL</option>
+                                            <option>GRIS</option>
+                                        </select>
+                                    </td>
                                     <td></td>
+                                    <td>camilaleyton@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <td>COQUIMBO</td>
-                                    <td>12345678-8</td>
+                                    <td>15524524-5</td>
                                     <td>DANIEL ENRIQUE</td>
                                     <td>VEGA CHAVEZ</td>
-                                    <td>CONSERJE</td>
+                                    <td>
+                                        <select class="cargo-select bg-white border rounded px-2 py-1 text-sm w-full">
+                                            <option>GUARDIA DE SEGURIDAD</option>
+                                            <option selected>CONSERJE</option>
+                                            <option>VIGILANTE PRIVADO</option>
+                                            <option>ASESOR DE SEGURIDAD</option>
+                                            <option>CAPACITADOR</option>
+                                            <option>ENCARGADO DE SEGURIDAD</option>
+                                            <option>JEFE DE SEGURIDAD</option>
+                                            <option>SUPERVISOR</option>
+                                            <option>TECNICO</option>
+                                            <option>TECNICO INDEPENDIENTE</option>
+                                            <option>TECNICO DE C.C.T.V. Y ALARMA</option>
+                                            <option>TECNICO A.T.M.</option>
+                                            <option>INSTALADOR TECNICO</option>
+                                        </select>
+                                    </td>
                                     <td>ALTA SEGURIDAD S.A.</td>
-                                    <td>31/10/2027</td>
+                                    <td>23/05/2026</td>
+                                    <td>
+                                        <select class="color-select bg-white border rounded px-2 py-1 text-sm w-full">
+                                            <option selected>BLANCO</option>
+                                            <option>AZUL</option>
+                                            <option>GRIS</option>
+                                        </select>
+                                    </td>
                                     <td></td>
+                                    <td>danielvega@gmail.com</td>
                                 </tr>
                             </tbody>
                         </table>
