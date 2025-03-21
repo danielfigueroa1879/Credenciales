@@ -389,67 +389,12 @@
             }
         }
         
-        /* Estilos específicos para impresión */
+        /* Estilos específicos para impresión - Solo para foto.jpg */
         @media print {
-            body {
-                background-color: white !important;
-                color: black !important;
-            }
-            
-            .card-container {
-                box-shadow: none !important;
-                animation: none !important;
-                max-width: 100% !important;
-            }
-            
-            /* Ajustar tamaños de imágenes para impresión */
-            .photo-example {
-                width: 20% !important;
+            /* Solo reducir el tamaño de la imagen foto.jpg */
+            img[src*="foto.jpg"] {
+                width: 15% !important;
                 height: auto !important;
-            }
-            
-            .valores-example {
-                width: 25% !important;
-                height: auto !important;
-            }
-            
-            /* Ocultar efectos de hover para impresión */
-            .photo-example:hover,
-            .valores-example:hover {
-                transform: none !important;
-                box-shadow: none !important;
-            }
-            
-            /* Asegurar que los QR codes no sean demasiado grandes */
-            .qr-code {
-                width: 60px !important;
-                height: 60px !important;
-                top: 10px !important;
-                right: 10px !important;
-            }
-            
-            /* Optimizar tabla para impresión */
-            .table-container {
-                overflow: visible !important;
-            }
-            
-            .responsive-table {
-                font-size: 9pt !important;
-            }
-            
-            .responsive-table th,
-            .responsive-table td {
-                padding: 5px !important;
-            }
-            
-            /* Ocultar botones de descarga e indicadores de scroll */
-            .download-btn {
-                display: none !important;
-            }
-            
-            .table-container::after,
-            .table-container::before {
-                display: none !important;
             }
         }
     </style>
