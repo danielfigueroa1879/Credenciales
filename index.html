@@ -391,12 +391,14 @@
         
         /* Estilos específicos para impresión - Para foto.jpg, código QR y tabla */
         @media print {
-            /* Aumentar más el tamaño de la imagen foto.jpg */
+            /* Aumentar el tamaño de la imagen foto.jpg y alinearla a la izquierda */
             img[src*="foto.jpg"] {
                 width: 45% !important;
                 height: auto !important;
-                margin: 0 auto !important;
-                display: block !important;
+                margin: 0 !important; /* Quitar margen automático */
+                display: inline-block !important; /* Cambiar a inline-block */
+                float: left !important; /* Alinear a la izquierda */
+                margin-right: 20px !important; /* Añadir margen derecho */
             }
             
             /* Aumentar más el código QR para impresión */
