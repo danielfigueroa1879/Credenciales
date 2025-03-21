@@ -389,12 +389,18 @@
             }
         }
         
-        /* Estilos específicos para impresión - Solo para foto.jpg */
+        /* Estilos específicos para impresión - Solo para foto.jpg y el código QR */
         @media print {
-            /* Solo reducir el tamaño de la imagen foto.jpg */
+            /* Ajustar el tamaño de la imagen foto.jpg */
             img[src*="foto.jpg"] {
-                width: 15% !important;
+                width: 25% !important;
                 height: auto !important;
+            }
+            
+            /* Hacer el código QR más pequeño para impresión */
+            .qr-code {
+                width: 40px !important;
+                height: 40px !important;
             }
         }
     </style>
