@@ -138,11 +138,21 @@
                 margin: 12px 0 !important;
             }
             
+            /* Asegurar que los botones tengan el mismo tamaño en móvil */
+            .excel-btn, .indep-btn {
+                width: 180px !important;
+                text-align: center !important;
+                min-width: 180px !important;
+                max-width: 180px !important;
+                box-sizing: border-box !important;
+            }
+            
             /* Ajustes para imágenes en móvil */
             .photo-example {
                 width: 66% !important;
                 height: auto;
-                margin: 0 auto;
+                margin-left: 0 !important;
+                margin-right: auto !important;
                 display: block;
             }
             
@@ -181,6 +191,14 @@
                 white-space: nowrap !important;
                 font-size: 1rem !important; /* Aumentado a 1rem */
                 padding: 10px 16px !important; /* Aumentado para mejor toque en modo oscuro */
+            }
+            
+            /* Consistencia en modo oscuro para botones */
+            .excel-btn, .indep-btn {
+                width: 180px !important;
+                text-align: center !important;
+                min-width: 180px !important;
+                max-width: 180px !important;
             }
             
             /* Ajustes adicionales para modo oscuro */
@@ -456,7 +474,8 @@
                             <img 
                                 src="https://github.com/danielfigueroa1879/Credenciales/raw/17337cdf6fb8b4e03149a37a2870c64e04601bca/foto.jpg" 
                                 alt="Ejemplo de Fotografía" 
-                                class="photo-example w-2/3 md:w-1/4 mb-2"
+                                class="photo-example w-2/3 md:w-1/4 mb-2 ml-0" 
+                                style="margin-left: 0; display: block;"
                             >
                         </div>
                         <div class="flex space-x-2 mt-2">
@@ -511,10 +530,10 @@
                         </table>
                     </div>
                     <div class="flex flex-wrap justify-center items-center space-x-8 md:space-x-24">
-                        <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-4 mb-4">
+                        <a href="https://dal5.short.gy/Cr3d" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded mt-4 mb-4 excel-btn">
                             Descargar Excel
                         </a>
-                        <a href="https://dal5.short.gy/Ind" target="_blank" class="download-btn bg-blue-500 hover:bg-blue-600 text-white font-bold rounded mt-4 mb-4">
+                        <a href="https://dal5.short.gy/Ind" target="_blank" class="download-btn bg-blue-500 hover:bg-blue-600 text-white font-bold rounded mt-4 mb-4 indep-btn">
                             Cred. Independiente
                         </a>
                     </div>
