@@ -389,36 +389,18 @@
             }
         }
         
-        /* Estilos específicos para impresión - Para foto.jpg, código QR y tabla */
+        /* Estilos específicos para impresión - Solo para foto.jpg y el código QR */
         @media print {
-            /* Aumentar el tamaño de la imagen foto.jpg y alinearla a la izquierda */
+            /* Ajustar el tamaño de la imagen foto.jpg */
             img[src*="foto.jpg"] {
-                width: 45% !important;
+                width: 35% !important;
                 height: auto !important;
-                margin: 0 !important; /* Quitar margen automático */
-                display: inline-block !important; /* Cambiar a inline-block */
-                float: left !important; /* Alinear a la izquierda */
-                margin-right: 20px !important; /* Añadir margen derecho */
             }
             
-            /* Aumentar más el código QR para impresión */
+            /* Hacer el código QR más grande para impresión */
             .qr-code {
-                width: 80px !important;
-                height: 80px !important;
-            }
-            
-            /* Reducir la tabla a la mitad de su tamaño */
-            .responsive-table {
-                font-size: 7pt !important;
-                transform: scale(0.5) !important;
-                transform-origin: top left !important;
-                width: 200% !important; /* Compensar la escala */
-                margin-bottom: 30px !important; /* Espacio para compensar */
-            }
-            
-            .table-container {
-                overflow: visible !important;
-                max-width: 50% !important;
+                width: 60px !important;
+                height: 60px !important;
             }
         }
     </style>
