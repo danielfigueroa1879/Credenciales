@@ -103,16 +103,20 @@
                 font-size: 14px; /* Reducido de 16px a 14px */
                 color: #374151;
             }
-            /* QR Code adaptado para móviles - más pequeño */
+            /* QR Code adaptado para móviles - más pequeño y ubicación ajustada */
             .qr-code-footer {
                 width: 60px;
                 height: 60px;
                 border-radius: 4px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 padding: 2px;
-                margin-top: -10px; /* Un valor diferente para móviles */
+                margin-top: 0 !important; /* Anula el margen para subir el QR en móviles */
             }
             
+            /* Ajustar posición del QR en móviles */
+            .mt-4.flex.justify-between {
+                align-items: center !important; /* Centra verticalmente en móviles */
+            }
             /* Título restaurado al tamaño original para móviles */
             h1.main-title {
                 font-size: 1.3rem;
@@ -619,18 +623,18 @@
                     </div>
                 </div>
                 <!-- Imagen de valores y QR con margen ajustable -->
-                <div class="mt-4 flex flex-wrap justify-between items-start">
+                <div class="mt-4 flex flex-wrap justify-between items-start md:items-start">
                     <img 
                         src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
                         alt="Valores de Pago" 
                         class="valores-example w-1/2 md:w-1/4 mb-2"
                     >
-                    <a href="https://dal5.short.gy/Cr3d" target="_blank">
+                    <a href="https://dal5.short.gy/Cr3d" target="_blank" class="mt-0 md:mt-0">
                         <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
                              alt="Código QR" 
                              class="qr-code-footer"
                              title="Escanea para más información"
-                             style="margin-top: 250px;"> <!-- Aquí puedes ajustar los píxeles -->
+                             style="margin-top: 20px;"> <!-- Para pantallas grandes -->
                     </a>
                 </div>
             </div>
