@@ -501,11 +501,20 @@
                 height: auto !important;
             }
             
-            /* Hacer el código QR más grande para impresión y posicionarlo a 250px */
+            /* Posicionamiento absoluto para el QR en impresión */
+            .mt-4.flex.justify-between {
+                position: relative !important;
+                height: 500px !important; /* Crear espacio suficiente */
+            }
+            
+            /* Hacer el código QR más grande para impresión y posicionarlo absolutamente */
             .qr-code-footer {
                 width: 80px !important;
                 height: 80px !important;
-                margin-top: 450px !important; /* Aumentado de 350px a 450px para bajar el QR aún más en la impresión */
+                position: absolute !important;
+                top: 450px !important; /* Posición fija desde la parte superior */
+                right: 30px !important; /* Posición desde la derecha */
+                margin-top: 0 !important; /* Anular cualquier margen */
             }
             
             /* NUEVO: Reducir la tabla al 40% de su tamaño para impresión */
