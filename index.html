@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tramitar Credencial Empresa</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
@@ -57,21 +58,19 @@
                 opacity: 1;
             }
         }
-        /* Estilos para el QR Code - MODIFICADO PARA PC */
-        .qr-code {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px; /* Aumentado de 60px a 100px */
-            height: 100px; /* Aumentado de 60px a 100px */
-            z-index: 10;
+        
+        /* Estilos para el QR Code - MODIFICADO */
+        .qr-code-footer {
+            width: 100px;
+            height: 100px;
             transition: all 0.3s ease;
-            border-radius: 8px; /* Aumentado de 6px a 8px */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra mejorada */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             background-color: white;
-            padding: 4px; /* Aumentado de 3px a 4px */
+            padding: 4px;
         }
-        /* QR Code en el header para móviles */
+        
+        /* Header para móviles */
         .header-container {
             position: relative;
             display: flex;
@@ -104,12 +103,10 @@
                 font-size: 14px; /* Reducido de 16px a 14px */
                 color: #374151;
             }
-            /* QR Code restaurado al tamaño original para móviles */
-            .qr-code {
-                width: 40px;
-                height: 40px;
-                top: 8px;
-                right: 8px;
+            /* QR Code adaptado para móviles */
+            .qr-code-footer {
+                width: 80px;
+                height: 80px;
                 border-radius: 4px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 padding: 2px;
@@ -117,7 +114,6 @@
             /* Título restaurado al tamaño original para móviles */
             h1.main-title {
                 font-size: 1.3rem;
-                padding-right: 40px; /* Espacio para el QR code */
                 letter-spacing: -0.5px; /* Reduce el espaciado entre letras */
             }
             h3 {
@@ -445,7 +441,7 @@
             }
             
             /* Hacer el código QR más grande para impresión */
-            .qr-code {
+            .qr-code-footer {
                 width: 80px !important;
                 height: 80px !important;
             }
@@ -620,22 +616,20 @@
                         Teléfono OS.10.: +562512651024
                     </div>
                 </div>
-                <!-- Imagen de valores -->
-                <!-- Imagen de valores y QR Code -->
-           <div class="mt-4 flex items-center justify-between">
-             <img 
-                    src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
-                    alt="Valores de Pago" 
-                    class="valores-example w-1/2 md:w-1/4 mb-2"
-             >
-             <a href="https://dal5.short.gy/Cr3d" target="_blank">
-                    <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
-                         alt="Código QR" 
-                         class="qr-code"
-                         title="Escanea para más información">
-             </a>
-            </div>
-                               
+                <!-- Imagen de valores y código QR -->
+                <div class="mt-4 flex justify-between items-center">
+                    <img 
+                        src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
+                        alt="Valores de Pago" 
+                        class="valores-example w-1/2 md:w-1/4 mb-2"
+                    >
+                    <a href="https://dal5.short.gy/Cr3d" target="_blank">
+                        <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
+                             alt="Código QR" 
+                             class="qr-code-footer"
+                             title="Escanea para más información">
+                    </a>
+                </div>
             </div>
         </div>
         
