@@ -103,19 +103,33 @@
                 font-size: 14px; /* Reducido de 16px a 14px */
                 color: #374151;
             }
-            /* QR Code adaptado para móviles - más pequeño y ubicación ajustada */
+            /* QR Code adaptado para móviles con posición ajustable */
             .qr-code-footer {
                 width: 60px;
                 height: 60px;
                 border-radius: 4px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 padding: 2px;
-                margin-top: 0 !important; /* Anula el margen para subir el QR en móviles */
+                margin-top: 40px !important; /* Ajusta este valor para bajar o subir el QR en móviles */
             }
             
-            /* Ajustar posición del QR en móviles */
+            /* Quitar alineación centrada para permitir margen personalizado */
             .mt-4.flex.justify-between {
-                align-items: center !important; /* Centra verticalmente en móviles */
+                align-items: flex-start !important; 
+            }
+            /* QR Code adaptado para móviles con posición ajustable */
+            .qr-code-footer {
+                width: 60px;
+                height: 60px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 2px;
+                /* El margen móvil se define en línea */
+            }
+            
+            /* Quitar alineación centrada para permitir margen personalizado */
+            .mt-4.flex.justify-between {
+                align-items: flex-start !important; 
             }
             /* Título restaurado al tamaño original para móviles */
             h1.main-title {
@@ -634,7 +648,7 @@
                              alt="Código QR" 
                              class="qr-code-footer"
                              title="Escanea para más información"
-                             style="margin-top: 250px;"> <!-- Para pantallas grandes -->
+                             style="margin-top: 250px; /* Para pantallas grandes */"> 
                     </a>
                 </div>
             </div>
