@@ -47,6 +47,8 @@
             background-color: #FFFFEF;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Asegura posición relativa para el logo */
+            padding-top: 60px; /* Espacio adicional para el título */
         }
         @keyframes slideUp {
             from {
@@ -86,6 +88,7 @@
             text-align: center;
             margin-bottom: 0.5rem;
             letter-spacing: 0.5px; /* Mejor espaciado */
+            margin-top: 25px; /* Espacio adicional en la parte superior para el título */
         }
         
         /* Mantener los títulos y encabezados como están */
@@ -95,6 +98,21 @@
 
         h3, h4 {
             font-weight: 600; /* Mantener los encabezados en negrita */
+        }
+        
+        /* Logo OS10 */
+        .logo-os10 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-os10:hover {
+            opacity: 1;
         }
         
         @media (max-width: 640px) {
@@ -135,13 +153,14 @@
             h1.main-title {
                 font-size: 1.3rem;
                 letter-spacing: -0.5px; /* Reduce el espaciado entre letras */
+                margin-top: 35px; /* Más espacio en móvil */
             }
             h3 {
                 font-size: 1.2rem;
             }
             .card-container {
                 padding: 16px;
-                padding-top: 20px; /* Mayor espacio superior */
+                padding-top: 60px; /* Mayor espacio superior */
             }
             ul li {
                 font-size: 14px; /* Reducido de 16px a 14px */
@@ -196,6 +215,13 @@
             /* Texto en minúscula para todo el contenido móvil */
             .text-sm {
                 font-size: 14px !important; /* Reducido de 16px a 14px */
+            }
+            
+            /* Logo OS10 en móvil */
+            .logo-os10 {
+                width: 80px;
+                top: 10px;
+                left: 10px;
             }
         }
         
@@ -482,7 +508,14 @@
     </style>
 </head>
 <body class="text-gray-800">
-    <div class="card-container bg-white rounded-xl shadow-md relative">         
+    <div class="card-container bg-white rounded-xl shadow-md relative">
+        <!-- Logo OS10 -->
+        <a href="https://www.zosepcar.cl/OS10.php" target="_blank">
+            <img src="https://github.com/danielfigueroa1879/Credenciales/blob/592cdbb028ff7da3345c11f9f0f06e0900ea0d37/logo-os10.png?raw=true" 
+                 alt="Logo OS10" 
+                 class="logo-os10">
+        </a>
+        
         <h1 class="main-title">TRAMITAR CREDENCIAL EMPRESA</h1>
         <div class="border-l-4 border-yellow-500 pl-4 mb-6">
             <h3 class="font-bold mb-2">REQUISITOS PARA SOLICITUD DE CREDENCIAL</h3>
