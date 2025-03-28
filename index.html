@@ -37,13 +37,6 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        /* Botones DPI más angostos */
-        .dpi-btn {
-            width: 20% !important; /* Más angosto que el 25% original */
-            min-width: 160px;
-        }
-        
         .card-container {
             max-width: 950px; /* Ligeramente más ancho */
             margin: 0 auto;
@@ -192,10 +185,12 @@
                 margin: 12px 0 !important;
             }
             
-            /* DPI buttons en móvil */
-            .dpi-btn {
-                width: 160px !important; /* Ancho fijo para móvil */
-                min-width: 160px !important;
+            /* Botones DPI en móvil - MODIFICADO para ser un poco más anchos */
+            .download-btn.dpi-btn {
+                width: 175px !important; /* Ajustado a un ancho intermedio */
+                min-width: 175px !important;
+                max-width: 175px !important;
+                text-align: center;
             }
             
             /* Asegurar que los botones tengan el mismo tamaño en móvil */
@@ -265,10 +260,11 @@
                 padding: 10px 16px !important; /* Aumentado para mejor toque en modo oscuro */
             }
             
-            /* DPI buttons en modo oscuro móvil */
-            .dpi-btn {
-                width: 160px !important;
-                min-width: 160px !important;
+            /* Botones DPI en modo oscuro móvil - MODIFICADO */
+            .download-btn.dpi-btn {
+                width: 175px !important; /* Ajustado a un ancho intermedio */
+                min-width: 175px !important;
+                max-width: 175px !important;
             }
             
             /* Consistencia en modo oscuro para botones */
