@@ -178,11 +178,26 @@
                 font-size: 14px; /* Reducido de 16px a 14px */
             }
             .download-btn {
-                font-size: 1rem !important; /* Aumentado de 0.8rem a 1rem */
-                padding: 8px 12px !important; /* Aumentado de 6px 10px a 8px 12px */
+                font-size: 0.85rem !important; /* Tamaño igual al botón "Descargar Solicitud" */
+                padding: 8px 12px !important;
                 width: auto !important;
-                min-width: 180px !important; /* Aumentado de 160px a 180px */
+                min-width: 25% !important; /* Ancho igual al botón "Descargar Solicitud" */
+                max-width: 25% !important;
                 margin: 12px 0 !important;
+                text-align: center !important;
+            }
+            
+            /* Asegurar que los botones de conversión tengan el mismo tamaño */
+            .conversion-btn {
+                width: 25% !important;
+                text-align: center !important;
+                min-width: 25% !important;
+                max-width: 25% !important;
+                box-sizing: border-box !important;
+                white-space: normal !important; /* Permitir salto de línea */
+                font-size: 0.85rem !important;
+                height: auto !important;
+                line-height: 1.2 !important;
             }
             
             /* Asegurar que los botones tengan el mismo tamaño en móvil */
@@ -246,10 +261,19 @@
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
             .download-btn {
                 width: auto !important;
-                min-width: 180px !important; /* Aumentado de 160px a 180px */
+                min-width: 25% !important;
                 white-space: nowrap !important;
-                font-size: 1rem !important; /* Aumentado a 1rem */
-                padding: 10px 16px !important; /* Aumentado para mejor toque en modo oscuro */
+                font-size: 0.85rem !important;
+                padding: 8px 12px !important;
+            }
+            
+            /* Botones de conversión en modo oscuro */
+            .conversion-btn {
+                width: 25% !important;
+                text-align: center !important;
+                min-width: 25% !important;
+                max-width: 25% !important;
+                font-size: 0.85rem !important;
             }
             
             /* Consistencia en modo oscuro para botones */
@@ -311,9 +335,8 @@
                 font-size: 14px; /* Aumentado de 12px a 14px */
                 color: #6b7280;
             }
-        }
-        
-        .responsive-table {
+        }    
+      .responsive-table {
             width: 100%; /* Cambiado a 100% para mejor ajuste */
             border-collapse: collapse;
             margin-bottom: 8px;
@@ -582,11 +605,11 @@
                             </div>
                            <div class="flex flex-col space-y-3 mt-2">
                         
-                        <a href="https://dal5.short.gy/0" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
-                        1. CONVERTIR A 300 DPI 
+                        <a href="https://dal5.short.gy/0" target="_blank" class="download-btn conversion-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
+                        1. DPI 300
                         </a>
-                        <a href="https://dal5.short.gy/j" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
-                        2.- CONVERTIR A 300 DPI O PPP
+                        <a href="https://dal5.short.gy/j" target="_blank" class="download-btn conversion-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
+                        2. PPP 300
                         </a>
                         <p class="text-sm italic mt-1">modificar los DPI o PPP de su imagen</p>
                         </div>
@@ -742,3 +765,6 @@
     </footer>
 </body>
 </html>
+      
+      
+   
