@@ -37,6 +37,13 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Botones DPI más angostos */
+        .dpi-btn {
+            width: 20% !important; /* Más angosto que el 25% original */
+            min-width: 160px;
+        }
+        
         .card-container {
             max-width: 950px; /* Ligeramente más ancho */
             margin: 0 auto;
@@ -185,6 +192,12 @@
                 margin: 12px 0 !important;
             }
             
+            /* DPI buttons en móvil */
+            .dpi-btn {
+                width: 160px !important; /* Ancho fijo para móvil */
+                min-width: 160px !important;
+            }
+            
             /* Asegurar que los botones tengan el mismo tamaño en móvil */
             .excel-btn, .indep-btn {
                 width: 180px !important;
@@ -250,6 +263,12 @@
                 white-space: nowrap !important;
                 font-size: 1rem !important; /* Aumentado a 1rem */
                 padding: 10px 16px !important; /* Aumentado para mejor toque en modo oscuro */
+            }
+            
+            /* DPI buttons en modo oscuro móvil */
+            .dpi-btn {
+                width: 160px !important;
+                min-width: 160px !important;
             }
             
             /* Consistencia en modo oscuro para botones */
@@ -582,11 +601,11 @@
                             </div>
                            <div class="flex flex-col space-y-3 mt-2">
                         
-                        <a href="https://dal5.short.gy/0" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
+                        <a href="https://dal5.short.gy/0" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
                         1. CONVERTIR A 300 DPI 
                         </a>
-                        <a href="https://dal5.short.gy/j" target="_blank" class="download-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
-                        2. CONVERTIR A 300 DPI
+                        <a href="https://dal5.short.gy/j" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
+                        2.- CONVERTIR A 300 DPI O PPP
                         </a>
                         <p class="text-sm italic mt-1">modificar los DPI o PPP de su imagen</p>
                         </div>
