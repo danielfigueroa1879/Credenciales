@@ -82,7 +82,7 @@
         }
         /* Título principal - MODIFICADO PARA PC */
         h1.main-title {
-            font-size: 1.9rem; /* Aumentado para PC */
+            font-size: 1.8rem; /* Aumentado para PC */
             font-weight: bold;
             color: #EAB308; /* yellow-500 */
             text-align: center;
@@ -177,36 +177,40 @@
             ul li {
                 font-size: 14px; /* Reducido de 16px a 14px */
             }
+            
+            /* MODIFICADO: Botones más anchos en móvil */
             .download-btn {
-                font-size: 0.85rem !important; /* Tamaño igual al botón "Descargar Solicitud" */
+                font-size: 0.85rem !important; 
                 padding: 8px 12px !important;
-                width: auto !important;
-                min-width: 25% !important; /* Ancho igual al botón "Descargar Solicitud" */
-                max-width: 25% !important;
+                width: auto !important; 
+                min-width: 200px !important; /* Cambiado de 25% a 200px */
+                max-width: 100% !important; /* Cambiado de 25% a 100% */
                 margin: 12px 0 !important;
                 text-align: center !important;
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
-            
-            /* Asegurar que los botones de conversión tengan el mismo tamaño */
+/* MODIFICADO: Botones de conversión más anchos */
             .conversion-btn {
-                width: 25% !important;
+                width: auto !important; /* Cambiado de 25% a auto */
                 text-align: center !important;
-                min-width: 25% !important;
-                max-width: 25% !important;
+                min-width: 200px !important; /* Cambiado de 25% a 200px */
+                max-width: 100% !important; /* Cambiado de 25% a 100% */
                 box-sizing: border-box !important;
                 white-space: normal !important; /* Permitir salto de línea */
                 font-size: 0.85rem !important;
                 height: auto !important;
                 line-height: 1.2 !important;
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
             
             /* Asegurar que los botones tengan el mismo tamaño en móvil */
             .excel-btn, .indep-btn {
-                width: 180px !important;
+                width: auto !important; /* Cambiado de 180px a auto */
                 text-align: center !important;
-                min-width: 180px !important;
-                max-width: 180px !important;
+                min-width: 200px !important; /* Cambiado de 180px a 200px */
+                max-width: 100% !important; /* Añadido */
                 box-sizing: border-box !important;
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
             
             /* Ajustes para imágenes en móvil */
@@ -218,10 +222,10 @@
                 display: block;
             }
             
-            /* Ajustar tamaño de texto en tabla para móvil */
+            /* Aumentar tamaño de texto en tabla para móvil */
             .responsive-table th,
             .responsive-table td {
-                font-size: 0.75rem; /* Reducido de 0.9rem a 0.75rem para móvil */
+                font-size: 0.9rem; /* Reducido de 1rem a 0.9rem */
             }
             
             /* Aumentar tamaño del indicador de desplazamiento */
@@ -261,27 +265,31 @@
         @media (prefers-color-scheme: dark) and (max-width: 640px) {
             .download-btn {
                 width: auto !important;
-                min-width: 25% !important;
+                min-width: 200px !important; /* Cambiado de 25% a 200px */
+                max-width: 100% !important; /* Cambiado de 25% a 100% */
                 white-space: nowrap !important;
                 font-size: 0.85rem !important;
                 padding: 8px 12px !important;
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
             
             /* Botones de conversión en modo oscuro */
             .conversion-btn {
-                width: 25% !important;
+                width: auto !important; /* Cambiado de 25% a auto */
                 text-align: center !important;
-                min-width: 25% !important;
-                max-width: 25% !important;
+                min-width: 200px !important; /* Cambiado de 25% a 200px */
+                max-width: 100% !important; /* Cambiado de 25% a 100% */
                 font-size: 0.85rem !important;
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
             
             /* Consistencia en modo oscuro para botones */
             .excel-btn, .indep-btn {
-                width: 180px !important;
+                width: auto !important; /* Cambiado de 180px a auto */
                 text-align: center !important;
-                min-width: 180px !important;
-                max-width: 180px !important;
+                min-width: 200px !important; /* Cambiado de 180px a 200px */
+                max-width: 100% !important; /* Añadido */
+                display: block !important; /* Asegura que ocupe toda la línea */
             }
             
             /* Ajustes adicionales para modo oscuro */
@@ -392,8 +400,8 @@
                 z-index: 5;
             }
         }
-        
-        /* Estilos para los selectores en la tabla */
+      
+      /* Estilos para los selectores en la tabla */
         .cargo-select,
         .color-select {
             appearance: none;
@@ -606,10 +614,10 @@
                            <div class="flex flex-col space-y-3 mt-2">
                         
                         <a href="https://dal5.short.gy/0" target="_blank" class="download-btn conversion-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
-                        1. DPI 300
+                        1. CONVERTIR 300 DPI
                         </a>
                         <a href="https://dal5.short.gy/j" target="_blank" class="download-btn conversion-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
-                        2. PPP 300
+                        2. CONVERTIR 300 DPI
                         </a>
                         <p class="text-sm italic mt-1">modificar los DPI o PPP de su imagen</p>
                         </div>
@@ -620,7 +628,8 @@
                         <h4 class="font-semibold mb-2">Formato Excel:</h4>
                         <ul class="list-disc pl-5 text-sm">
                             <li class="mb-1">Nombre del archivo: RUT del agente sin puntos, guión medio y dígito verificador (ej: 12345678-9).</li>
-                            <li class="mb-1">Estructura obligatoria: <strong>FORMATO ESTÁNDAR DE EXCEL PARA EMPRESAS. Datos de los agentes</strong>.</li>
+                            <li class
+                                <li class="mb-1">Estructura obligatoria: <strong>FORMATO ESTÁNDAR DE EXCEL PARA EMPRESAS. Datos de los agentes</strong>.</li>
                         </ul>
                         <div class="table-container">
                             <table class="responsive-table">
