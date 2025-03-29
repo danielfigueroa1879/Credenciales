@@ -8,9 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Base */
         body {
             font-family: 'Poppins', sans-serif;
-            font-weight: 400; /* Cambiado de ExtraLight a Regular */
+            font-weight: 400;
             margin: 0;
             padding: 20px;
             background-color: #f0f2f5;
@@ -18,30 +19,14 @@
             line-height: 1.5;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        /* Hacer que el texto regular en elementos de lista y párrafos sea más visible en PC */
+
         .text-sm, p, li, td {
-            font-weight: 400; /* Peso normal */
+            font-weight: 400;
         }
-        
-        .download-btn {
-            transition: all 0.3s ease;
-            margin: 16px 0;
-            padding: 08px 10px;
-            font-size: 0.9rem;
-            width: 25%;
-            display: inline-block;
-            white-space: nowrap; /* Evita que el texto se corte */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra por defecto */
-            border-radius: 7px !important;
-        }
-        .download-btn:hover {
-           transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hover */
-        }
-        
+
+        /* Contenedor Principal */
         .card-container {
-            max-width: 950px; /* Ligeramente más ancho */
+            max-width: 950px;
             margin: 0 auto;
             padding: 20px;
             transition: all 0.3s ease;
@@ -50,9 +35,10 @@
             background-color: #FFFFEF;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative; /* Asegura posición relativa para el logo */
-            padding-top: 40px; /* Espacio reducido para el título */
+            position: relative;
+            padding-top: 40px;
         }
+
         @keyframes slideUp {
             from {
                 transform: translateY(20%);
@@ -63,8 +49,94 @@
                 opacity: 1;
             }
         }
+
+        /* Header y Logo */
+        .header-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1.main-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #EAB308;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            padding-left: 60px;
+        }
+
+        h3, h4 {
+            font-weight: 600;
+        }
+
+        .logo-os10 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 70px;
+            height: auto;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-os10:hover {
+            opacity: 1;
+        }
+
+        .content-container {
+            margin-top: 35px;
+        }
+
+        /* Estilos de Botones - MODIFICADOS para PC */
+        .download-btn {
+            transition: all 0.3s ease;
+            margin: 16px 0;
+            padding: 14px 16px; /* Engrosado verticalmente para PC */
+            font-size: 0.95rem;
+            width: 25%;
+            display: inline-block;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 7px !important;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sombras específicas para tipos de botones */
+        .download-btn.bg-yellow-500 {
+            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
+        }
         
-        /* Estilos para el QR Code - MODIFICADO */
+        .download-btn.bg-yellow-500:hover {
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
+        }
+        
+        .download-btn.bg-blue-500 {
+            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
+        }
+        
+        .download-btn.bg-blue-500:hover {
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.4);
+        }
+        
+        .download-btn.dpi-btn {
+            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
+            text-align: center;
+        }
+        
+        .download-btn.dpi-btn:hover {
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Imágenes y Miniaturas */
         .qr-code-footer {
             width: 80px;
             height: 80px;
@@ -74,282 +146,44 @@
             background-color: white;
             padding: 4px;
         }
-        
-        /* Header para móviles */
-        .header-container {
+
+        .photo-example,
+        .valores-example,
+        .pdf-thumbnail {
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+            border: 1px solid #FFD700;
+            margin-bottom: 10px;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        /* Título principal - MODIFICADO PARA PC */
-        h1.main-title {
-            font-size: 1.8rem; /* Aumentado para PC */
-            font-weight: bold;
-            color: #EAB308; /* yellow-500 */
-            text-align: center;
-            margin-bottom: 1.5rem; /* Aumentado espacio debajo del título */
-            letter-spacing: 0.5px; /* Mejor espaciado */
-            margin-top: 15px; /* Reducido espacio sobre el título */
-            padding-left: 60px; /* Espacio adicional a la izquierda para no tapar el logo */
-        }
-        
-        /* Mantener los títulos y encabezados como están */
-        h1.main-title {
-            font-weight: bold; /* Mantener el peso original */
+            max-width: 100%;
         }
 
-        h3, h4 {
-            font-weight: 600; /* Mantener los encabezados en negrita */
+        .photo-example:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-        
-        /* Logo OS10 - Reducido de tamaño */
-        .logo-os10 {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 70px; /* Reducido de 100px a 80px */
-            height: auto;
-            opacity: 0.5; /* Aumentada la transparencia de 0.7 a 0.5 */
-            transition: opacity 0.3s ease;
+
+        .valores-example:hover {
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
-        
-        .logo-os10:hover {
-            opacity: 1;
-        }
-        
-        /* Espacio adicional después del título */
-        .content-container {
-            margin-top: 35px; /* Aumentado de 20px a 35px para dar más espacio después del título */
-        }
-        
-        @media (max-width: 640px) {
-            body {
-                padding: 16px;
-                font-size: 14px; /* Reducido de 16px a 14px */
-                color: #374151;
-            }
-            /* QR Code adaptado para móviles con posición ajustable */
-            .qr-code-footer {
-                width: 60px;
-                height: 60px;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                padding: 2px;
-                margin-top: 200px !important; /* Ajusta este valor para bajar o subir el QR en móviles */
-            }
-            
-            /* Quitar alineación centrada para permitir margen personalizado */
-            .mt-4.flex.justify-between {
-                align-items: flex-start !important; 
-            }
-            /* QR Code adaptado para móviles con posición ajustable */
-            .qr-code-footer {
-                width: 60px;
-                height: 60px;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                padding: 2px;
-                /* El margen móvil se define en línea */
-            }
-            
-            /* Quitar alineación centrada para permitir margen personalizado */
-            .mt-4.flex.justify-between {
-                align-items: flex-start !important; 
-            }
-            /* Título restaurado al tamaño original para móviles */
-            /* Título con tamaño aumentado para móviles */
-            h1.main-title {
-                font-size: 1.6rem; /* Aumentado de 1.3rem a 1.6rem */
-                letter-spacing: -0.5px;
-                margin-top: 8px;
-                margin-bottom: 1.2rem;
-                padding-left: 65px;
-                text-align: center;
-                padding-right: 15px;
-                line-height: 1.2; /* Añadido para mejorar legibilidad */
-            }
-            h3 {
-                font-size: 1.2rem;
-            }
-            .card-container {
-                padding: 16px;
-                padding-top: 40px; /* Espacio reducido superior */
-            }
-            ul li {
-                font-size: 14px; /* Reducido de 16px a 14px */
-            }
-            .download-btn {
-                font-size: 1rem !important; /* Aumentado de 0.8rem a 1rem */
-                width: auto !important;
-                min-width: 180px !important; /* Aumentado de 160px a 180px */
-                margin: 12px 0 !important;
-                margin-left: 0 !important;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-            }
-            
-            /* Botones DPI en móvil - MODIFICADO para ser un poco más anchos */
-            .download-btn.dpi-btn {
-                width: 180px !important; /* Ajustado a un ancho intermedio */
-                min-width: 180px !important;
-                max-width: 180px !important;
-                font-weight: 900 !important;
-                margin-left: 0 !important;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-                
-            }
-            
-            /* Asegurar que los botones tengan el mismo tamaño en móvil */
-            .excel-btn, .indep-btn {
-                width: 180px !important;
-                max-width: 180px !important;
-                box-sizing: border-box !important;
-                font-weight: 900 !important;
-                margin-left: 0 !important;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-                
-            }
-            
-            /* Ajustes para imágenes en móvil */
-            .photo-example {
-                width: 66% !important;
-                height: auto;
-                margin-left: 0 !important;
-                margin-right: auto !important;
-                display: block;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-            }
-            
-            /* Aumentar tamaño de texto en tabla para móvil */
-            .responsive-table th,
-            .responsive-table td {
-                font-size: 0.9rem; /* Reducido de 1rem a 0.9rem */
-            }
-            
-            /* Aumentar tamaño del indicador de desplazamiento */
-            .table-container::after {
-                font-size: 14px; /* Aumentado de 12px a 14px */
-            }
-            
-            /* Aumentar tamaño de los enlaces de conversión */
-            .conversion-link {
-                font-size: 0.9rem !important; /* Reducido de 1rem a 0.9rem */
-            }
-            
-            /* Aumentar tamaño del texto en el footer */
-            footer {
-                font-size: 0.8rem; /* Aumentado de 0.75rem a 0.8rem */
-            }
-            
-            /* Texto en minúscula para todo el contenido móvil */
-            .text-sm {
-                font-size: 14px !important; /* Reducido de 16px a 14px */
-            }
-            
-            /* Logo OS10 en móvil */
-            .logo-os10 {
-                width: 60px; /* Reducido más en móvil */
-                top: 10px;
-                left: 10px;
-            }
-            
-            /* Contenedor de contenido en móvil */
-            .content-container {
-                margin-top: 25px; /* Aumentado de 15px a 25px para móviles */
-            }
-        }
-        
-        /* Modo oscuro móvil para botón de solicitud */
-        @media (prefers-color-scheme: dark) and (max-width: 640px) {
-            .download-btn {
-                width: 180px !important;
-                white-space: nowrap !important;
-                font-size: 1rem !important; /* Aumentado a 1rem */
-                padding: 8px 12px !important; /* Aumentado para mejor toque en modo oscuro */
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-            }
-            
-            /* Botones DPI en modo oscuro móvil - MODIFICADO */
-            .download-btn.dpi-btn {
-                width: 180px !important; /* Ajustado a un ancho intermedio */
-                min-width: 180px !important;
-                max-width: 180px !important;
-                text-align: left; !important;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-            }
-                    
-            /* Consistencia en modo oscuro para botones */
-            .excel-btn, .indep-btn {
-                width: 180px !important;
-                min-width: 180px !important;
-                max-width: 180px !important;
-                text-align: left !important;
-                padding-top: 14px !important;
-                padding-bottom: 14px !important;
-            }
-            
-            /* Ajustes adicionales para modo oscuro */
-            body {
-                font-size: 16px; /* Consistente con modo claro */
-            }
-            
-            .text-sm {
-                font-size: 16px !important; /* Aumentado */
-            }
-            
-            /* Mayor contraste para enlaces en modo oscuro */
-            .conversion-link {
-                font-size: 0.9rem !important; /* Reducido de 1rem a 0.9rem */
-                color: #FF6B6B !important; /* Rojo más brillante en modo oscuro */
-            }
-        }
-        
-        /* NUEVA CONFIGURACIÓN MEJORADA PARA LA TABLA EN MÓVIL */
+
+        /* Estilos de Tabla */
         .table-container {
             overflow-x: auto;
             margin-top: 24px;
-            -webkit-overflow-scrolling: touch; /* Para mejorar el desplazamiento en iOS */
-            scrollbar-width: thin; /* Barra de desplazamiento delgada en Firefox */
-            position: relative; /* Para el indicador de desplazamiento */
-            margin-bottom: 20px; /* Espacio para el texto de desplazamiento */
-        }
-        
-        /* Estilo para siempre mostrar la barra de desplazamiento en móvil */
-        @media (max-width: 640px) {
-            .table-container::-webkit-scrollbar {
-                -webkit-appearance: none;
-                height: 6px;
-            }
-            
-            .table-container::-webkit-scrollbar-thumb {
-                border-radius: 4px;
-                background-color: rgba(0, 0, 0, .5);
-                -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-            }
-            
-            /* Mostrar indicación de desplazamiento */
-            .table-container::after {
-                content: '←  desplaza horizontalmente  →'; /* cambiado a minúsculas */
-                display: block !important;
-                position: absolute;
-                bottom: -20px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                font-size: 14px; /* Aumentado de 12px a 14px */
-                color: #6b7280;
-            }
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            position: relative;
+            margin-bottom: 20px;
         }
         
         .responsive-table {
-            width: 100%; /* Cambiado a 100% para mejor ajuste */
+            width: 100%;
             border-collapse: collapse;
             margin-bottom: 8px;
         }
@@ -360,12 +194,12 @@
             padding: 12px;
             text-align: left;
             font-size: 0.9rem;
-            white-space: nowrap; /* Evita saltos de línea */
+            white-space: nowrap;
         }
         
         .responsive-table th {
             background-color: #f1f5f9;
-            position: sticky; /* Cabeceras fijas al desplazar */
+            position: sticky;
             top: 0;
             z-index: 10;
         }
@@ -382,29 +216,6 @@
         .responsive-table th:nth-child(9), .responsive-table td:nth-child(9) { min-width: 100px; } /* OTROS */
         .responsive-table th:nth-child(10), .responsive-table td:nth-child(10) { min-width: 180px; } /* EMAIL */
         
-        /* Estilos para móvil */
-        @media (max-width: 640px) {
-            .table-container {
-                margin-left: -16px; /* Extiende fuera del contenedor */
-                margin-right: -16px;
-                width: calc(100% + 32px);
-                padding: 0 16px; /* Añade padding horizontal */
-            }
-            
-            /* Indicador de desplazamiento horizontal siempre visible */
-            .table-container::before {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                width: 20px;
-                height: 100%;
-                background: linear-gradient(to right, transparent, rgba(255,255,255,0.7));
-                pointer-events: none;
-                z-index: 5;
-            }
-        }
-        
         /* Estilos para los selectores en la tabla */
         .cargo-select,
         .color-select {
@@ -420,8 +231,189 @@
             cursor: pointer;
         }
         
-        /* Modo oscuro para tabla y selectores */
+        /* Elementos adicionales */
+        .conversion-link {
+            color: #DC2626 !important;
+            font-weight: bold !important;
+        }
+        
+        .border-l-4 {
+            border-color: #FFD700 !important;
+        }
+        
+        .border-l-4:hover {
+            border-color: #FFA000 !important;
+        }
+        
+        .separator {
+            height: 1px;
+            background-color: #FFD700;
+            opacity: 0.3;
+            margin: 24px 0;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 640px) {
+            body {
+                padding: 16px;
+                font-size: 14px;
+                color: #374151;
+            }
+            
+            h1.main-title {
+                font-size: 1.6rem;
+                letter-spacing: -0.5px;
+                margin-top: 8px;
+                margin-bottom: 1.2rem;
+                padding-left: 65px;
+                text-align: center;
+                padding-right: 15px;
+                line-height: 1.2;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .card-container {
+                padding: 16px;
+                padding-top: 40px;
+            }
+            
+            ul li {
+                font-size: 14px;
+            }
+            
+            .text-sm {
+                font-size: 14px !important;
+            }
+            
+            .logo-os10 {
+                width: 60px;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .content-container {
+                margin-top: 25px;
+            }
+            
+            /* Botones en móvil */
+            .download-btn {
+                font-size: 1rem !important;
+                width: auto !important;
+                min-width: 180px !important;
+                margin: 12px 0 !important;
+                margin-left: 0 !important;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+            }
+            
+            .download-btn:hover {
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+            }
+            
+            .download-btn.dpi-btn, .excel-btn, .indep-btn {
+                width: 180px !important;
+                min-width: 180px !important;
+                max-width: 180px !important;
+                font-weight: 900 !important;
+                margin-left: 0 !important;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
+            }
+            
+            .download-btn.dpi-btn:hover, .excel-btn:hover, .indep-btn:hover {
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35) !important;
+            }
+            
+            /* QR Code en móvil */
+            .qr-code-footer {
+                width: 60px;
+                height: 60px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 2px;
+                margin-top: 200px !important;
+            }
+            
+            /* Ajustes para imágenes en móvil */
+            .photo-example {
+                width: 66% !important;
+                height: auto;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                display: block;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+            
+            /* Tabla en móvil */
+            .table-container {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
+                padding: 0 16px;
+            }
+            
+            .table-container::after {
+                content: '←  desplaza horizontalmente  →';
+                display: block !important;
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+                color: #6b7280;
+            }
+            
+            .table-container::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 20px;
+                height: 100%;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.7));
+                pointer-events: none;
+                z-index: 5;
+            }
+            
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 0.9rem;
+            }
+            
+            .conversion-link {
+                font-size: 0.9rem !important;
+            }
+        }
+        
+        /* Modo Oscuro */
         @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #111827;
+                color: #d1d5db;
+                font-size: 16px;
+            }
+            
+            .bg-white {
+                background-color: #374151;
+                color: #d1d5db;
+            }
+            
+            .text-sm {
+                font-size: 16px !important;
+            }
+            
+            .conversion-link {
+                color: #EF4444 !important;
+                font-size: 0.9rem !important;
+            }
+            
             .responsive-table th {
                 background-color: #374151;
                 color: #d1d5db;
@@ -451,238 +443,99 @@
             .color-select option {
                 background-color: #1f2937;
             }
-        }
-        
-        /* EFECTOS PARA IMÁGENES CORREGIDOS */
-        .photo-example,
-        .valores-example,
-        .pdf-thumbnail {
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-            border: 1px solid #FFD700;
-            margin-bottom: 10px;
-            position: relative; /* Asegura posición relativa */
-            max-width: 100%;
-        }
-        /* Zoom 200% para fotos y valores */
-        .photo-example:hover {
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2); /* Prefijo para compatibilidad */
-            z-index: 1000;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-        }
-        .valores-example:hover {
-            transform: scale(1.5);
-            -webkit-transform: scale(1.5); /* Prefijo para compatibilidad */
-            z-index: 1000;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        /* Enlaces de conversión en rojo y negrita */
-        .conversion-link {
-            color: #DC2626 !important; /* Rojo */
-            font-weight: bold !important;
-        }
-        
-        /* Bordes laterales */
-        .border-l-4 {
-            border-color: #FFD700 !important;
-        }
-        .border-l-4:hover {
-            border-color: #FFA000 !important;
-        }
-        
-        /* Separador horizontal para la nueva sección */
-        .separator {
-            height: 1px;
-            background-color: #FFD700;
-            opacity: 0.3;
-            margin: 24px 0;
-        }
-        
-        /* Modo oscuro */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #111827;
-                color: #d1d5db;
-            }
-            .bg-white {
-                background-color: #374151;
-                color: #d1d5db;
-            }
-            .border-l-4 {
-                border-color: #FFD700 !important;
-            }
-            .border-l-4:hover {
-                border-color: #FFA000 !important;
-            }
-            .conversion-link {
-                color: #EF4444 !important; /* Rojo más claro en modo oscuro */
-            }
-            .separator {
-                background-color: #FFD700;
-                opacity: 0.4;
+            
+            /* Botones en modo oscuro */
+            .download-btn {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             }
             
-            /* Asegurarse de que el texto siga siendo legible en modo oscuro */
-            .text-sm, p, li, td {
-                font-weight: 400; /* Mantener peso normal en modo oscuro */
+            .download-btn:hover {
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            }
+            
+            .download-btn.bg-yellow-500 {
+                box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
+            }
+            
+            .download-btn.bg-yellow-500:hover {
+                box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
+            }
+            
+            .download-btn.bg-blue-500 {
+                box-shadow: 0 4px 8px rgba(251, 191, 36, 0.6);
+            }
+            
+            .download-btn.bg-blue-500:hover {
+                box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
+            }
+            
+            .download-btn.dpi-btn {
+                box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
+            }
+            
+            .download-btn.dpi-btn:hover {
+                box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
             }
         }
         
-        /* Estilos específicos para impresión - Solo para foto.jpg y el código QR */
+        /* Modo oscuro específico para móvil */
+        @media (prefers-color-scheme: dark) and (max-width: 640px) {
+            .download-btn {
+                width: 180px !important;
+                white-space: nowrap !important;
+                font-size: 1rem !important;
+                padding: 8px 12px !important;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+            
+            .download-btn.dpi-btn, .excel-btn, .indep-btn {
+                width: 180px !important;
+                min-width: 180px !important;
+                max-width: 180px !important;
+                text-align: left !important;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+        }
+        
+        /* Estilos para impresión */
         @media print {
-            /* Ajustar el tamaño de la imagen foto.jpg */
             img[src*="foto.jpg"] {
                 width: 35% !important;
                 height: auto !important;
             }
             
-            /* Posicionamiento absoluto para el QR en impresión */
             .mt-4.flex.justify-between {
                 position: relative !important;
-                height: 500px !important; /* Crear espacio suficiente */
+                height: 500px !important;
             }
             
-            /* Hacer el código QR más grande para impresión y posicionarlo absolutamente */
             .qr-code-footer {
                 width: 80px !important;
                 height: 80px !important;
                 position: absolute !important;
-                top: 350px !important; /* Reducido de 450px a 350px para subir el QR */
-                right: 30px !important; /* Posición desde la derecha */
-                margin-top: 0 !important; /* Anular cualquier margen */
+                top: 350px !important;
+                right: 30px !important;
+                margin-top: 0 !important;
             }
             
-            /* NUEVO: Reducir la tabla al 40% de su tamaño para impresión */
             .table-container {
                 transform: scale(0.4);
                 transform-origin: top left;
-                width: 250%; /* Compensar la reducción de escala (100% / 0.4 = 250%) */
-                margin-bottom: 70px; /* Espacio extra adicional para evitar solapamiento */
+                width: 250%;
+                margin-bottom: 70px;
             }
             
-            /* Ajustar elementos cercanos a la tabla */
             .table-container + div {
-                margin-top: -140px; /* Aumentado para compensar la mayor reducción */
+                margin-top: -140px;
             }
         }
-
-            /* Botones DPI - MODIFICADOS para ser más redondeados */
-            .download-btn.dpi-btn {
-                border-radius: 7px !important; /* Esquinas más redondeadas (valor original era probablemente 4px o 6px) */
-        }
-
-            /* Aseguramos que el cambio de borde redondeado aplique también en otros estados del botón */
-            .download-btn.dpi-btn:hover,
-            .download-btn.dpi-btn:active,
-            .download-btn.dpi-btn:focus {
-                border-radius: 7px !important;
-        }
-
-            /* Para que todos los botones tengan el mismo estilo redondeado */
-            .download-btn {
-                border-radius: 7px !important;
-        }
-
-            /* Aseguramos que el cambio aplique en modo oscuro también */
-            @media (prefers-color-scheme: dark) {
-            .download-btn.dpi-btn,
-            .download-btn {
-                border-radius: 7px !important;
-            }
-        }
-/* Sombra específica para botones amarillos */
-    .download-btn.bg-yellow-500 {
-        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
-    }
-    
-    .download-btn.bg-yellow-500:hover {
-        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
-    }
-    
-    /* Sombra específica para botones azules */
-    .download-btn.bg-blue-500 {
-        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
-    }
-    
-    .download-btn.bg-blue-500:hover {
-        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.4);
-    }
-    
-    /* Estilos específicos para botones DPI */
-    .download-btn.dpi-btn {
-        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
-    }
-    
-    .download-btn.dpi-btn:hover {
-        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
-    }
-    
-    /* Asegurar que las sombras se ven bien en modo oscuro */
-    @media (prefers-color-scheme: dark) {
-        .download-btn {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        }
-        
-        .download-btn:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-        }
-        
-        .download-btn.bg-yellow-500 {
-            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
-        }
-        
-        .download-btn.bg-yellow-500:hover {
-            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
-        }
-        
-        .download-btn.bg-blue-500 {
-            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.6);
-        }
-        
-        .download-btn.bg-blue-500:hover {
-            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
-        }
-        
-        .download-btn.dpi-btn {
-            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
-        }
-        
-        .download-btn.dpi-btn:hover {
-            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
-        }
-    }
-    
-    /* Ajustes específicos para dispositivos móviles */
-    @media (max-width: 640px) {
-        .download-btn {
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-        }
-        
-        .download-btn:hover {
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
-        }
-        
-        /* Asegurar que los botones tienen el mismo estilo en móvil */
-        .excel-btn, .indep-btn, .download-btn.dpi-btn {
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
-        }
-        
-        .excel-btn:hover, .indep-btn:hover, .download-btn.dpi-btn:hover {
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35) !important;
-        }
-    }
-
-
-
-        
     </style>
-
 </head>
 <body class="text-gray-800">
     <div class="card-container bg-white rounded-xl shadow-md relative">
-        <!-- Logo OS10 más pequeño -->
+        <!-- Logo OS10 -->
         <a href="https://www.zosepcar.cl/OS10.php" target="_blank">
             <img src="https://github.com/danielfigueroa1879/Credenciales/blob/592cdbb028ff7da3345c11f9f0f06e0900ea0d37/logo-os10.png?raw=true" 
                  alt="Logo OS10" 
@@ -709,6 +562,7 @@
                             <li class="mb-1">Certificado de Antecedentes para Fines Especiales.</li>
                         </ul>
                     </div>
+                    
                     <!-- Fotografía digital -->
                     <div class="mb-4">
                         <h4 class="font-semibold mb-2">Fotografía digital:</h4>
@@ -725,18 +579,18 @@
                                     style="margin-left: 0; display: block;"
                                 >
                             </div>
-                           <div class="flex flex-col space-y-3 mt-2">
-                        
-                        <a href="https://dal5.short.gy/0" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
-                        1. Convertir 300 DPI 
-                        </a>
-                        <a href="https://dal5.short.gy/j" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded" style="text-align: center;">
-                        2. Convertir 300 DPI
-                        </a>
-                        <p class="text-sm italic mt-1">modificar los DPI o PPP de su imagen</p>
-                        </div>
+                            <div class="flex flex-col space-y-3 mt-2">
+                                <a href="https://dal5.short.gy/0" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
+                                    1. Convertir 300 DPI 
+                                </a>
+                                <a href="https://dal5.short.gy/j" target="_blank" class="download-btn dpi-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded">
+                                    2. Convertir 300 DPI
+                                </a>
+                                <p class="text-sm italic mt-1">modificar los DPI o PPP de su imagen</p>
+                            </div>
                         </ul>
                     </div>
+                    
                     <!-- Formato Excel -->
                     <div class="mb-4">
                         <h4 class="font-semibold mb-2">Formato Excel:</h4>
@@ -837,43 +691,39 @@
                                 Descargar Excel
                             </a>
                         </div>
-                        
-                        <!-- Nuevo subtítulo para Credencial Independiente, ahora más grande y rojo -->
-                        <!-- Subtítulo para Credencial Independiente alineado con los botones superiores -->
+                                  <!-- Subtítulo para Credencial Independiente -->
                         <h4 class="font-semibold mb-2 mt-4 text-left">
                           <span style="color: #DC2626;" class="text-lg sm:text-xl md:text-2xl">CREDENCIAL INDEPENDIENTE</span>
                         </h4>
                         <div class="flex flex-wrap justify-start items-center pl-5">
                             <a href="https://dal5.short.gy/Ind" target="_blank" class="download-btn bg-blue-500 hover:bg-blue-600 text-white font-bold rounded mt-2 mb-4 indep-btn">
                                C. Independiente
-                        </a>
+                            </a>
                         </div>
                     </div>
                     <div>
-                    <h4 class="font-semibold mb-2">PAGO VALE VISTA:</h4>
-    
-                    <ul class="list-disc pl-5 text-sm">
-                        <li class="mb-1">$5.763 CLP en VALE VISTA a nombre de:</li>
-                        <li class="mb-1"><strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong></li>
-                        <li class="mb-1">R.U.T.: 61.944.800-6</li>
-                        <li class="mb-1">Teléfono OS.10.: +562512651024</li>
-                    </ul>
+                        <h4 class="font-semibold mb-2">PAGO VALE VISTA:</h4>
+                        <ul class="list-disc pl-5 text-sm">
+                            <li class="mb-1">$5.763 CLP en VALE VISTA a nombre de:</li>
+                            <li class="mb-1"><strong>ZONA DE CARABINEROS SEGURIDAD PRIVADA CONTROL DE ARMAS Y EXPLOSIVOS</strong></li>
+                            <li class="mb-1">R.U.T.: 61.944.800-6</li>
+                            <li class="mb-1">Teléfono OS.10.: +562512651024</li>
+                        </ul>
                     </div>
-                    </div>
-                    <div class="mt-4 flex flex-wrap justify-between items-start md:items-start">
-                        <img 
-                            src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
-                            alt="Valores de Pago" 
-                            class="valores-example w-1/2 md:w-1/4 mb-2"
-                        >
-                        <a href="https://dal5.short.gy/C√" target="_blank" class="mt-0 md:mt-0">
-                            <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
-                                 alt="Código QR" 
-                                 class="qr-code-footer"
-                                 title="Escanea para más información"
-                                 style="margin-top: 250px; /* Para pantallas grandes */"> 
-                        </a>
-                    </div>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-between items-start md:items-start">
+                    <img 
+                        src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/da146109b14c4ffc143bbbf27a00dfad2fbfe4b0/valores.jpg" 
+                        alt="Valores de Pago" 
+                        class="valores-example w-1/2 md:w-1/4 mb-2"
+                    >
+                    <a href="https://dal5.short.gy/C√" target="_blank" class="mt-0 md:mt-0">
+                        <img src="https://raw.githubusercontent.com/danielfigueroa1879/Credenciales/ef0b1d80f2830affe8a2d4095f70a136119cf5a0/qrcred.png" 
+                             alt="Código QR" 
+                             class="qr-code-footer"
+                             title="Escanea para más información"
+                             style="margin-top: 250px; /* Para pantallas grandes */"> 
+                    </a>
                 </div>
             </div>
         </div>
