@@ -32,10 +32,12 @@
             width: 25%;
             display: inline-block;
             white-space: nowrap; /* Evita que el texto se corte */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra por defecto */
+            border-radius: 7px !important;
         }
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hover */
         }
         .card-container {
             max-width: 950px; /* Ligeramente más ancho */
@@ -586,8 +588,93 @@
             .download-btn.dpi-btn,
             .download-btn {
                 border-radius: 7px !important;
+            }
+        }
+/* Sombra específica para botones amarillos */
+    .download-btn.bg-yellow-500 {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
     }
-}
+    
+    .download-btn.bg-yellow-500:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
+    }
+    
+    /* Sombra específica para botones azules */
+    .download-btn.bg-blue-500 {
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+    }
+    
+    .download-btn.bg-blue-500:hover {
+        box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+    }
+    
+    /* Estilos específicos para botones DPI */
+    .download-btn.dpi-btn {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.4);
+    }
+    
+    .download-btn.dpi-btn:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.5);
+    }
+    
+    /* Asegurar que las sombras se ven bien en modo oscuro */
+    @media (prefers-color-scheme: dark) {
+        .download-btn {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        
+        .download-btn:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+        
+        .download-btn.bg-yellow-500 {
+            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
+        }
+        
+        .download-btn.bg-yellow-500:hover {
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
+        }
+        
+        .download-btn.bg-blue-500 {
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.5);
+        }
+        
+        .download-btn.bg-blue-500:hover {
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.6);
+        }
+        
+        .download-btn.dpi-btn {
+            box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
+        }
+        
+        .download-btn.dpi-btn:hover {
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6);
+        }
+    }
+    
+    /* Ajustes específicos para dispositivos móviles */
+    @media (max-width: 640px) {
+        .download-btn {
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+        }
+        
+        .download-btn:hover {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+        }
+        
+        /* Asegurar que los botones tienen el mismo estilo en móvil */
+        .excel-btn, .indep-btn, .download-btn.dpi-btn {
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
+        }
+        
+        .excel-btn:hover, .indep-btn:hover, .download-btn.dpi-btn:hover {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35) !important;
+        }
+    }
+
+
+
+        
     </style>
 
 </head>
