@@ -549,6 +549,31 @@
                 margin-top: -140px; /* Aumentado para compensar la mayor reducción */
             }
         }
+
+            /* Botones DPI - MODIFICADOS para ser más redondeados */
+            .download-btn.dpi-btn {
+                border-radius: 15px !important; /* Esquinas más redondeadas (valor original era probablemente 4px o 6px) */
+        }
+
+            /* Aseguramos que el cambio de borde redondeado aplique también en otros estados del botón */
+            .download-btn.dpi-btn:hover,
+            .download-btn.dpi-btn:active,
+            .download-btn.dpi-btn:focus {
+                border-radius: 15px !important;
+        }
+
+            /* Para que todos los botones tengan el mismo estilo redondeado */
+            .download-btn {
+                border-radius: 15px !important;
+        }
+
+            /* Aseguramos que el cambio aplique en modo oscuro también */
+            @media (prefers-color-scheme: dark) {
+            .download-btn.dpi-btn,
+            .download-btn {
+                border-radius: 15px !important;
+    }
+}
     </style>
 
 </head>
