@@ -586,6 +586,54 @@ h4.font-semibold, h4 {
         margin-bottom: 0.85rem !important;
     }
 }
+/* Sombras y efectos de brillo para TODOS los botones en modo oscuro móvil */
+@media (prefers-color-scheme: dark) and (max-width: 640px) {
+    /* Aplicar sombra base a TODOS los tipos de botones */
+    .download-btn,
+    .dpi-btn,
+    .excel-btn,
+    .indep-btn,
+    a[href*="Cr3d"],
+    a[href*="Ind"],
+    a[href*="bv"],
+    a[href*="dal5.short.gy/0"],
+    a[href*="dal5.short.gy/j"] {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Aplicar efecto hover a TODOS los tipos de botones */
+    .download-btn:hover,
+    .dpi-btn:hover,
+    .excel-btn:hover,
+    .indep-btn:hover,
+    a[href*="Cr3d"]:hover,
+    a[href*="Ind"]:hover,
+    a[href*="bv"]:hover,
+    a[href*="dal5.short.gy/0"]:hover,
+    a[href*="dal5.short.gy/j"]:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    /* Específicamente para botones amarillos */
+    .bg-yellow-500 {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5) !important;
+    }
+
+    .bg-yellow-500:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6) !important;
+    }
+
+    /* Específicamente para botones azules */
+    .bg-blue-500 {
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.5) !important;
+    }
+
+    .bg-blue-500:hover {
+        box-shadow: 0 6px 15px rgba(59, 130, 246, 0.6) !important;
+    }
+}
     </style>
 </head>
 <body class="text-gray-800">
