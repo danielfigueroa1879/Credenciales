@@ -493,21 +493,6 @@ transition: all 0.3s ease;
             border-radius: 7px !important;
             font-size: 1rem; /* Tamaño aumentado para los botones *
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         /* Modo oscuro específico para móvil */
        /* Corregir el CSS para botones en modo oscuro para móvil */
      @media (prefers-color-scheme: dark) and (max-width: 640px) {
@@ -634,6 +619,40 @@ h4.font-semibold, h4 {
         box-shadow: 0 6px 15px rgba(59, 130, 246, 0.6) !important;
     }
 }
+/* Corrección específica para botones de conversión DPI */
+@media (prefers-color-scheme: dark) and (max-width: 640px) {
+    /* Selección muy específica para los botones de 300 DPI */
+    a[href="https://dal5.short.gy/0"].download-btn.dpi-btn,
+    a[href="https://dal5.short.gy/j"].download-btn.dpi-btn {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5) !important;
+        transition: all 0.3s ease !important;
+        width: 180px !important;
+        min-width: 180px !important;
+        max-width: 180px !important;
+        text-align: center !important;
+        font-weight: 600 !important;
+        padding: 14px 12px !important;
+    }
+
+    a[href="https://dal5.short.gy/0"].download-btn.dpi-btn:hover,
+    a[href="https://dal5.short.gy/j"].download-btn.dpi-btn:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6) !important;
+        transform: translateY(-3px) !important;
+    }
+    
+    /* Asegurarse que todos los botones dpi-btn tengan los mismos efectos */
+    .download-btn.dpi-btn {
+        box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .download-btn.dpi-btn:hover {
+        box-shadow: 0 6px 15px rgba(251, 191, 36, 0.6) !important;
+        transform: translateY(-3px) !important;
+    }
+}
+
+        
     </style>
 </head>
 <body class="text-gray-800">
