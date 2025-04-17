@@ -700,37 +700,41 @@ h4.font-semibold, h4 {
         list-style-type: none !important;
     }
 }
-/* Dividir el título en dos líneas SOLO para móviles */
+/* Estilo para título en dos líneas con segunda línea más pequeña (solo móviles) */
 @media (max-width: 640px) {
     h1.main-title {
-        font-size: 1.8rem !important;
+        font-size: 1.4rem !important;
         letter-spacing: -0.5px;
-        line-height: 1.3;
-        padding-left: 20px;
+        line-height: 1.2;
+        padding-left: 60px;
         padding-right: 10px;
-        margin-top: 4px;
+        margin-top: 6px;
         margin-bottom: 1rem;
     }
     
-    /* Clase adicional para aplicar solo en móviles */
-    .mobile-break {
-        display: block !important; /* Hace que el span actúe como bloque y genere el salto de línea */
+    /* Clase para la segunda línea - más pequeña */
+    .subtitle-mobile {
+        display: block !important;
+        font-size: 0.95rem !important;
         margin-top: 2px;
+        letter-spacing: -0.2px;
     }
 }
 
-/* Para pantallas más grandes, ocultar el salto de línea */
-.mobile-break {
-    display: none; /* Por defecto, el span no genera salto de línea */
+/* Para pantallas normales, mantener todo en línea */
+.subtitle-mobile {
+    display: none;
 }
 
 /* Para pantallas muy pequeñas, reducir aún más */
 @media (max-width: 380px) {
     h1.main-title {
-        font-size: 1.4rem !important;
-        letter-spacing: -0.5px;
+        font-size: 1.2rem !important;
         padding-left: 55px;
-        line-height: 1.3;
+    }
+    
+    .subtitle-mobile {
+        font-size: 0.85rem !important;
     }
 }
 
@@ -746,7 +750,7 @@ h4.font-semibold, h4 {
                  class="logo-os10">
         </a>
         
-        <h1 class="main-title">CREDENCIAL <br class="mobile-break">INDEPENDIENTE Y EMPRESA</h1>
+       <h1 class="main-title">CREDENCIAL <span class="subtitle-mobile">INDEPENDIENTE Y EMPRESA</span></h1>
         
         <!-- Contenedor con espacio adicional después del título -->
         <div class="content-container">
