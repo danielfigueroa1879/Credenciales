@@ -700,28 +700,34 @@ h4.font-semibold, h4 {
         list-style-type: none !important;
     }
 }
-/* Dividir el título en dos líneas para móviles */
+/* Dividir el título en dos líneas SOLO para móviles */
 @media (max-width: 640px) {
     h1.main-title {
-        font-size: 1.9rem !important;
+        font-size: 1.3rem !important;
         letter-spacing: -0.5px;
         line-height: 1.3;
         padding-left: 60px;
         padding-right: 10px;
         margin-top: 6px;
         margin-bottom: 1rem;
-        /* Esta propiedad hace que "CREDENCIAL" e "INDEPENDIENTE Y EMPRESA" queden en líneas separadas */
-        white-space: pre-line;
     }
     
-    /* También debes modificar el HTML del título para que tenga un salto de línea */
-    /* Cambiar el texto del H1 a: "CREDENCIAL\nINDEPENDIENTE Y EMPRESA" */
+    /* Clase adicional para aplicar solo en móviles */
+    .mobile-break {
+        display: block !important; /* Hace que el span actúe como bloque y genere el salto de línea */
+        margin-top: 2px;
+    }
+}
+
+/* Para pantallas más grandes, ocultar el salto de línea */
+.mobile-break {
+    display: none; /* Por defecto, el span no genera salto de línea */
 }
 
 /* Para pantallas muy pequeñas, reducir aún más */
 @media (max-width: 380px) {
     h1.main-title {
-        font-size: 1.5rem !important;
+        font-size: 1.1rem !important;
         letter-spacing: -0.5px;
         padding-left: 55px;
         line-height: 1.3;
