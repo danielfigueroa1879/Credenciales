@@ -667,7 +667,39 @@ h4.font-semibold, h4 {
         transform: translateY(-3px) !important;
     }
 }
+/* Estilos para el pie de página - Normal para PC */
+.text-sm.text-gray-200.mt-4.text-center.normal-text ul.space-y-3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
+.text-sm.text-gray-200.mt-4.text-center.normal-text span {
+    font-size: 0.9rem;
+}
+
+/* Estilos para móvil - Texto más pequeño */
+@media (max-width: 640px) {
+    .text-sm.text-gray-200.mt-4.text-center.normal-text span {
+        font-size: 0.7rem !important; /* Mucho más pequeño en móvil */
+        line-height: 1.2 !important;
+    }
+    
+    .text-sm.text-gray-200.mt-4.text-center.normal-text ul.space-y-3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 0 !important;
+    }
+    
+    .text-sm.text-gray-200.mt-4.text-center.normal-text ul.space-y-3.pl-5 {
+        padding-left: 0 !important;
+    }
+    
+    .text-sm.text-gray-200.mt-4.text-center.normal-text li {
+        margin-bottom: 0 !important;
+        line-height: 1.1 !important;
+        list-style-type: none !important;
+    }
+}
         
     </style>
 </head>
