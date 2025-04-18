@@ -736,7 +736,7 @@ h4.font-semibold, h4 {
 }
 /* De aqui solo para titulo ______________________________________________________*/
 
-/* Estilos base para ambas líneas del título con efectos más sutiles */
+/* Estilos base para ambas líneas del título con efectos balanceados */
 .title-container {
   text-align: center;
   margin-top: 1rem;
@@ -751,29 +751,29 @@ h4.font-semibold, h4 {
   text-align: center;
   padding: 0;
   margin: 0;
-  text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3); /* Sombra sutil */
+  text-shadow: 0 1px 4px rgba(245, 158, 11, 0.4); /* Sombra ligeramente más visible */
   transition: all 0.3s ease;
 }
 
-/* Posicionamiento mantenido pero efectos reducidos */
+/* Posicionamiento mantenido con efectos moderados */
 .main-title {
   font-size: 1.75rem;
   margin-bottom: -0.3rem;
   transform: translateX(-10px); /* Mover CREDENCIAL a la izquierda */
-  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.2)); /* Brillo muy sutil */
+  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3)); /* Brillo sutil pero visible */
 }
 
 .main-subtitle {
   font-size: 1.5rem;
   margin-top: -0.25rem;
   transform: translateX(15px); /* Segunda línea a la derecha */
-  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.2));
+  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3));
 }
 
-/* Efecto hover sutil */
+/* Efecto hover ligeramente más perceptible */
 .title-container:hover .main-title,
 .title-container:hover .main-subtitle {
-  text-shadow: 0 1px 5px rgba(245, 158, 11, 0.4); /* Apenas perceptible */
+  text-shadow: 0 2px 6px rgba(245, 158, 11, 0.5); /* Sombra aumentada en hover */
 }
 
 /* Ajuste específico para móviles */
@@ -797,12 +797,14 @@ h4.font-semibold, h4 {
     font-size: 2.25rem;
     margin-bottom: -0.4rem;
     transform: translateX(-15px);
+    text-shadow: 0 2px 5px rgba(245, 158, 11, 0.45); /* Sombra ligeramente más visible en PC */
   }
   
   .main-subtitle {
     font-size: 2rem;
     margin-top: -0.35rem;
     transform: translateX(30px);
+    text-shadow: 0 2px 5px rgba(245, 158, 11, 0.45);
   }
 }
     </style>
