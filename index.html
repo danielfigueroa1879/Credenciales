@@ -735,7 +735,6 @@ h4.font-semibold, h4 {
     }
 }
 /* De aqui solo para titulo ______________________________________________________*/
-
 /* Estilos base para ambas líneas del título con efectos balanceados */
 .title-container {
   text-align: center;
@@ -755,18 +754,18 @@ h4.font-semibold, h4 {
   transition: all 0.3s ease;
 }
 
-/* Posicionamiento ajustado - CREDENCIAL más a la derecha */
+/* Posicionamiento ajustado - CREDENCIAL con mínimo desplazamiento */
 .main-title {
   font-size: 1.75rem;
   margin-bottom: -0.3rem;
-  transform: translateX(1px); /*Se mueve a la derecha - Reducido de -10px a -2px */
+  transform: translateX(-3px); /* Se mueve a la derecha - Reducido a -3px */
   filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3)); /* Brillo sutil pero visible */
 }
 
 .main-subtitle {
   font-size: 1.5rem;
   margin-top: -0.25rem;
-  transform: translateX(13px); /* Segunda línea a la derecha */
+  transform: translateX(10px); /* Segunda línea a la derecha */
   filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3));
 }
 
@@ -796,7 +795,7 @@ h4.font-semibold, h4 {
   .main-title {
     font-size: 2.25rem;
     margin-bottom: -0.4rem;
-    transform: translateX(-8px); /* Reducido de -15px a -8px */
+    transform: translateX(-2px); /* CAMBIO AQUÍ: Valor más cercano a 0 para mover más a la derecha */
     text-shadow: 0 2px 5px rgba(245, 158, 11, 0.45); /* Sombra ligeramente más visible en PC */
   }
   
@@ -807,7 +806,6 @@ h4.font-semibold, h4 {
     text-shadow: 0 2px 5px rgba(245, 158, 11, 0.45);
   }
 }
-
 /* Ajuste para que el contenedor ocupe casi todo el ancho en móvil */
 @media (max-width: 640px) {
     body {
