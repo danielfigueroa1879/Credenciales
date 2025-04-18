@@ -739,12 +739,27 @@ h4.font-semibold, h4 {
   font-size: 1.75rem; /* 28px */
   line-height: 1.2;
   margin-bottom: 0;
+  color: #EAB308; /* Color amarillo dorado para ambos */
 }
 
 .main-subtitle {
   font-size: 1.25rem; /* 20px */
   line-height: 1.2;
   margin-top: -0.5rem; /* Reduce espacio entre líneas */
+  color: #EAB308; /* Mismo color que el título principal */
+}
+
+/* Ajuste específico para móviles más pequeños */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.5rem; /* 24px - un poco más pequeño */
+  }
+  
+  .main-subtitle {
+    font-size: 0.95rem; /* 15px - significativamente más pequeño */
+    margin-top: -0.25rem;
+    letter-spacing: -0.5px; /* Comprime un poco las letras */
+  }
 }
 
 @media (min-width: 768px) {
@@ -771,7 +786,7 @@ h4.font-semibold, h4 {
         </a>
         <div class="text-center text-gray-500 text-sm mt-4">
   <h1 class="main-title text-3xl md:text-4xl font-bold">CREDENCIAL</h1>
-  <h2 class="main-subtitle text-yellow-600 text-xl md:text-2xl -mt-2 md:-mt-1 pl-0 md:pl-2">
+  <h2 class="main-subtitle text-xl md:text-2xl -mt-2 md:-mt-1 pl-0 md:pl-2">
     INDEPENDIENTE Y EMPRESA
   </h2>
 </div>
