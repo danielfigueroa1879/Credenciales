@@ -736,10 +736,11 @@ h4.font-semibold, h4 {
 }
 /* De aqui solo para titulo */
 /* Estilos base para ambas líneas del título */
+/* Estilos base para ambas líneas del título */
 .main-title, .main-subtitle {
   color: #EAB308; /* Color amarillo dorado para ambos */
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .main-title {
@@ -750,7 +751,7 @@ h4.font-semibold, h4 {
 
 .main-subtitle {
   font-size: 1.5rem; /* Más grande que antes */
-  margin-top: -0.2rem; /* Reduce espacio entre líneas */
+  margin-top: -0.1rem; /* Menos espacio entre líneas */
   padding-left: 10px; /* Desplaza ligeramente a la derecha en móvil */
 }
 
@@ -764,7 +765,7 @@ h4.font-semibold, h4 {
   
   .main-subtitle {
     font-size: 1.3rem; /* Más grande que antes pero todavía manejable */
-    margin-top: -0.15rem; /* Juntar más las líneas */
+    margin-top: -0.05rem; /* Juntar mucho más las líneas */
     text-align: center;
     margin-right: -10px; /* Ajustar más a la derecha */
   }
@@ -775,15 +776,17 @@ h4.font-semibold, h4 {
   .main-title {
     font-size: 2.25rem; /* 36px */
     padding-right: 0; /* Reset el padding en PC */
+    text-align: right; /* Alinear a la derecha */
+    padding-right: 10px; /* Empujar un poco a la izquierda */
   }
   
   .main-subtitle {
     font-size: 2rem; /* 32px - casi del mismo tamaño */
-    margin-top: -0.3rem; /* Espacio ajustado */
-    padding-left: 0; /* Reset el padding en PC */
+    margin-top: -0.1rem; /* Espacio mínimo */
+    text-align: left; /* Alinear a la izquierda */
+    padding-left: 30px; /* Empujar significativamente a la derecha */
   }
-}
-        
+}       
     </style>
 </head>
 <body class="text-gray-800">
@@ -794,7 +797,7 @@ h4.font-semibold, h4 {
                  alt="Logo OS10" 
                  class="logo-os10">
         </a>
-        <div class="text-center mt-4">
+        <div class="title-container text-center mt-4">
   <h1 class="main-title">CREDENCIAL</h1>
   <h2 class="main-subtitle">INDEPENDIENTE Y EMPRESA</h2>
 </div>
