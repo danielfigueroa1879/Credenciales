@@ -735,29 +735,31 @@ h4.font-semibold, h4 {
     }
 }
 /* De aqui solo para titulo ______________________________________________________*/
-
 /* Estilos base para ambas líneas del título */
 .title-container {
   text-align: center;
   margin-top: 1rem;
+  line-height: 0.8; /* Reducido al mínimo para el contenedor */
 }
 
 .main-title, .main-subtitle {
   color: #EAB308; /* Color amarillo dorado para ambos */
   font-weight: bold;
-  line-height: 0.9; /* Reducido para menos espacio vertical */
+  line-height: 0.8; /* Extremadamente reducido */
   display: block;
   text-align: center; /* Mantener centrado */
+  padding: 0; /* Eliminar cualquier padding */
+  margin: 0; /* Reset márgenes */
 }
 
 .main-title {
   font-size: 1.75rem; /* 28px */
-  margin-bottom: 0;
+  margin-bottom: -0.3rem; /* Valor negativo para superponer */
 }
 
 .main-subtitle {
   font-size: 1.5rem; /* Más grande que antes */
-  margin-top: -0.1rem; /* Espacio aún más reducido entre líneas */
+  margin-top: -0.25rem; /* Valor muy negativo para eliminar espacio */
   transform: translateX(15px); /* Desplaza ligeramente a la derecha */
 }
 
@@ -765,11 +767,12 @@ h4.font-semibold, h4 {
 @media (max-width: 640px) {
   .main-title {
     font-size: 1.5rem;
+    margin-bottom: -0.35rem; /* Ajustado para móvil */
   }
   
   .main-subtitle {
     font-size: 1.3rem; /* Más grande que antes pero todavía manejable */
-    margin-top: -0.12rem; /* Prácticamente pegadas */
+    margin-top: -0.3rem; /* Valor negativo fuerte */
     transform: translateX(10px); /* Desplazamiento menor en móvil */
   }
 }
@@ -778,14 +781,17 @@ h4.font-semibold, h4 {
 @media (min-width: 768px) {
   .main-title {
     font-size: 2.25rem; /* 36px */
+    margin-bottom: -0.4rem; /* Ajustado para PC */
   }
   
   .main-subtitle {
     font-size: 2rem; /* 32px - casi del mismo tamaño */
-    margin-top: -0.15rem; /* Espacio reducido al mínimo */
-    transform: translateX(30px); /* Desplazamiento mayor en PC - aumentado */
+    margin-top: -0.35rem; /* Valor extremadamente negativo */
+    transform: translateX(30px); /* Desplazamiento mayor en PC */
   }
 }
+
+
     </style>
 </head>
 <body class="text-gray-800">
