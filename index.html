@@ -808,22 +808,22 @@ h4.font-semibold, h4 {
   }
 }
 
-/* Ajuste para que el contenedor ocupe el ancho completo en móvil */
+/* Ajuste para que el contenedor ocupe casi todo el ancho en móvil */
 @media (max-width: 640px) {
     body {
-        padding: 0 !important; /* Eliminar el padding del body */
+        padding: 8px !important; /* Padding reducido pero no eliminado */
     }
     
     .card-container {
         max-width: 100% !important; /* Ancho máximo al 100% */
         width: 100% !important; /* Ancho 100% */
-        padding: 12px !important; /* Padding interno reducido */
-        margin-left: 0 !important; /* Sin margen izquierdo */
-        margin-right: 0 !important; /* Sin margen derecho */
-        border-radius: 0 !important; /* Sin bordes redondeados en móvil */
+        padding: 15px !important; /* Padding interno ligeramente más grande */
+        margin-left: auto !important; /* Margen automático */
+        margin-right: auto !important; /* Margen automático */
+        border-radius: 8px !important; /* Mantiene bordes redondeados más pequeños */
     }
     
-    /* Ajuste para el contenido interno también */
+    /* Ajuste para el contenido interno */
     .content-container {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -833,10 +833,9 @@ h4.font-semibold, h4 {
     .border-l-4 {
         margin-left: 0 !important;
         margin-right: 0 !important;
-        padding-right: 10px !important;
+        padding-right: 8px !important;
     }
 }
-
       
     </style>
 </head>
