@@ -736,7 +736,7 @@ h4.font-semibold, h4 {
 }
 /* De aqui solo para titulo ______________________________________________________*/
 
-/* Estilos base para ambas líneas del título con efectos de brillo mejorados */
+/* Estilos base para ambas líneas del título con efectos más sutiles */
 .title-container {
   text-align: center;
   margin-top: 1rem;
@@ -751,37 +751,29 @@ h4.font-semibold, h4 {
   text-align: center;
   padding: 0;
   margin: 0;
-  text-shadow: 0 2px 6px rgba(245, 158, 11, 0.6); /* Sombra de texto aumentada */
+  text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3); /* Sombra sutil */
   transition: all 0.3s ease;
-  position: relative;
 }
 
-/* Efecto de brillo alrededor del texto - mejorado */
+/* Posicionamiento mantenido pero efectos reducidos */
 .main-title {
   font-size: 1.75rem;
   margin-bottom: -0.3rem;
   transform: translateX(-10px); /* Mover CREDENCIAL a la izquierda */
-  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
-  letter-spacing: 0.5px; /* Aumentar legibilidad */
+  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.2)); /* Brillo muy sutil */
 }
 
 .main-subtitle {
   font-size: 1.5rem;
   margin-top: -0.25rem;
-  transform: translateX(15px); /* Segunda línea más a la derecha */
-  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
-  letter-spacing: 0.5px; /* Aumentar legibilidad */
+  transform: translateX(15px); /* Segunda línea a la derecha */
+  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.2));
 }
 
-/* Efecto hover en títulos - aumentado */
-.title-container:hover .main-title {
-  text-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 15px rgba(245, 158, 11, 0.6);
-  transform: translateX(-10px) translateY(-2px);
-}
-
+/* Efecto hover sutil */
+.title-container:hover .main-title,
 .title-container:hover .main-subtitle {
-  text-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 15px rgba(245, 158, 11, 0.6);
-  transform: translateX(15px) translateY(-2px);
+  text-shadow: 0 1px 5px rgba(245, 158, 11, 0.4); /* Apenas perceptible */
 }
 
 /* Ajuste específico para móviles */
@@ -789,56 +781,28 @@ h4.font-semibold, h4 {
   .main-title {
     font-size: 1.5rem;
     margin-bottom: -0.35rem;
-    transform: translateX(-8px); /* CREDENCIAL a la izquierda en móvil */
-    text-shadow: 0 2px 8px rgba(245, 158, 11, 0.7); /* Sombra más fuerte */
+    transform: translateX(-8px);
   }
   
   .main-subtitle {
     font-size: 1.3rem;
     margin-top: -0.3rem;
-    transform: translateX(12px); /* Segunda línea a la derecha */
-    text-shadow: 0 2px 8px rgba(245, 158, 11, 0.7);
-  }
-  
-  /* Efecto hover para móvil */
-  .title-container:hover .main-title {
-    transform: translateX(-8px) translateY(-2px);
-  }
-  
-  .title-container:hover .main-subtitle {
-    transform: translateX(12px) translateY(-2px);
+    transform: translateX(12px);
   }
 }
 
-/* Ajustes para tablets y escritorio con efectos más notorios */
+/* Ajustes para tablets y escritorio */
 @media (min-width: 768px) {
   .main-title {
     font-size: 2.25rem;
     margin-bottom: -0.4rem;
-    transform: translateX(-15px); /* CREDENCIAL más a la izquierda en PC */
-    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
-    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.7); /* Sombra mucho más visible */
-    letter-spacing: 1px; /* Mejor espaciado de letras */
+    transform: translateX(-15px);
   }
   
   .main-subtitle {
     font-size: 2rem;
     margin-top: -0.35rem;
-    transform: translateX(30px); /* Segunda línea más a la derecha */
-    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
-    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.7);
-    letter-spacing: 1px;
-  }
-  
-  /* Efecto hover para PC - más dramático */
-  .title-container:hover .main-title {
-    text-shadow: 0 0 15px rgba(245, 158, 11, 0.9), 0 0 20px rgba(245, 158, 11, 0.6);
-    transform: translateX(-15px) translateY(-3px);
-  }
-  
-  .title-container:hover .main-subtitle {
-    text-shadow: 0 0 15px rgba(245, 158, 11, 0.9), 0 0 20px rgba(245, 158, 11, 0.6);
-    transform: translateX(30px) translateY(-3px);
+    transform: translateX(30px);
   }
 }
     </style>
