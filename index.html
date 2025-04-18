@@ -736,7 +736,7 @@ h4.font-semibold, h4 {
 }
 /* De aqui solo para titulo ______________________________________________________*/
 
-    /* Estilos base para ambas líneas del título con efectos similares a los botones */
+/* Estilos base para ambas líneas del título con efectos de brillo */
 .title-container {
   text-align: center;
   margin-top: 1rem;
@@ -778,7 +778,7 @@ h4.font-semibold, h4 {
 
 .title-container:hover .main-subtitle {
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.6), 0 0 12px rgba(245, 158, 11, 0.4);
-  transform: translateX(10px) translateY(-2px);
+  transform: translateY(-2px); /* Mantener el desplazamiento X intacto en hover */
 }
 
 /* Ajuste específico para móviles */
@@ -813,13 +813,13 @@ h4.font-semibold, h4 {
   .main-subtitle {
     font-size: 2rem;
     margin-top: -0.35rem;
-    transform: translateX(12px);
+    transform: translateX(25px); /* Aumentado a 25px para desplazar más a la derecha en PC */
     filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
   }
   
   /* Efecto hover para PC */
   .title-container:hover .main-subtitle {
-    transform: translateX(12px) translateY(-2px);
+    transform: translateX(25px) translateY(-2px); /* Mantener el mismo desplazamiento X en hover */
   }
 }
 
