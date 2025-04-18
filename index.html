@@ -734,40 +734,43 @@ h4.font-semibold, h4 {
         line-height: 1.3;
     }
 }
-/* De aqui solo para titulo */
+/* De aqui solo para titulo ______________________________________________________*/
+
 /* Estilos base para ambas líneas del título */
-/* Estilos base para ambas líneas del título */
+.title-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .main-title, .main-subtitle {
   color: #EAB308; /* Color amarillo dorado para ambos */
   font-weight: bold;
   line-height: 1;
+  display: block;
+  text-align: center; /* Mantener centrado */
 }
 
 .main-title {
   font-size: 1.75rem; /* 28px */
   margin-bottom: 0;
-  padding-right: 10px; /* Desplaza ligeramente a la izquierda en móvil */
 }
 
 .main-subtitle {
   font-size: 1.5rem; /* Más grande que antes */
-  margin-top: -0.1rem; /* Menos espacio entre líneas */
-  padding-left: 10px; /* Desplaza ligeramente a la derecha en móvil */
+  margin-top: -0.05rem; /* Espacio mínimo entre líneas */
+  transform: translateX(15px); /* Desplaza ligeramente a la derecha */
 }
 
 /* Ajuste específico para móviles */
 @media (max-width: 640px) {
   .main-title {
     font-size: 1.5rem;
-    text-align: center;
-    margin-left: -10px; /* Ajustar más a la izquierda */
   }
   
   .main-subtitle {
     font-size: 1.3rem; /* Más grande que antes pero todavía manejable */
-    margin-top: -0.05rem; /* Juntar mucho más las líneas */
-    text-align: center;
-    margin-right: -10px; /* Ajustar más a la derecha */
+    margin-top: -0.02rem; /* Prácticamente pegadas */
+    transform: translateX(10px); /* Desplazamiento menor en móvil */
   }
 }
 
@@ -775,18 +778,14 @@ h4.font-semibold, h4 {
 @media (min-width: 768px) {
   .main-title {
     font-size: 2.25rem; /* 36px */
-    padding-right: 0; /* Reset el padding en PC */
-    text-align: right; /* Alinear a la derecha */
-    padding-right: 10px; /* Empujar un poco a la izquierda */
   }
   
   .main-subtitle {
     font-size: 2rem; /* 32px - casi del mismo tamaño */
-    margin-top: -0.1rem; /* Espacio mínimo */
-    text-align: left; /* Alinear a la izquierda */
-    padding-left: 30px; /* Empujar significativamente a la derecha */
+    margin-top: -0.05rem; /* Espacio mínimo */
+    transform: translateX(20px); /* Desplazamiento mayor en PC */
   }
-}       
+}  
     </style>
 </head>
 <body class="text-gray-800">
@@ -797,7 +796,7 @@ h4.font-semibold, h4 {
                  alt="Logo OS10" 
                  class="logo-os10">
         </a>
-        <div class="title-container text-center mt-4">
+        <div class="title-container">
   <h1 class="main-title">CREDENCIAL</h1>
   <h2 class="main-subtitle">INDEPENDIENTE Y EMPRESA</h2>
 </div>
