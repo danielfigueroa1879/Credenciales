@@ -736,7 +736,7 @@ h4.font-semibold, h4 {
 }
 /* De aqui solo para titulo ______________________________________________________*/
 
-/* Estilos base para ambas líneas del título con efectos de brillo */
+/* Estilos base para ambas líneas del título con efectos de brillo mejorados */
 .title-container {
   text-align: center;
   margin-top: 1rem;
@@ -751,34 +751,37 @@ h4.font-semibold, h4 {
   text-align: center;
   padding: 0;
   margin: 0;
-  text-shadow: 0 2px 4px rgba(245, 158, 11, 0.4); /* Sombra de texto similar a los botones */
-  transition: all 0.3s ease; /* Misma transición que los botones */
-  position: relative; /* Para efectos de pseudo-elementos */
+  text-shadow: 0 2px 6px rgba(245, 158, 11, 0.6); /* Sombra de texto aumentada */
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Efecto de brillo alrededor del texto */
+/* Efecto de brillo alrededor del texto - mejorado */
 .main-title {
   font-size: 1.75rem;
   margin-bottom: -0.3rem;
-  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3));
+  transform: translateX(-10px); /* Mover CREDENCIAL a la izquierda */
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+  letter-spacing: 0.5px; /* Aumentar legibilidad */
 }
 
 .main-subtitle {
   font-size: 1.5rem;
   margin-top: -0.25rem;
-  transform: translateX(10px);
-  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.3));
+  transform: translateX(15px); /* Segunda línea más a la derecha */
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+  letter-spacing: 0.5px; /* Aumentar legibilidad */
 }
 
-/* Efecto hover en títulos similar a botones */
+/* Efecto hover en títulos - aumentado */
 .title-container:hover .main-title {
-  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6), 0 0 12px rgba(245, 158, 11, 0.4);
-  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 15px rgba(245, 158, 11, 0.6);
+  transform: translateX(-10px) translateY(-2px);
 }
 
 .title-container:hover .main-subtitle {
-  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6), 0 0 12px rgba(245, 158, 11, 0.4);
-  transform: translateY(-2px); /* Mantener el desplazamiento X intacto en hover */
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 15px rgba(245, 158, 11, 0.6);
+  transform: translateX(15px) translateY(-2px);
 }
 
 /* Ajuste específico para móviles */
@@ -786,44 +789,58 @@ h4.font-semibold, h4 {
   .main-title {
     font-size: 1.5rem;
     margin-bottom: -0.35rem;
-    text-shadow: 0 2px 6px rgba(245, 158, 11, 0.5); /* Sombra más pronunciada en móvil */
+    transform: translateX(-8px); /* CREDENCIAL a la izquierda en móvil */
+    text-shadow: 0 2px 8px rgba(245, 158, 11, 0.7); /* Sombra más fuerte */
   }
   
   .main-subtitle {
     font-size: 1.3rem;
     margin-top: -0.3rem;
-    transform: translateX(8px);
-    text-shadow: 0 2px 6px rgba(245, 158, 11, 0.5);
+    transform: translateX(12px); /* Segunda línea a la derecha */
+    text-shadow: 0 2px 8px rgba(245, 158, 11, 0.7);
   }
   
   /* Efecto hover para móvil */
+  .title-container:hover .main-title {
+    transform: translateX(-8px) translateY(-2px);
+  }
+  
   .title-container:hover .main-subtitle {
-    transform: translateX(8px) translateY(-2px);
+    transform: translateX(12px) translateY(-2px);
   }
 }
 
-/* Ajustes para tablets y escritorio */
+/* Ajustes para tablets y escritorio con efectos más notorios */
 @media (min-width: 768px) {
   .main-title {
     font-size: 2.25rem;
     margin-bottom: -0.4rem;
-    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
+    transform: translateX(-15px); /* CREDENCIAL más a la izquierda en PC */
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.7); /* Sombra mucho más visible */
+    letter-spacing: 1px; /* Mejor espaciado de letras */
   }
   
   .main-subtitle {
     font-size: 2rem;
     margin-top: -0.35rem;
-    transform: translateX(25px); /* Aumentado a 25px para desplazar más a la derecha en PC */
-    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
+    transform: translateX(30px); /* Segunda línea más a la derecha */
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.7);
+    letter-spacing: 1px;
   }
   
-  /* Efecto hover para PC */
+  /* Efecto hover para PC - más dramático */
+  .title-container:hover .main-title {
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.9), 0 0 20px rgba(245, 158, 11, 0.6);
+    transform: translateX(-15px) translateY(-3px);
+  }
+  
   .title-container:hover .main-subtitle {
-    transform: translateX(25px) translateY(-2px); /* Mantener el mismo desplazamiento X en hover */
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.9), 0 0 20px rgba(245, 158, 11, 0.6);
+    transform: translateX(30px) translateY(-3px);
   }
 }
-
-
     </style>
 </head>
 <body class="text-gray-800">
