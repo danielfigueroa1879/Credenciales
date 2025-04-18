@@ -807,6 +807,37 @@ h4.font-semibold, h4 {
     text-shadow: 0 2px 5px rgba(245, 158, 11, 0.45);
   }
 }
+
+/* Ajuste para que el contenedor ocupe el ancho completo en móvil */
+@media (max-width: 640px) {
+    body {
+        padding: 0 !important; /* Eliminar el padding del body */
+    }
+    
+    .card-container {
+        max-width: 100% !important; /* Ancho máximo al 100% */
+        width: 100% !important; /* Ancho 100% */
+        padding: 12px !important; /* Padding interno reducido */
+        margin-left: 0 !important; /* Sin margen izquierdo */
+        margin-right: 0 !important; /* Sin margen derecho */
+        border-radius: 0 !important; /* Sin bordes redondeados en móvil */
+    }
+    
+    /* Ajuste para el contenido interno también */
+    .content-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Ajustes para las secciones con borde */
+    .border-l-4 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-right: 10px !important;
+    }
+}
+
+      
     </style>
 </head>
 <body class="text-gray-800">
