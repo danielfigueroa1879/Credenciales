@@ -1018,6 +1018,65 @@ h4.font-semibold, h4 {
            
         </footer>
     </div>
+// Script para añadir efecto click y animación de salto al botón de Credencial Independiente
+document.addEventListener('DOMContentLoaded', function() {
+    // Efecto click en secciones (conservado del código original)
+    var sections = document.querySelectorAll('.border-l-4');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].addEventListener('click', function() {
+            for (var j = 0; j < sections.length; j++) {
+                sections[j].classList.remove('clicked');
+            }
+            this.classList.add('clicked');
+        });
+    }
+    
+    // Agregamos la clase de animación para CSS
+    var cssAnimation = `
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-15px);
+        }
+        60% {
+            transform: translateY(-7px);
+        }
+    }
+    
+    .bounce-animation {
+        animation: bounce 2s ease infinite !important;
+    }`;
+    
+    // Agregar estilos al documento
+    var styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = cssAnimation;
+    document.head.appendChild(styleSheet);
+    
+    // Animación para el botón de Credencial Independiente
+    var botonIndependiente = document.querySelector('.indep-btn'); // Seleccionando el botón por su clase
+    
+    if (botonIndependiente) {
+        // Función para activar/desactivar la animación
+        function toggleBounce() {
+            botonIndependiente.classList.add('bounce-animation');
+            
+            // Desactivar después de 2 segundos
+            setTimeout(function() {
+                botonIndependiente.classList.remove('bounce-animation');
+            }, 2000);
+        }
+        
+        // Activar cada 5 segundos (cambiado de 3 a 5 para que sea menos intrusivo)
+        setInterval(toggleBounce, 5000);
+        
+        // Primera activación después de 3 segundos
+        setTimeout(toggleBounce, 3000);
+    }
+});
+
     
 </body>
 </html>
